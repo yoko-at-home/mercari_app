@@ -2,28 +2,33 @@
 <html lang="ja">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Mercari App</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>メルカリ　スマホで簡単　フリマアプリ</title>
+  <link rel="stylesheet" href="global.css" />
+  <link rel="stylesheet" href="landing.css" />
 </head>
 
 <body>
   <header class="header">
-    <div class="header__inner--top">
-      <div class="header__logo">
-        <img src="" alt="logo" />
-      </div>
-      <div class="header__input">
-        <input placeholder="何かお探しですか？" />
-      </div>
-    </div>
-    <div class="header__inner--bottom">
-      <div class="header__search">
-        <div class="header__search--category">
-          <p>カテゴリーから探す</p>
+    <div class="header__inner">
+
+      <div class="header__top">
+        <div class="header__logo">
+          <img src="" alt="logo" />
         </div>
-        <div class="header__search--brand">
-          <p>ブランドから探す</p>
+        <div class="header__input">
+          <input placeholder="何かお探しですか？" />
+        </div>
+      </div>
+      <div class="header__bottom">
+        <div class="header__search">
+          <div class="header__search--category">
+            <p><img src="" alt="category icon" />カテゴリーから探す</p>
+          </div>
+          <div class="header__search--brand">
+            <p><img src="" alt="brand icon" />ブランドから探す</p>
+          </div>
         </div>
       </div>
       <div class="header__button">
@@ -36,6 +41,7 @@
       </div>
     </div>
   </header>
+
   <section class="items-section">
     <div class="items-section__inner--top">
       <div class="items-section__title">
@@ -72,113 +78,200 @@
       <div class="items-section__product--content">
         <div class="card">
           <div class="card__preview">
-            <div class="card_preview--img"><img src="" alt="item" /></div>
+            <div class="card_preview--img"><img src="" alt="item image" /></div>
             <div class="card__preview--price">
               <p>¥6666</p>
             </div>
           </div>
           <div class="card__caption">
-            <div class="card__caption-description"></div>
-            <div class="card__caption-likes"></div>
+            <div class="card__caption-description">item info</div>
+            <div class="card__caption-likes"><a href="">link to item</a></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__preview">
+            <div class="card_preview--img"><img src="" alt="item image" /></div>
+            <div class="card__preview--price">
+              <p>¥6666</p>
+            </div>
+          </div>
+          <div class="card__caption">
+            <div class="card__caption-description">item info</div>
+            <div class="card__caption-likes"><a href="">link to item</a></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__preview">
+            <div class="card_preview--img"><img src="" alt="item image" /></div>
+            <div class="card__preview--price">
+              <p>¥6666</p>
+            </div>
+          </div>
+          <div class="card__caption">
+            <div class="card__caption-description">item info</div>
+            <div class="card__caption-likes"><a href="">link to item</a></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__preview">
+            <div class="card_preview--img"><img src="" alt="item image" /></div>
+            <div class="card__preview--price">
+              <p>¥6666</p>
+            </div>
+          </div>
+          <div class="card__caption">
+            <div class="card__caption-description">item info</div>
+            <div class="card__caption-likes"><a href="">link to item</a></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__preview">
+            <div class="card_preview--img"><img src="" alt="item image" /></div>
+            <div class="card__preview--price">
+              <p>¥6666</p>
+            </div>
+          </div>
+          <div class="card__caption">
+            <div class="card__caption-description">item info</div>
+            <div class="card__caption-likes"><a href="">link to item</a></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__preview">
+            <div class="card_preview--img"><img src="" alt="item image" /></div>
+            <div class="card__preview--price">
+              <p>¥6666</p>
+            </div>
+          </div>
+          <div class="card__caption">
+            <div class="card__caption-description">item info</div>
+            <div class="card__caption-likes"><a href="">link to item</a></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__preview">
+            <div class="card_preview--img"><img src="" alt="item image" /></div>
+            <div class="card__preview--price">
+              <p>¥6666</p>
+            </div>
+          </div>
+          <div class="card__caption">
+            <div class="card__caption-description">item info</div>
+            <div class="card__caption-likes"><a href="">link to item</a></div>
           </div>
         </div>
       </div>
   </section>
   <section class="app-section">
-    <div class="app-section__inner--text-top">
-      <div>
+    <div class="app-section__content">
+      <div class="app-section__subtitle">
         <h3>スマホでかんたんフリマアプリ</h3>
       </div>
-      <div class="app-section__inner--text-bottom">
+      <div class="app-section__title">
         <h2>いますぐ無料ダウンロード！</h2>
       </div>
-      <div class="app-section__inner--icons">
-        <div class="app-section__inner--icons-mercari">
+      <!-- </div> -->
+      <div class="app-section__icons">
+        <div class="app-section__icons-app">
           <img src="" alt="app-icon" />
         </div>
-        <div class="app-section__inner--icons--appstore">
+        <div class="app-section__icons--appstore">
           <a href="/">app store</a>
         </div>
-        <div class="app-section__inner--icons-gplay">
+        <div class="app-section__icons-gpstore">
           <a href="/">google play</a>
         </div>
       </div>
     </div>
-    <div>
+    <!--/div> -->
+    <div class="app-section__phone-img">
       <div>
         <img src="" alt="phone" />
       </div>
     </div>
   </section>
-  <footer class="foonter">
-    <nav class="footer__inner--top">
-      <div class="footer__about">
-        <h2 class="footer__about--title">メルカリについて</h2>
-        <ul class="">
-          <li class="footer__about--items">会社概要（運営会社）</li>
-          <li class="footer__about--items">採用情報</li>
-          <li class="footer__about--items">プレスリリース</li>
-          <li class="footer__about--items">公式ブログ</li>
-          <li class="footer__about--items">メルカリロゴ利用ガイドライン</li>
-          <div>
-            <svg>
-              <path d="" />--mercari img svgのパス--</svg>
+  <footer class="footer">
+    <div class="footer__inner--top">
+      <!-- <div class="footer__wrapper--about-help"> -->
+      <div class="footer__section">
+        <div class="footer__about">
+          <div class="footer__titles">メルカリについて</div>
+          <div class="footer__section--content">
+            <ul class="footer__list">
+              <li class="footer__item">会社概要（運営会社）</li>
+              <li class="footer__item">採用情報</li>
+              <li class="footer__item">プレスリリース</li>
+              <li class="footer__item">公式ブログ</li>
+              <li class="footer__item">メルカリロゴ利用ガイドライン</li>
+              <!-- <div>
+                  <svg>
+                    <path d="" />--mercari img svgのパス--</svg>
+                </div>
+                <div>
+                  <svg>
+                    <path d="" />--facebook img svgのパス--</svg>
+                </div> -->
+            </ul>
           </div>
-          <div>
-            <svg>
-              <path d="" />--facebook img svgのパス--</svg>
+        </div>
+        <div class="footer__help">
+          <div class="footer__titles">ヘルプ＆ガイド</div>
+          <div class="footer__section--content">
+            <ul class="footer__list">
+              <li class="footer__item">メルカリガイド</li>
+              <li class="footer__item">らくらくメルカリ便</li>
+              <li class="footer__item">ゆうゆうメルカリ便</li>
+              <li class="footer__item">梱包・発送たのメル便</li>
+              <li class="footer__item">車体取引ガイド</li>
+              <li class="footer__item">メルカリあんしん・あんぜん宣言！</li>
+              <li class="footer__item">偽ブランド品撲滅への取り組み</li>
+              <li class="footer__item">メルカリボックス</li>
+              <li class="footer__item">スマホ出品・売却相場</li>
+            </ul>
           </div>
-        </ul>
-      </div>
-      <div class="footer__help">
-        <h2 class="footer__help--title">ヘルプ＆ガイド</h2>
-        <ul class="">
-          <li class="footer__help--articles">メルカリガイド</li>
-          <li class="footer__help--articles">らくらくメルカリ便</li>
-          <li class="footer__help--articles">ゆうゆうメルカリ便</li>
-          <li class="footer__help--articles">梱包・発送たのメル便</li>
-          <li class="footer__help--articles">車体取引ガイド</li>
-          <li class="footer__help--articles">メルカリあんしん・あんぜん宣言！</li>
-          <li class="footer__help--articles">偽ブランド品撲滅への取り組み</li>
-          <li class="footer__help--articles">メルカリボックス</li>
-          <li class="footer__help--articles">スマホ出品・売却相場</li>
-        </ul>
-      </div>
-      <div class="footer__privacy">
-        <h2 class="footer__privacy--title">プライバシーと利用規約</h2>
-        <div class="footer__privacy-policies">
-          <ul class="">
-            <li class="footer__privacy-policy">プライバシーポリシー</li>
-            <li class="footer__privacy-policy">メルカリ利用規約</li>
-            <li class="footer__privacy-policy">あんしんスマホサポート制度に関する利用特約</li>
-            <li class="footer__privacy-policy">コンプライアンスポリシー</li>
-          </ul>
         </div>
-        <div class="footer__privacy-legals">
-          <ul class="">
-            <li class="footer__privacy--legal">個人データの安全管理に係る基本方針</li>
-            <li class="footer__privacy--legal">特定商取引に関する表記</li>
-            <li class="footer__privacy--legal">資金決済法に基づく表示
-            </li>
-            <li class="footer__privacy--legal">法令順守と犯罪抑止のために</li>
-          </ul>
+        <div class="footer__privacy">
+          <div class="footer__titles">プライバシーと利用規約</div>
+          <div class="footer__wrapper-privacy">
+            <div class="footer__wrapper-privacy-left">
+              <ul class="footer_list">
+                <li class="footer__item">プライバシーポリシー</li>
+                <li class="footer__item">メルカリ利用規約</li>
+                <li class="footer__item">あんしんスマホサポート制度に関する利用特約</li>
+                <li class="footer__item">コンプライアンスポリシー</li>
+              </ul>
+            </div>
+            <div class="footer__wrapper-privacy-right">
+              <ul class="footer__list">
+                <li class="footer__item">個人データの安全管理に係る基本方針</li>
+                <li class="footer__item">特定商取引に関する表記</li>
+                <li class="footer__item">資金決済法に基づく表示</li>
+                <li class="footer__item">法令順守と犯罪抑止のために</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer__country">
+          <div class="footer__titles">国</div>
+          <div class="footer__wrapper--country">
+            <ul class="footer__list">
+              <li class="footer__item"><a class="footer__country-japan" href=" /">日本</a></li>
+              <li class="footer__item"><a href="/" class="footer__country-us">United States</a></li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div class="footer__countries">
-        <h2>国</h2>
-        <ul class="">
-          <li class="footer__country">
-            <a class="footer__country-japan" href=" /">日本</a>
-            <a href="/" class="footer__country-us">United States</a></li>
-        </ul>
-      </div>
-    </nav>
-    <div class="footer__copyright">
-      <svg>
-        <path d="" />--mercari logo svgのパス--</svg>
     </div>
-    <div class="footer__copyright-">
-      <p>© Mercari, Inc.</p>
+    </div>
+    <div class="footer__copyright">
+      <div class="footer__inner--bottom">
+        <!-- <svg>
+          <path d="" />--mercari logo svgのパス--</svg> -->
+      </div>
+      <div class="footer__copyright-">
+        <p>© Mercari, Inc.</p>
+      </div>
+
     </div>
   </footer>
 </body>

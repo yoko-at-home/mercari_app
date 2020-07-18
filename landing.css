@@ -3,12 +3,16 @@ header {
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  padding-top: 6px;
 }
 
 .header__inner {
-  display: inlfine;
-  width: 700px;
+  display: inline;
   justify-content: space-between;
 }
 
@@ -22,8 +26,8 @@ header {
   display: flex;
   justify-content: center;
   background-size: cover;
+  max-width: 767px;
 }
-
 
 .header__form {
   vertical-align: baseline;
@@ -71,26 +75,25 @@ header {
   padding: 0px 50px 0px 10px;
   transition: all 0.3s ease-out 0s;
 }
-}
 
 .header__search-icon {
   display: flex;
   justify-content: flex-end;
   background-color: transparent;
-    /* height: 40px; */
-    position: absolute;
-    right: 0px;
-    top: 0px;
-    width: 40px;
-    /* -webkit-appearance: none; */
-    border-width: initial;
-    border-style: none;
-    /* border-color: initial;
+  /* height: 40px; */
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 40px;
+  /* -webkit-appearance: none; */
+  border-width: initial;
+  border-style: none;
+  /* border-color: initial;
     border-image: initial; */
-    border-radius: 0px 4px 4px 0px;
+  border-radius: 0px 4px 4px 0px;
 }
 
-.header__search-icon:hover{
+.header__search-icon:hover {
   cursor: pointer;
 }
 
@@ -136,7 +139,6 @@ header {
   border-color: rgb(234, 53, 45);
 }
 
-
 .header__button--login > button {
   /* padding: 0px 10px; */
   color: rgb(0, 149, 238);
@@ -163,7 +165,7 @@ button {
 }
 
 button:hover {
-  cursor:pointer
+  cursor: pointer;
 }
 /* section */
 section {
@@ -378,7 +380,6 @@ ul > li {
   justify-content: flex-start;
 }
 
-
 .footer__titles {
   display: block;
   margin-block-start: 0.83em;
@@ -425,12 +426,25 @@ ul > li {
   border-radius: 50%;
 }
 
-@media (min-width: 1068px)
-.items-section--banner-img {
-    width: 1020px;
-    margin: 30px auto 20px;
-}
-@media (min-width: 768px)
-.items-section--banner-img {
+/* middle-size screen */
+@media (min-width: 768px) {
+  header {
+    position: relative;
+  }
+
+  .items-section--banner-img {
     width: 700px;
     margin: 55px auto 10px;
+  }
+}
+
+/* large-size screen */
+@media (min-width: 1068px) {
+  header {
+    position: relative;
+  }
+  .items-section--banner-img {
+    width: 1020px;
+    margin: 30px auto 20px;
+  }
+}

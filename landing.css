@@ -1,50 +1,77 @@
+/* small screen mobile */
 /* Header  */
-header {
+
+.header {
+  display: none;
+  display: inline;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.header__inner {
+  display: none;
+  justify-content: space-between;
+  max-width: 764px;
+  /* margin: 0 auto; */
+}
+
+.header--mobile {
   width: 100%;
-  display: flex;
-  justify-content: center;
+  display: inline;
+  justify-content: space-arounds;
   position: sticky;
   top: 0;
   z-index: 3;
   background-color: rgb(255, 255, 255);
   box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-  padding-top: 6px;
+  padding: 3px 10px;
 }
 
-.header__inner {
+.header__inner--mobile {
   display: inline;
-  justify-content: space-between;
+  justify-content: baseline;
+  width: 100%;
+  padding: 0 10px;
+  margin: 0 auto;
 }
+
+.header__top--mobile {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.header__middle--mobile {
+  display: flex;
+  justify-content: center;
+}
+
+.header__bottom--mobile {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+}
+
 
 .header__top {
   display: flex;
   justify-content: flex-start;
   line-height: 14px;
+  width: 100%;
 }
 
 .header__logo {
   display: flex;
-  justify-content: center;
-  background-size: cover;
-  max-width: 767px;
+  justify-content: flex-start;
 }
 
-.header__form {
+form {
   vertical-align: baseline;
-  margin: 0px;
-  padding: 0px;
   border-width: 0px;
-  font: inherit;
-}
-
-.header__input {
-  width: 100%;
-  margin-left: 25px;
-  height: 30px;
-  font-size: 25px;
   background-color: rgb(245, 245, 245);
+  font-size: 16px;
   height: 40px;
-  /* line-height: 1.4em; */
+  line-height: 1.4em;
   position: relative;
   width: 100%;
   -webkit-appearance: none;
@@ -54,13 +81,11 @@ header {
   border-image: initial;
   border-radius: 4px;
   outline: none;
-  padding: 0px 50px 0px 10px;
   transition: all 0.3s ease-out 0s;
 }
 
 .header__input > input {
-  background-color: rgb(245, 245, 245);
-  font-size: 16px;
+  font-size: 30px;
   height: 40px;
   line-height: 1.4em;
   /* position: relative; */
@@ -72,31 +97,31 @@ header {
   border-image: initial;
   border-radius: 4px;
   outline: none;
-  padding: 0px 50px 0px 10px;
   transition: all 0.3s ease-out 0s;
 }
 
-.header__search-icon {
+.header__input--icon {
   display: flex;
   justify-content: flex-end;
   background-color: transparent;
-  /* height: 40px; */
+  height: 40px;
   position: absolute;
   right: 0px;
   top: 0px;
   width: 40px;
-  /* -webkit-appearance: none; */
   border-width: initial;
   border-style: none;
-  /* border-color: initial;
-    border-image: initial; */
-  border-radius: 0px 4px 4px 0px;
 }
 
-.header__search-icon:hover {
+.header__input--icon:hover {
   cursor: pointer;
 }
 
+.header__bottom--mobile {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
 .header__bottom {
   display: flex;
   justify-content: space-between;
@@ -133,40 +158,6 @@ header {
   justify-content: flex-end;
 }
 
-.header__button--register > button {
-  background: rgb(234, 53, 45);
-  color: rgb(255, 255, 255);
-  border-color: rgb(234, 53, 45);
-}
-
-.header__button--login > button {
-  /* padding: 0px 10px; */
-  color: rgb(0, 149, 238);
-  border-color: rgb(0, 149, 238);
-  transition-property: transform;
-  transition-duration: 1s;
-}
-
-.header__button--login > button:hover {
-  /* padding: 0px 10px; */
-  color: rgb(255, 255, 255);
-  border-color: rgb(0, 149, 238);
-  background-color: rgb(0, 149, 238);
-}
-
-button {
-  margin: 5px 0 0 10px;
-  font-size: 14px;
-  border-style: solid;
-  border-width: 1px;
-  border-image: initial;
-  border-radius: 4px;
-  padding: 5px 10px;
-}
-
-button:hover {
-  cursor: pointer;
-}
 /* section */
 section {
   background-color: #fff;
@@ -236,19 +227,30 @@ section {
 }
 
 .items-section--banner {
-  width: 100%;
-}
-.items-section--banner-img {
   display: flex;
   justify-content: center;
-  height: 250px;
+  background-image: url(img/merrucari_app_banner01.png);
   width: 100%;
+  height: 150px;
+  /* max-width: 767px; */
   background-position: center;
   background-size: cover;
-  background-image: url(img/merrucari_app_banner01.png);
-  margin-bottom: 16px;
-  /* padding: 56px 0px 30px; */
 }
+.items-section--banner-img {
+  /* display: flex;
+  justify-content: flex-start; */
+  width: 100%;
+  /* max-width: 767px; */
+  height: 150px;
+  /* background-image: url(img/merrucari_app_banner01.png); */
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 16px;
+}
+.items-section--banner-img:a{
+  height: auto;
+}
+
 
 .items-section__inner--top {
   display: infline;
@@ -322,26 +324,13 @@ footer {
   color: rgb(255, 255, 255);
   font-size: 12px;
   background: rgb(34, 34, 34);
-  display: inline;
-  justify-content: center;
-  /* max-width: 1000px; */
-  /* margin: 0 auto; */
-  padding: 0px 20px 10px;
 }
-
-/* .footer__inner--top {
-  display: inline;
-  max-width: 500px;
-  flex-wrap: wrap;
-}
-
-.footer__inner--bottom {
-  display: inline;
-  max-width: 500px;
-  flex-wrap: wrap;
-} */
 
 .footer__section {
+  display: inline;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0px 20px 10px;
   display: flex;
   justify-content: center;
   /* max-width: 1000px; */
@@ -367,9 +356,9 @@ ul > li {
   justify-content: flex-start;
 }
 
-.footer__wrapper-privacy ul {
+/* .footer__wrapper-privacy ul {
   padding-left: 0;
-}
+} */
 
 .footer__wrapper-country {
   display: inline;
@@ -387,6 +376,7 @@ ul > li {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   font-weight: bold;
+  width: calc(200%);
 }
 
 .footer__help {
@@ -394,7 +384,7 @@ ul > li {
   justify-content: center;
 }
 
-.footer__copyright {
+.footer__inner--bottom {
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin: 30px auto 20px;
@@ -405,7 +395,7 @@ ul > li {
   vertical-align: top;
 }
 
-.footer__copyright-- {
+.footer__label--copyright {
   /* display: flex; */
   /* justify-content: center; */
   margin-bottom: 8px;
@@ -426,25 +416,119 @@ ul > li {
   border-radius: 50%;
 }
 
-/* middle-size screen */
-@media (min-width: 768px) {
-  header {
+/* common */
+
+.header__button--register > button {
+  background: rgb(234, 53, 45);
+  color: rgb(255, 255, 255);
+  border-color: rgb(234, 53, 45);
+}
+
+.header__button--login > button {
+  color: rgb(0, 149, 238);
+  border-color: rgb(0, 149, 238);
+  transition-property: transform;
+  transition-duration: 1s;
+}
+
+.header__button--login > button:hover {
+  color: rgb(255, 255, 255);
+  border-color: rgb(0, 149, 238);
+  background-color: rgb(0, 149, 238);
+}
+
+button {
+  margin: 5px 0 0 10px;
+  font-size: 14px;
+  border-style: solid;
+  border-width: 1px;
+  border-image: initial;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+/* middle-size screen tablet */
+@media (min-width: 765px) {
+  .header--mobile {
+    display: none;
+  }
+  .header {
     position: relative;
+    display: inline;
   }
 
-  .items-section--banner-img {
-    width: 700px;
-    margin: 55px auto 10px;
+  .header__inner {
+    display: inline;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .header__inner--mobile {
+    display: none;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .items-section--banner {
+    width: 100%;
+    height: auto;
+    background-size: auto;
+    background-image: url(img/merrucari_app_banner01.png);
+    background-position: center;
+    background-size: cover;
+    display: block;
+    /* margin: 55px auto 10px; */
+  }
+  /* items-section--banner-img:a {
+    background-image: url(img/merrucari_app_banner01.png);
+    background-size: auto;
+    background-position: center;
+    background-size: cover;
+    display: block;
+    height: 250px;
+  } */
+
+  .footer__section {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding: 0px 20px 10px;
+    display: flex;
+    justify-content: center;
+    /* max-width: 1000px; */
   }
 }
 
-/* large-size screen */
-@media (min-width: 1068px) {
-  header {
+/* large-size screen  laptop */
+@media (min-width: 1065px) {
+  /* .header--mobile {
+    display: none;
+  } */
+
+  .header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    padding-top: 6px;
+  }
+  .header {
     position: relative;
   }
-  .items-section--banner-img {
-    width: 1020px;
+  .items-section--banner {
     margin: 30px auto 20px;
+    width: 100%;
+    height: 300px;
   }
+  /* a {
+    background-size: auto;
+    height: 300px;
+  } */
+
+
 }

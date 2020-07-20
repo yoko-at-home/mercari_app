@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>メルカリ　スマホで簡単　フリマアプリ</title>
+  <title>メルカリ　スマホでかんたん　フリマアプリ</title>
   <link rel="stylesheet" href="global.css" />
   <link rel="stylesheet" href="landing.css" />
 </head>
@@ -17,11 +17,16 @@
         <div class="header__logo">
           <img src="img/mercari_logo.png" alt="logo" width="134px" height="36px" />
         </div>
-        <div class="header__input">
-          <form action="header__form">
-            <input type="search" placeholder="何かお探しですか？" />
-          <button class="header__search-icon"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" class="header__search-icon"><path fill="currentColor" fill-rule="nonzero" d="M11.435 10.063h-.723l-.256-.247a5.92 5.92 0 0 0 1.437-3.87 5.946 5.946 0 1 0-5.947 5.947 5.92 5.92 0 0 0 3.87-1.437l.247.256v.723L14.637 16 16 14.637l-4.565-4.574zm-5.489 0A4.111 4.111 0 0 1 1.83 5.946 4.111 4.111 0 0 1 5.946 1.83a4.111 4.111 0 0 1 4.117 4.116 4.111 4.111 0 0 1-4.117 4.117z"></path></svg></button>
-        </form>
+          <div class="header__input">
+            <form action="header__form">
+              <input type="search" placeholder="何かお探しですか？" />
+            </form>
+            <div class="header__input--icon">
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" class="header__search-icon"><path fill="currentColor" fill-rule="nonzero" d="M11.435 10.063h-.723l-.256-.247a5.92 5.92 0 0 0 1.437-3.87 5.946 5.946 0 1 0-5.947 5.947 5.92 5.92 0 0 0 3.87-1.437l.247.256v.723L14.637 16 16 14.637l-4.565-4.574zm-5.489 0A4.111 4.111 0 0 1 1.83 5.946 4.111 4.111 0 0 1 5.946 1.83a4.111 4.111 0 0 1 4.117 4.116 4.111 4.111 0 0 1-4.117 4.117z"></path></svg>
+            </div>
+        <!-- </div> -->
+      <!-- </div> -->
+
         </div>
       </div>
       <div class="header__bottom">
@@ -46,13 +51,48 @@
       </div>
     </div>
   </header>
-  <section class="items-section--banner">
-    <div clss="items-section--banner-img">
-      <img src="img/merrucari_app_banner01.png" height="250px" alt="">
+<!-- モバイル専用 -->
+  <header class="header--mobile">
+    <div class="header__inner--mobile">
+
+        <div class="header__top--mobile">
+          <div class="header__logo">
+            <img src="img/mercari_logo.png" alt="logo" width="134px" height="36px" />
+          </div>
+            <div class="header__button">
+              <div class="header__button--register"><button>会員登録</button></div>
+              <div class="header__button--login"><button>ログイン</button></div>
+            </div>
+        </div>
+
+        <div class="header__middle--mobile">
+          <form action="header__form">
+            <div><input type="search" placeholder="何かお探しですか？" /></div>
+            <div class="header__input--icon"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" class="header__search-icon"><path fill="currentColor" fill-rule="nonzero" d="M11.435 10.063h-.723l-.256-.247a5.92 5.92 0 0 0 1.437-3.87 5.946 5.946 0 1 0-5.947 5.947 5.92 5.92 0 0 0 3.87-1.437l.247.256v.723L14.637 16 16 14.637l-4.565-4.574zm-5.489 0A4.111 4.111 0 0 1 1.83 5.946 4.111 4.111 0 0 1 5.946 1.83a4.111 4.111 0 0 1 4.117 4.116 4.111 4.111 0 0 1-4.117 4.117z"></path></svg></div>
+          </form>
+        <!-- </div> -->
+        </div>
+
+        <div class="header__bottom--mobile">
+          <div class="header__search">
+            <p><svg aria-hidden="true" width="20" height="16" viewBox="0 0 20 16" class="search__svg"><path fill="currentColor" fill-rule="nonzero" d="M18.799 15.25h-11.5a1.25 1.25 0 1 1 0-2.5h11.5a1.25 1.25 0 0 1 0 2.5zm0-6h-11.5a1.25 1.25 0 1 1 0-2.5h11.5a1.25 1.25 0 0 1 0 2.5zm0-6h-11.5a1.25 1.25 0 1 1 0-2.5h11.5a1.25 1.25 0 0 1 0 2.5zM2 16a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0-6a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0-6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"></path></svg>カテゴリーから探す</p></div>
+            <p><svg aria-hidden="true" width="23" height="16" viewBox="0 0 23 16" class="search__svg"><path fill="currentColor" fill-rule="nonzero" d="M6.315 0L4.473 1.806 2.833.019.73 1.977l1.69 1.84L1.198 5.02c-1.594 1.594-1.594 4.188-.01 5.772L6.3 16h13.272a3.08 3.08 0 0 0 3.077-3.077V3.076A3.08 3.08 0 0 0 19.57 0H6.315zm13.46 12.925a.211.211 0 0 1-.205.205H7.504L3.227 8.771a1.226 1.226 0 0 1-.01-1.71L4.38 5.92l1.28 1.371a2.68 2.68 0 1 0 2.13-1.93L6.433 3.907 7.49 2.87h12.082a.211.211 0 0 1 .206.205v9.848h-.002z"></path></svg>ブランドから探す</p></div>
+          </div>
+      </div>
     </div>
+    </div>
+    <!-- </div> -->
+  </header>
+
+  <section class="items-section--banner">
+    <div clss="items-section--banner-img" style="height: 150px;">
+      <a href=""><img src="" alt="" height="250px"></a>
+    </div>
+    <div clss="items-section--banner-img">
+
   </section>
 
-  <div class="camera">出品</div>
+  <!-- <div class="camera">出品</div> -->
 
   <section class="items-section">
     <div class="items-section__inner--top">
@@ -282,10 +322,9 @@
           </div>
         </div>
         <div class="footer__inner--bottom">
-
-          <div class="footer__privacy">
+          <div class="footer__wrapper--privacy">
             <div class="footer__titles">プライバシーと利用規約</div>
-            <div class="footer__wrapper-privacy">
+          <div class="footer__section--content">
               <div class="footer__wrapper-privacy-left">
                 <ul class="footer_list">
                   <li class="footer__item">プライバシーポリシー</li>
@@ -303,26 +342,25 @@
                 </ul>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="footer__country">
-          <div class="footer__titles">国</div>
-          <div class="footer__wrapper--country">
-            <ul class="footer__list">
-              <li class="footer__item"><a class="footer__country-japan" href=" /">日本</a></li>
-              <li class="footer__item"><a href="/" class="footer__country-us">United States</a></li>
-            </ul>
+            <div class="footer__country">
+              <div class="footer__titles">国</div>
+              <div class="footer__wrapper--country">
+                <ul class="footer__list">
+                  <li class="footer__item"><a class="footer__country-japan" href=" /">日本</a></li>
+                  <li class="footer__item"><a href="/" class="footer__country-us">United States</a></li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
     </div>
-    <div class="footer__copyright">
-      <!-- <div></div> -->
       <div class="footer__inner--bottom">
+	  <div class="footer__label--logo">
         <img src="img/mercari-icon-footer.svg" width="131px" alt="">
       </div>
-      <div class="footer__copyright--">
+      <div class="footer__label--copyright">
         <p>© Mercari, Inc.</p>
       </div>
     </div>

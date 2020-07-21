@@ -291,6 +291,7 @@ section {
   background-position: center;
   background-size: cover;
   color: #fff;
+  width: 100%;
 }
 
 .app-section__subtitle {
@@ -315,8 +316,7 @@ section {
 }
 
 .app-section__phone-img {
-  /* width: 40%; */
-  margin-left: 40px;
+  display: none;
 }
 
 /* footer */
@@ -324,20 +324,40 @@ footer {
   color: rgb(255, 255, 255);
   font-size: 12px;
   background: rgb(34, 34, 34);
+  padding:25px;
 }
 
-.footer__section {
+.footer__inner--top {
   display: inline;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-direction: column;
-  padding: 0px 20px 10px;
+  padding: 0;
   display: flex;
   justify-content: center;
-  /* max-width: 1000px; */
 }
 
 .footer__titles {
   font-weight: bold;
+}
+
+.footer__about {
+  display: inline;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding-right: 15px;
+}
+
+.footer__social-icon {
+  display: flex;
+  justify-content: stretch;
+  flex-direction: row;
+  height: 50px;
+}
+
+.footer__facebook .footer__twitter {
+  width: 16px;
+  height: auto;
+  padding: 5px;
 }
 
 .footer__list {
@@ -351,8 +371,8 @@ ul > li {
   list-style-type: none;
 }
 
-.footer__wrapper-privacy {
-  display: flex;
+.footer__inner--bottom{
+  display: inline;
   justify-content: flex-start;
 }
 
@@ -360,8 +380,18 @@ ul > li {
   padding-left: 0;
 } */
 
+.footer__section--content {
+display: inline;
+justify-content: flex-start;
+}
+
 .footer__wrapper-country {
   display: inline;
+}
+
+.footer__country-japan:link .footer__country-us:link {
+  text-decoration: none;
+  color: white;
 }
 
 .footer__icons {
@@ -376,7 +406,7 @@ ul > li {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   font-weight: bold;
-  width: calc(200%);
+  max-width: 764px;
 }
 
 .footer__help {
@@ -384,14 +414,14 @@ ul > li {
   justify-content: center;
 }
 
-.footer__inner--bottom {
+.footer__inner--bottom-logo {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 30px auto 20px;
+  margin: 0px auto 20px;
   vertical-align: bottom;
 }
 
-.footer__inner--bottom img {
+.footer__inner--bottom-logo img {
   vertical-align: top;
 }
 
@@ -492,6 +522,13 @@ button:hover {
     height: 250px;
   } */
 
+  .app-section__phone-img {
+    display: flex;
+    width: 300px;
+    height: auto;
+    margin-left: 40px;
+  }
+
   .footer__section {
     display: flex;
     justify-content: center;
@@ -501,6 +538,11 @@ button:hover {
     justify-content: center;
     /* max-width: 1000px; */
   }
+
+ .footer__section--content {
+    display: flex;
+    justify-content: center;
+    }
 }
 
 /* large-size screen  laptop */

@@ -90,10 +90,15 @@
 .header__form {
   display: flex;
   justify-content: flex-start;
+
+  align-items: center;
+  padding-left: 10px;
   background-color: rgb(245, 245, 245);
   line-height: 1.4em;
   position: relative;
   width: 100%;
+
+  height: 100%;
   border-width: 1px;
   border-style: solid;
   border-color: rgb(204, 204, 204);
@@ -102,16 +107,14 @@
 }
 
 input {
-  display: flex;
-  justify-content: space-between;
   border: 1px;
   background-color: rgb(245, 245, 245);
   font-size: 16px;
   line-height: 1.4em;
   position: relative;
   width: 100%;
-  -webkit-appearance: none;
-  border-bottom: 1px;
+  height: 100%;
+  border-bottom: 1px solid rgb(204, 204, 204);
   border-color: rgb(204, 204, 204);
   border-image: initial;
   border-radius: 4px;
@@ -138,10 +141,10 @@ input {
 
 .header__bottom--mobile {
   font-weight: 600;
-  padding: 0 10px;
+  margin: 0 10px;
 }
 
-.header__search {
+.search__wrapper {
   display: flex;
   line-height: 14px;
   justify-content: space-between;
@@ -149,7 +152,7 @@ input {
   font-size: small;
 }
 
-.header__search > div {
+.header__search {
   display: flex;
 }
 .search__svg {
@@ -179,17 +182,27 @@ a {
 }
 
 /* BANNER */
-.items-section--banner {
+/* .items-section--banner {
+    width: 100%;
+    height: 150px;
+    background-size: auto;
+    background-image: url(../img/merrucari_app_banner01.png);
+    background-position: center;
+    background-size: cover;
+    display: block;
+  } */
+.banner-section {
+  background-image: url('../img/merrucari_app_banner01.png');
   width: 100%;
-  height: 150px;
-  background-size: auto;
-  background-image: url(../img/merrucari_app_banner01.png);
+  height: 250px;
   background-position: center;
   background-size: cover;
-  display: block;
 }
 
 /* section */
+.items-section {
+  padding: 0 10px;
+}
 
 .items-section__inner--top {
   display: flex;
@@ -197,7 +210,6 @@ a {
   justify-content: center;
   padding: 56px 0px 5px;
   width: 100%;
-  /* padding: 40px 20px 20px 20px; */
 }
 
 .items-section__categories {
@@ -338,7 +350,6 @@ a {
 .app-section__title {
   font-size: 20px;
   font-weight: 600;
-  /* margin-bottom: 20px; */
 }
 
 .app-section__icons {
@@ -405,7 +416,7 @@ footer {
   margin: 0px;
 }
 
-.footer__section--content-middle  {
+.footer__section--content-middle {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -482,8 +493,6 @@ ul > li {
 }
 
 .footer__label--copyright {
-  /* display: flex; */
-  /* justify-content: center; */
   margin-bottom: 8px;
   align-items: center;
   line-height: 36px;
@@ -491,8 +500,6 @@ ul > li {
 
 .camera {
   display: inline-block;
-  /* align-items: flex-end; */
-  /* padding-top: 15px; */
   text-align: center;
   line-height: 80px;
   color: #fff;
@@ -524,13 +531,11 @@ ul > li {
 }
 
 button {
-  margin: 5px 0 0 10px;
   font-size: 14px;
   border-style: solid;
   border-width: 1px;
   border-image: initial;
   border-radius: 4px;
-  padding: 5px 10px;
 }
 
 button:hover {

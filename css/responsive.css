@@ -42,7 +42,6 @@
   .header__bottom {
     display: flex;
     justify-content: space-between;
-    font-weight: 600;
     padding: 10px;
     box-shadow: none;
   }

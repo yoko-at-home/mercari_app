@@ -114,7 +114,7 @@ input {
   position: relative;
   width: 100%;
   height: 100%;
-  border-bottom: 1px solid rgb(204, 204, 204);
+  border-bottom: 1px;
   border-color: rgb(204, 204, 204);
   border-image: initial;
   border-radius: 4px;
@@ -307,12 +307,12 @@ a {
   width: 100%;
 }
 
-/* .card {
+.card {
   display: inline-block;
   justify-content: space-between;
   width: 33.33%;
   padding: 5px 0 5px 5px;
-} */
+}
 
 /* APP SECTION */
 .app-section {

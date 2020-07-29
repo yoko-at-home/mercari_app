@@ -64,7 +64,6 @@
     height: 175px;
   }
 
-
   .items-section--banner {
     height: 200px;
   }
@@ -82,24 +81,19 @@
     margin-right: 15px;
   }
 
-
   .items-section__category--more {
     display: inline-flex;
   }
 
-  .tems-section__inner--bottom-container {
+  .items-section__inner--bottom-container {
     margin: 0 15px;
     max-width: 767px;
-    padding: 0;
   }
 
-  .footer__container {
-    max-width: 767px;
-  }
+  /* FOOTER */
 
-  .footer__section-top {
-    justify-content: space-between;
-    width: 80%;
+  .footer__about_help--wrapper {
+    justify-content: flex-start;
   }
 }
 
@@ -124,6 +118,14 @@
     line-height: 34px;
   }
 
+  /*  画像エリア*/
+  .items-section__product--container {
+    grid-template-rows: calc(width * 0.2) calc(width * 0.2) calc(width * 0.2) calc(
+        width * 0.2
+      ) calc(width * 0.2);
+    grid-template-columns: auto auto auto auto auto;
+  }
+
   .app-section {
     height: 260px;
   }
@@ -137,22 +139,16 @@
     flex-direction: column;
     margin-left: 10px;
   }
-  .app-section__subtitle {
+  .app-section__subtitle h3 {
     font-size: 24px;
     font-weight: 600;
     margin: 30px 0 15px;
     margin-bottom: 15px;
   }
 
-  .app-section__title {
+  .app-section__title h2 {
     font-size: 34px;
     font-weight: 400;
-  }
-  .app-section__subtitle {
-    font-size: 16px;
-    font-weight: 600;
-    margin: 30px 0 15px;
-    margin-bottom: 15px;
   }
 
   .app-section__icons-app-mobile {
@@ -172,14 +168,17 @@
     justify-content: space-between;
     width: 100%;
   }
+/* FOOTER */
+.footer__list {
+  width: 300px;
+  margin-right: 10px;
+}
 
-  .footer__container {
-    flex-direction: row;
-    max-width: 1064px;
-  }
-  .footer__section--content {
-    flex-direction: row;
-  }
+.footer__section-bottom {
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
 }
 
 /* large-size screen  laptop */
@@ -188,6 +187,23 @@
   .banner-section {
     max-width: none;
     height: 250px;
+  }
+
+  /* FOOTER */
+  .footer__inner-top-container {
+    /* width: 700px; */
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+  }
+
+  .footer__section-bottom {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .footer__list {
+    width: 200px;
   }
 
 }

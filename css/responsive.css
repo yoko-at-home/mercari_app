@@ -1,8 +1,22 @@
+@media (min-width: 320px) {
+  .card__price-div {
+    margin-top: -50px;
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 450px) {
+  .card__price-div {
+    margin-top: -5px;
+  }
+}
+
 /* middle screen */
 @media (min-width: 560px) {
   .header--mobile {
     display: none;
   }
+
 
   .header {
     width: 100%;
@@ -90,10 +104,30 @@
     max-width: 767px;
   }
 
-  /* FOOTER */
+  /* 商品画像エリア */
+  .card-none {
+    display: none;
+  }
 
+  .card__price-div {
+    margin-top: 40px;
+    font-size: medium;
+  }
+
+  .card__price_opacity {
+    padding: 1px 2px;
+    width: 70px;
+    height: 25px;
+    }
+
+  /* FOOTER */
   .footer__about_help--wrapper {
     justify-content: flex-start;
+  }
+
+  .footer__list {
+    width: 300px;
+    margin-right: 0px;
   }
 }
 
@@ -118,13 +152,31 @@
     line-height: 34px;
   }
 
-  /*  画像エリア*/
+  /*  商品画像エリア*/
   .items-section__product--container {
-    grid-template-rows: calc(width * 0.2) calc(width * 0.2) calc(width * 0.2) calc(
-        width * 0.2
-      ) calc(width * 0.2);
-    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: repeat (5, calc(width * 0.2) );
+    grid-template-columns: repeat(5, auto);
   }
+
+  .card_none {
+    display: block;
+  }
+
+.card_none .card_price_div {
+  position: relative;
+  margin-top: 0;
+
+  .card__price-div {
+    margin-top: 30px;
+    font-size: initial;
+  }
+
+  .card__price_opacity {
+    padding: 1px 2px;
+    width: 70px;
+    height: 20px;
+    line-height: 20px;
+    }
 
   .app-section {
     height: 260px;
@@ -139,6 +191,7 @@
     flex-direction: column;
     margin-left: 10px;
   }
+
   .app-section__subtitle h3 {
     font-size: 24px;
     font-weight: 600;
@@ -169,11 +222,6 @@
     width: 100%;
   }
 /* FOOTER */
-.footer__list {
-  width: 300px;
-  margin-right: 10px;
-}
-
 .footer__section-bottom {
   flex-direction: row;
   justify-content: flex-end;

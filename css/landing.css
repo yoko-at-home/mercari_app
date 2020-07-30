@@ -134,7 +134,6 @@ input {
   width: 40px;
   border-width: initial;
   border-style: none;
-  z-index: 3;
 }
 
 .header__input--icon:hover {
@@ -278,7 +277,7 @@ a {
   width: 100%;
   padding: 10px 0;
   margin: 10px auto;
-  background-color: pink;
+  /* background-color: pink; */
 }
 
 .items-section__product--title {
@@ -314,16 +313,18 @@ a {
   white-space: nowrap;
 }
 
-/*  画像エリア*/
+/*  商品画像エリア*/
 .items-section__product--container {
   display: grid;
   justify-content: center;
-  grid-template-rows: calc(width*0.33) calc(width*0.33) calc(width*0.33);
-  grid-template-columns: auto auto auto;
+  /* grid-template-rows: calc(width*0.33) calc(width*0.33) calc(width*0.33); */
+  grid-template-rows: repeat(3, calc(width*0.33));
+  /* grid-template-columns: auto auto auto; */
+  grid-template-columns: repeat(3, auto);
   padding: 10px auto 25px;
   /* padding-bottom: 25px; */
   gap: 10px;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .card {
@@ -332,7 +333,7 @@ flex-direction: column;
 justify-content: center;
 /* position: relative; */
 padding: 3px;
-background: purple;
+/* background: purple; */
 }
 
 .card__preview {
@@ -345,15 +346,44 @@ background: purple;
 }
 
 .card__preview img {
-  display: block;
+display: block;
 width: 100%;
 height: auto;
+position: relative;
+}
+
+.card_none {
+  display: none;
+}
+
+/* .card_none .card_price_div {
+  margin-top: 0; */
+
+.card__price-div {
+  position: absolute;
+  margin-top: -20px;
+  font-size: small;
+}
+
+.card__price_opacity {
+opacity: 0.6;
+border-radius: 0 10px 10px 0;
+padding: 1px 2px;
+width: 50px;
+height: 20px;
+background: rgb(248, 231, 231);
+position: absolute;
 }
 
 .card__preview--price {
   visibility: visible;
-  transition: all 0.5s ease 0s;
-  opacity: 1;
+  z-index: 2;
+  margin-left: 5px;
+  /* transition: all 0.5s ease 0s; */
+  position: absolute;
+  line-height: 20px;
+  /* opacity: 1; */
+
 }
 
 /* APP SECTION */
@@ -382,6 +412,7 @@ height: auto;
   flex-direction: column;
   margin-left: 10px;
 }
+
 .app-section__subtitle h3 {
   font-size: 16px;
   font-weight: 300;
@@ -443,6 +474,8 @@ footer {
 .footer__social-icon {
   display: grid;
   /* grid-template-rows: 20px 20px; */
+  grid-template-rows: repeat (2, 20px);
+  grid-template-columns: repeat (4, 1fr);
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 

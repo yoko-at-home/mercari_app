@@ -1,28 +1,15 @@
-@media (min-width: 320px) {
-  .card__price-div {
-    margin-top: -50px;
-    font-size: 12px;
-  }
-}
-
-@media (min-width: 450px) {
-  .card__price-div {
-    margin-top: -5px;
-  }
-}
-
 /* middle screen */
 @media (min-width: 560px) {
   .header--mobile {
     display: none;
   }
 
-
   .header {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     background-color: rgb(255, 255, 255);
     box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
     padding: 0 10px;
@@ -31,10 +18,11 @@
   }
 
   .header__inner {
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
     color: #000;
-    justify-content: space-between;
+    justify-content: center;
+    max-width: 1024px;
     width: 100%;
     padding: 10px 0;
     box-shadow: none;
@@ -56,7 +44,8 @@
   .header__bottom {
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    align-items: center;
+    padding-top: 10px;
     box-shadow: none;
   }
 
@@ -73,11 +62,6 @@
   }
 
   /* BANNER */
-  .banner-section {
-    max-width: 767px;
-    height: 175px;
-  }
-
   .items-section--banner {
     height: 200px;
   }
@@ -86,22 +70,33 @@
     justify-content: center;
   }
 
+  /* 人気のカテゴリータイトル */
+  .items-section__inner--top {
+    padding: 54px 0 30px;
+  }
+
+.items-section__title h3 {
+  font-size: 28px;
+  line-height: 39px;
+  margin-bottom: 16px;
+}
+
   .horizontal_scroll {
     overflow-x: inherit;
-    padding: 0 8px 8px;
+    /* padding: 0 8px 8px; */
   }
 
   .horizontal_scroll > li {
     margin-right: 15px;
   }
 
-  .items-section__category--more {
-    display: inline-flex;
+  .items-section__inner--bottom {
+    padding: 56px 50px 30px;
+    /* height: auto; */
   }
 
-  .items-section__inner--bottom-container {
-    margin: 0 15px;
-    max-width: 767px;
+  .items-section__category--more {
+    display: inline-flex;
   }
 
   /* 商品画像エリア */
@@ -118,33 +113,14 @@
     padding: 1px 2px;
     width: 70px;
     height: 25px;
-    }
-
-  /* FOOTER */
-  .footer__about_help--wrapper {
-    justify-content: flex-start;
   }
 
-  .footer__list {
-    width: 300px;
-    margin-right: 0px;
-  }
 }
 
 @media (min-width: 768px) {
   /* BANNER */
   .banner-section {
-    max-width: 1064px;
-    height: 200px;
-  }
-
-  .items-section--banner {
     height: 250px;
-  }
-
-  .items-section__product--title {
-    justify-content: space-between;
-    width: 100%;
   }
 
   .items-section__category--text {
@@ -154,29 +130,18 @@
 
   /*  商品画像エリア*/
   .items-section__product--container {
-    grid-template-rows: repeat (5, calc(width * 0.2) );
+    grid-template-rows: repeat (5, calc(width * 0.2));
     grid-template-columns: repeat(5, auto);
+    gap: 10px;
+  }
+
+  .card__caption {
+    padding: 5px;
   }
 
   .card_none {
-    display: block;
+    display: flex;
   }
-
-.card_none .card_price_div {
-  position: relative;
-  margin-top: 0;
-
-  .card__price-div {
-    margin-top: 30px;
-    font-size: initial;
-  }
-
-  .card__price_opacity {
-    padding: 1px 2px;
-    width: 70px;
-    height: 20px;
-    line-height: 20px;
-    }
 
   .app-section {
     height: 260px;
@@ -184,12 +149,6 @@
 
   .app-section__content {
     flex-direction: column;
-  }
-
-  .app-section__content-titles {
-    display: inline-block;
-    flex-direction: column;
-    margin-left: 10px;
   }
 
   .app-section__subtitle h3 {
@@ -221,37 +180,51 @@
     justify-content: space-between;
     width: 100%;
   }
-/* FOOTER */
-.footer__section-bottom {
-  flex-direction: row;
-  justify-content: flex-end;
-}
-
 }
 
 /* large-size screen  laptop */
 @media (min-width: 1065px) {
   /* BANNER */
   .banner-section {
-    max-width: none;
-    height: 250px;
+    height: 300px;
   }
 
   /* FOOTER */
-  .footer__inner-top-container {
-    /* width: 700px; */
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 0;
+  .footer__grid {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 330px 31px ;
+    gap: 20px
   }
 
-  .footer__section-bottom {
-    flex-direction: row;
-    justify-content: flex-end;
+  .footer__list-country {
+    display: inline;
   }
 
   .footer__list {
     width: 200px;
   }
 
+  .footer__country {
+    width: auto;
+  }
+
+  .footer__country ul {
+    flex-direction: column;
+  }
+
+  .footer__country-us {
+    white-space: nowrap;
+  }
+
+  .footer__label--copyright-mobile {
+    display: none;
+  }
+
+  .footer__label--copyright-pc {
+    display: inline;
+  }
+
+  .dammy {
+    display: inline;
+  }
 }

@@ -376,7 +376,7 @@ a {
   font-size: 12px;
   height: 40px;
   padding: 6px 8px;
-  z-index: 0;
+  z-index: 1;
   width: 100%;
 }
 
@@ -384,7 +384,7 @@ a {
   display: inline-block;
   overflow: hidden;
   position: relative;
-  z-index: 0;
+  z-index: 1;
   width: 100%;
 }
 .card__caption-description span p {
@@ -402,7 +402,7 @@ a {
   align-self: baseline;
   bottom: 0;
   right: 5px;
-  z-index: 3;
+  z-index: 1;
   background-color: #fff;
   /* background-color: pink; */
   /* border-radius: 50%; */
@@ -476,8 +476,8 @@ footer {
 
 .footer__grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 350px 220px 100px 35x;
+  grid-template-columns: repeat(2, minmax(350px, 1fr));
+  grid-template-rows: 350px 230px 100px 35x;
 }
 
 .footer__about .footer__help {
@@ -500,8 +500,13 @@ footer {
   display: flex;
   justify-content: flex-start;
   flex-direction: row;
-  padding: 0;
+  padding: 0 5px 0 0;
   margin-top: -12px;
+}
+
+.footer__list-country li {
+  padding: 0 15px 0 0;
+
 }
 
 .footer__country {
@@ -542,10 +547,12 @@ ul > li {
 }
 
 .footer__item {
-  font-size: small;
-  font-weight: 200;
+  font-size: 12px;
+  /* font-weight: 200; */
+  opacity: 0.7;
   text-decoration: none;
   color: white;
+  white-space: normal;
 }
 
 .footer__country-japan:link .footer__country-us:link {
@@ -591,7 +598,7 @@ ul > li {
   display: none;
 }
 
-.camera {
+.camera-a {
   display: inline-block;
   text-align: center;
   line-height: 80px;

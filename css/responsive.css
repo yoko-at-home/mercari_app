@@ -75,11 +75,11 @@
     padding: 54px 0 30px;
   }
 
-.items-section__title h3 {
-  font-size: 28px;
-  line-height: 39px;
-  margin-bottom: 16px;
-}
+  .items-section__title h3 {
+    font-size: 28px;
+    line-height: 39px;
+    margin-bottom: 16px;
+  }
 
   .horizontal_scroll {
     overflow-x: inherit;
@@ -206,9 +206,12 @@
   }
 
   /* FOOTER */
+  .footer__container {
+    padding: 0px 20px 10px;
+  }
   .footer__grid {
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 330px 31px ;
+    grid-template-rows: 340px 31px;
     gap: 20px;
   }
 
@@ -220,12 +223,19 @@
     width: 200px;
   }
 
+  .footer__item {
+    line-height: 1.4em;
+    margin: 16px 0px 0px;
+  }
+
   .footer__country {
     width: auto;
   }
 
   .footer__country ul {
     flex-direction: column;
+    line-height: 1.4em;
+    margin: 16px 0px 0px;
   }
 
   .footer__country-us {

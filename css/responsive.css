@@ -131,7 +131,7 @@
   /*  商品画像エリア*/
   .items-section__product--container {
     grid-template-rows: repeat (5, calc(width * 0.2));
-    grid-template-columns: repeat(5, auto);
+    grid-template-columns: repeat(5, minmax(145px, 1fr));
     gap: 10px;
   }
 
@@ -141,6 +141,22 @@
 
   .card_none {
     display: flex;
+  }
+
+  .card__caption-description {
+    height: 50px;
+  }
+
+  .card__caption-description span p {
+    font-size: 14px;
+  }
+
+  .card__caption-likes {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    bottom: 5px;
+    right: 5px;
   }
 
   .app-section {
@@ -193,7 +209,7 @@
   .footer__grid {
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: 330px 31px ;
-    gap: 20px
+    gap: 20px;
   }
 
   .footer__list-country {

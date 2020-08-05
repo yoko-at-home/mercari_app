@@ -183,7 +183,7 @@ a {
 
 /* BANNER */
 .banner-section {
-  background-image: url("../img/merrucari_app_banner01.png");
+  background-image: url('../img/merrucari_app_banner01.png');
   width: 100%;
   height: 150px;
   background-position: center;
@@ -309,7 +309,7 @@ a {
   display: grid;
   justify-content: center;
   grid-template-rows: repeat(3, calc(width * 0.33));
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(3, minmax(70px, 1fr));
   padding: 10px auto 25px;
   gap: 5px;
 }
@@ -369,36 +369,43 @@ a {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
   position: relative;
+  width: 100%;
 }
 
 .card__caption-description {
   font-size: 12px;
-  /* height: 46px; */
+  height: 40px;
   padding: 6px 8px;
   z-index: 0;
+  width: 100%;
 }
 
-.card__caption-description span {
-  font-size: small;
-  font-weight: 300;
-  /* box-shadow: 1px, 1px, 4, gray; */
+.card__caption-description {
   display: inline-block;
-  height: 2.8em;
   overflow: hidden;
   position: relative;
   z-index: 0;
-  /* white-space: wrap; */
+  width: 100%;
+}
+.card__caption-description span p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  font-size: 12px;
 }
 
 .card__caption-likes {
-  /* display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  padding-bottom: 5px; */
   position: absolute;
-  bottom: 5px;
-  right: 15px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  align-self: baseline;
+  bottom: 0;
+  right: 5px;
   z-index: 3;
+  background-color: #fff;
+  /* background-color: pink; */
+  /* border-radius: 50%; */
 }
 
 /* APP SECTION */

@@ -114,7 +114,6 @@
     width: 70px;
     height: 25px;
   }
-
 }
 
 @media (min-width: 768px) {
@@ -196,6 +195,11 @@
     justify-content: space-between;
     width: 100%;
   }
+
+  .footer__grid {
+    grid-template-columns: repeat(2, minmax(350px, 1fr));
+  }
+
 }
 
 /* large-size screen  laptop */

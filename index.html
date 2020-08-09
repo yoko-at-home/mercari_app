@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/global.css" />
     <link rel="stylesheet" href="css/landing.css" />
     <link rel="stylesheet" href="css/responsive.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
   </head>
 
   <body>
@@ -221,241 +223,20 @@
               </div>
 
               <div class="card__caption">
-                <div class="card__caption-description"><span><p>【item info】xxxxxxxxxxxxx</p></span></div>
+                <div class="card__caption-description"><p>【item info】xxxxxxxxxxxxx</p></div>
                 <div class="card__caption-likes">
-                  <svg
-                    width="16"
-                    height="16"
-                    fill="#888888"
-                    fill-rule="evenodd"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M12,21a.68.68,0,0,1-.48-.19C10.68,20,3.3,13,2.34,10.41a5.4,5.4,0,0,1,.17-4.19,5.56,5.56,0,0,1,3.2-2.89A5.65,5.65,0,0,1,12,5.09a5.66,5.66,0,0,1,6.29-1.76,5.56,5.56,0,0,1,3.2,2.89,5.4,5.4,0,0,1,.17,4.19c-1,2.58-8.34,9.61-9.18,10.4A.68.68,0,0,1,12,21ZM7.61,4.4a4.18,4.18,0,0,0-1.43.25,4.13,4.13,0,0,0-2.4,2.16,4,4,0,0,0-.12,3.11c.66,1.81,5.86,7,8.34,9.41,2.48-2.38,7.68-7.6,8.34-9.41a4,4,0,0,0-.12-3.11,4.13,4.13,0,0,0-2.4-2.16h0a4.24,4.24,0,0,0-5.2,2,.73.73,0,0,1-1.24,0A4.24,4.24,0,0,0,7.61,4.4Z"
-                    ></path>
-                  </svg>
-                  <a href="">2</a>
+                  <div onclick="Count()" class="material-icons">
+                    <label class="like">
+                      <!-- <input type="checkbox" /> -->
+                      <i class="material-icons" id="heart">favorite</i>
+                      <div class="ripple"></div>
+                    </label>
+                  </div>
+                  <div class="favourite-counter"><span id="count">0</span></div>
                 </div>
               </div>
             </div>
             <div class="card">
-              <div class="card__preview">
-                <div class="card__preview--price">
-                  <div class="card__preview--text"><p>¥6666</p></div>
-                </div>
-                <img src="img/mercari_item2.jpg" alt="" />
-              </div>
-
-              <div class="card__caption">
-                <div class="card__caption-description"><span><p>【item info】xxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p></span></div>
-                <div class="card__caption-likes">
-                  <svg
-                    width="16"
-                    height="16"
-                    fill="#888888"
-                    fill-rule="evenodd"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M12,21a.68.68,0,0,1-.48-.19C10.68,20,3.3,13,2.34,10.41a5.4,5.4,0,0,1,.17-4.19,5.56,5.56,0,0,1,3.2-2.89A5.65,5.65,0,0,1,12,5.09a5.66,5.66,0,0,1,6.29-1.76,5.56,5.56,0,0,1,3.2,2.89,5.4,5.4,0,0,1,.17,4.19c-1,2.58-8.34,9.61-9.18,10.4A.68.68,0,0,1,12,21ZM7.61,4.4a4.18,4.18,0,0,0-1.43.25,4.13,4.13,0,0,0-2.4,2.16,4,4,0,0,0-.12,3.11c.66,1.81,5.86,7,8.34,9.41,2.48-2.38,7.68-7.6,8.34-9.41a4,4,0,0,0-.12-3.11,4.13,4.13,0,0,0-2.4-2.16h0a4.24,4.24,0,0,0-5.2,2,.73.73,0,0,1-1.24,0A4.24,4.24,0,0,0,7.61,4.4Z"
-                    ></path>
-                  </svg>
-                  <a href="">2</a>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card__preview">
-                <div class="card__preview--price">
-                  <div class="card__preview--text"><p>¥6666</p></div>
-                </div>
-                <img src="img/mercari_item3.jpg" alt="" />
-              </div>
-
-              <div class="card__caption">
-                <div class="card__caption-description"><span><p>【item info】xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxx</p></span></div>
-                <div class="card__caption-likes">
-                  <svg
-                    width="16"
-                    height="16"
-                    fill="#888888"
-                    fill-rule="evenodd"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M12,21a.68.68,0,0,1-.48-.19C10.68,20,3.3,13,2.34,10.41a5.4,5.4,0,0,1,.17-4.19,5.56,5.56,0,0,1,3.2-2.89A5.65,5.65,0,0,1,12,5.09a5.66,5.66,0,0,1,6.29-1.76,5.56,5.56,0,0,1,3.2,2.89,5.4,5.4,0,0,1,.17,4.19c-1,2.58-8.34,9.61-9.18,10.4A.68.68,0,0,1,12,21ZM7.61,4.4a4.18,4.18,0,0,0-1.43.25,4.13,4.13,0,0,0-2.4,2.16,4,4,0,0,0-.12,3.11c.66,1.81,5.86,7,8.34,9.41,2.48-2.38,7.68-7.6,8.34-9.41a4,4,0,0,0-.12-3.11,4.13,4.13,0,0,0-2.4-2.16h0a4.24,4.24,0,0,0-5.2,2,.73.73,0,0,1-1.24,0A4.24,4.24,0,0,0,7.61,4.4Z"
-                    ></path>
-                  </svg>
-                  <a href="">2</a>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card__preview">
-                <div class="card__preview--price">
-                  <div class="card__preview--text"><p>¥6666</p></div>
-                </div>
-                <img src="img/mercari_item4.jpg" alt="" />
-              </div>
-
-              <div class="card__caption">
-                <div class="card__caption-description"><span><p>【item info】xxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p></span></div>
-                <div class="card__caption-likes">
-                  <svg
-                    width="16"
-                    height="16"
-                    fill="#888888"
-                    fill-rule="evenodd"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M12,21a.68.68,0,0,1-.48-.19C10.68,20,3.3,13,2.34,10.41a5.4,5.4,0,0,1,.17-4.19,5.56,5.56,0,0,1,3.2-2.89A5.65,5.65,0,0,1,12,5.09a5.66,5.66,0,0,1,6.29-1.76,5.56,5.56,0,0,1,3.2,2.89,5.4,5.4,0,0,1,.17,4.19c-1,2.58-8.34,9.61-9.18,10.4A.68.68,0,0,1,12,21ZM7.61,4.4a4.18,4.18,0,0,0-1.43.25,4.13,4.13,0,0,0-2.4,2.16,4,4,0,0,0-.12,3.11c.66,1.81,5.86,7,8.34,9.41,2.48-2.38,7.68-7.6,8.34-9.41a4,4,0,0,0-.12-3.11,4.13,4.13,0,0,0-2.4-2.16h0a4.24,4.24,0,0,0-5.2,2,.73.73,0,0,1-1.24,0A4.24,4.24,0,0,0,7.61,4.4Z"
-                    ></path>
-                  </svg>
-                  <a href="">2</a>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card__preview">
-                <div class="card__preview--price">
-                  <div class="card__preview--text"><p>¥6666</p></div>
-                </div>
-                <img src="img/mercari_item5.jpg" alt="" />
-              </div>
-
-              <div class="card__caption">
-                <div class="card__caption-description"><span><p>【item info】xxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p></span></div>
-                <div class="card__caption-likes">
-                  <svg
-                    width="16"
-                    height="16"
-                    fill="#888888"
-                    fill-rule="evenodd"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M12,21a.68.68,0,0,1-.48-.19C10.68,20,3.3,13,2.34,10.41a5.4,5.4,0,0,1,.17-4.19,5.56,5.56,0,0,1,3.2-2.89A5.65,5.65,0,0,1,12,5.09a5.66,5.66,0,0,1,6.29-1.76,5.56,5.56,0,0,1,3.2,2.89,5.4,5.4,0,0,1,.17,4.19c-1,2.58-8.34,9.61-9.18,10.4A.68.68,0,0,1,12,21ZM7.61,4.4a4.18,4.18,0,0,0-1.43.25,4.13,4.13,0,0,0-2.4,2.16,4,4,0,0,0-.12,3.11c.66,1.81,5.86,7,8.34,9.41,2.48-2.38,7.68-7.6,8.34-9.41a4,4,0,0,0-.12-3.11,4.13,4.13,0,0,0-2.4-2.16h0a4.24,4.24,0,0,0-5.2,2,.73.73,0,0,1-1.24,0A4.24,4.24,0,0,0,7.61,4.4Z"
-                    ></path>
-                  </svg>
-                  <a href="">2</a>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card__preview">
-                <div class="card__preview--price">
-                  <div class="card__preview--text"><p>¥6666</p></div>
-                </div>
-                <img src="img/mercari_item6.jpg" alt="" />
-              </div>
-
-              <div class="card__caption">
-                <div class="card__caption-description"><span><p>【item info】xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p></span></div>
-                <div class="card__caption-likes">
-                  <svg
-                    width="16"
-                    height="16"
-                    fill="#888888"
-                    fill-rule="evenodd"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M12,21a.68.68,0,0,1-.48-.19C10.68,20,3.3,13,2.34,10.41a5.4,5.4,0,0,1,.17-4.19,5.56,5.56,0,0,1,3.2-2.89A5.65,5.65,0,0,1,12,5.09a5.66,5.66,0,0,1,6.29-1.76,5.56,5.56,0,0,1,3.2,2.89,5.4,5.4,0,0,1,.17,4.19c-1,2.58-8.34,9.61-9.18,10.4A.68.68,0,0,1,12,21ZM7.61,4.4a4.18,4.18,0,0,0-1.43.25,4.13,4.13,0,0,0-2.4,2.16,4,4,0,0,0-.12,3.11c.66,1.81,5.86,7,8.34,9.41,2.48-2.38,7.68-7.6,8.34-9.41a4,4,0,0,0-.12-3.11,4.13,4.13,0,0,0-2.4-2.16h0a4.24,4.24,0,0,0-5.2,2,.73.73,0,0,1-1.24,0A4.24,4.24,0,0,0,7.61,4.4Z"
-                    ></path>
-                  </svg>
-                  <a href="">2</a>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card__preview">
-                <div class="card__preview--price">
-                  <div class="card__preview--text"><p>¥6666</p></div>
-                </div>
-                <img src="img/mercari_item7.jpg" alt="" />
-              </div>
-
-              <div class="card__caption">
-                <div class="card__caption-description"><span><p>【item info】xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p></span></div>
-                <div class="card__caption-likes">
-                  <svg
-                    width="16"
-                    height="16"
-                    fill="#888888"
-                    fill-rule="evenodd"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M12,21a.68.68,0,0,1-.48-.19C10.68,20,3.3,13,2.34,10.41a5.4,5.4,0,0,1,.17-4.19,5.56,5.56,0,0,1,3.2-2.89A5.65,5.65,0,0,1,12,5.09a5.66,5.66,0,0,1,6.29-1.76,5.56,5.56,0,0,1,3.2,2.89,5.4,5.4,0,0,1,.17,4.19c-1,2.58-8.34,9.61-9.18,10.4A.68.68,0,0,1,12,21ZM7.61,4.4a4.18,4.18,0,0,0-1.43.25,4.13,4.13,0,0,0-2.4,2.16,4,4,0,0,0-.12,3.11c.66,1.81,5.86,7,8.34,9.41,2.48-2.38,7.68-7.6,8.34-9.41a4,4,0,0,0-.12-3.11,4.13,4.13,0,0,0-2.4-2.16h0a4.24,4.24,0,0,0-5.2,2,.73.73,0,0,1-1.24,0A4.24,4.24,0,0,0,7.61,4.4Z"
-                    ></path>
-                  </svg>
-                  <a href="">2</a>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card__preview">
-                <div class="card__preview--price">
-                  <div class="card__preview--text"><p>¥6666</p></div>
-                </div>
-                <img src="img/mercari_item8.jpg" alt="" />
-              </div>
-
-              <div class="card__caption">
-                <div class="card__caption-description"><span><p>【item info】xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p></span></div>
-                <div class="card__caption-likes">
-                  <svg
-                    width="16"
-                    height="16"
-                    fill="#888888"
-                    fill-rule="evenodd"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M12,21a.68.68,0,0,1-.48-.19C10.68,20,3.3,13,2.34,10.41a5.4,5.4,0,0,1,.17-4.19,5.56,5.56,0,0,1,3.2-2.89A5.65,5.65,0,0,1,12,5.09a5.66,5.66,0,0,1,6.29-1.76,5.56,5.56,0,0,1,3.2,2.89,5.4,5.4,0,0,1,.17,4.19c-1,2.58-8.34,9.61-9.18,10.4A.68.68,0,0,1,12,21ZM7.61,4.4a4.18,4.18,0,0,0-1.43.25,4.13,4.13,0,0,0-2.4,2.16,4,4,0,0,0-.12,3.11c.66,1.81,5.86,7,8.34,9.41,2.48-2.38,7.68-7.6,8.34-9.41a4,4,0,0,0-.12-3.11,4.13,4.13,0,0,0-2.4-2.16h0a4.24,4.24,0,0,0-5.2,2,.73.73,0,0,1-1.24,0A4.24,4.24,0,0,0,7.61,4.4Z"
-                    ></path>
-                  </svg>
-                  <a href="">2</a>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card__preview">
-                <div class="card__preview--price">
-                  <div class="card__preview--text"><p>¥6666</p></div>
-                </div>
-                <img src="img/mercari_item6.jpg" alt="" />
-              </div>
-
-              <div class="card__caption">
-                <div class="card__caption-description"><span><p>【item info】xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p></span></div>
-                <div class="card__caption-likes">
-                  <svg
-                    width="16"
-                    height="16"
-                    fill="#888888"
-                    fill-rule="evenodd"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M12,21a.68.68,0,0,1-.48-.19C10.68,20,3.3,13,2.34,10.41a5.4,5.4,0,0,1,.17-4.19,5.56,5.56,0,0,1,3.2-2.89A5.65,5.65,0,0,1,12,5.09a5.66,5.66,0,0,1,6.29-1.76,5.56,5.56,0,0,1,3.2,2.89,5.4,5.4,0,0,1,.17,4.19c-1,2.58-8.34,9.61-9.18,10.4A.68.68,0,0,1,12,21ZM7.61,4.4a4.18,4.18,0,0,0-1.43.25,4.13,4.13,0,0,0-2.4,2.16,4,4,0,0,0-.12,3.11c.66,1.81,5.86,7,8.34,9.41,2.48-2.38,7.68-7.6,8.34-9.41a4,4,0,0,0-.12-3.11,4.13,4.13,0,0,0-2.4-2.16h0a4.24,4.24,0,0,0-5.2,2,.73.73,0,0,1-1.24,0A4.24,4.24,0,0,0,7.61,4.4Z"
-                    ></path>
-                  </svg>
-                  <a href="">2</a>
-                </div>
-              </div>
-            </div>
-            <div class="card card_none">
               <div class="card__preview">
                 <div class="card__preview--price">
                   <div class="card__preview--text"><p>¥6666</p></div>
@@ -464,24 +245,196 @@
               </div>
 
               <div class="card__caption">
-                <div class="card__caption-description"><span><p>【item info】xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p></span></div>
+                <div class="card__caption-description"><p>【item info】xxxxxxxxxxxxx</p></div>
                 <div class="card__caption-likes">
-                  <svg
-                    width="16"
-                    height="16"
-                    fill="#888888"
-                    fill-rule="evenodd"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                  <path
-                  d="M12,21a.68.68,0,0,1-.48-.19C10.68,20,3.3,13,2.34,10.41a5.4,5.4,0,0,1,.17-4.19,5.56,5.56,0,0,1,3.2-2.89A5.65,5.65,0,0,1,12,5.09a5.66,5.66,0,0,1,6.29-1.76,5.56,5.56,0,0,1,3.2,2.89,5.4,5.4,0,0,1,.17,4.19c-1,2.58-8.34,9.61-9.18,10.4A.68.68,0,0,1,12,21ZM7.61,4.4a4.18,4.18,0,0,0-1.43.25,4.13,4.13,0,0,0-2.4,2.16,4,4,0,0,0-.12,3.11c.66,1.81,5.86,7,8.34,9.41,2.48-2.38,7.68-7.6,8.34-9.41a4,4,0,0,0-.12-3.11,4.13,4.13,0,0,0-2.4-2.16h0a4.24,4.24,0,0,0-5.2,2,.73.73,0,0,1-1.24,0A4.24,4.24,0,0,0,7.61,4.4Z"
-                ></path>
-                  </svg>
-                  <a href="">2</a>
+                  <div onclick="Count()" class="material-icons">
+                    <label class="like">
+                      <!-- <input type="checkbox" /> -->
+                      <i class="material-icons" id="heart">favorite</i>
+                      <div class="ripple"></div>
+                    </label>
+                  </div>
+                  <div class="favourite-counter"><span id="count">0</span></div>
                 </div>
               </div>
             </div>
+            <div class="card">
+              <div class="card__preview">
+                <div class="card__preview--price">
+                  <div class="card__preview--text"><p>¥6666</p></div>
+                </div>
+                <img src="img/mercari_item9.jpg" alt="" />
+              </div>
+
+              <div class="card__caption">
+                <div class="card__caption-description"><p>【item info】xxxxxxxxxxxxx</p></div>
+                <div class="card__caption-likes">
+                  <div onclick="Count()" class="material-icons">
+                    <label class="like">
+                      <!-- <input type="checkbox" /> -->
+                      <i class="material-icons" id="heart">favorite</i>
+                      <div class="ripple"></div>
+                    </label>
+                  </div>
+                  <div class="favourite-counter"><span id="count">0</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card__preview">
+                <div class="card__preview--price">
+                  <div class="card__preview--text"><p>¥6666</p></div>
+                </div>
+                <img src="img/mercari_item9.jpg" alt="" />
+              </div>
+
+              <div class="card__caption">
+                <div class="card__caption-description"><p>【item info】xxxxxxxxxxxxx</p></div>
+                <div class="card__caption-likes">
+                  <div onclick="Count()" class="material-icons">
+                    <label class="like">
+                      <!-- <input type="checkbox" /> -->
+                      <i class="material-icons" id="heart">favorite</i>
+                      <div class="ripple"></div>
+                    </label>
+                  </div>
+                  <div class="favourite-counter"><span id="count">0</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card__preview">
+                <div class="card__preview--price">
+                  <div class="card__preview--text"><p>¥6666</p></div>
+                </div>
+                <img src="img/mercari_item9.jpg" alt="" />
+              </div>
+
+              <div class="card__caption">
+                <div class="card__caption-description"><p>【item info】xxxxxxxxxxxxx</p></div>
+                <div class="card__caption-likes">
+                  <div onclick="Count()" class="material-icons">
+                    <label class="like">
+                      <!-- <input type="checkbox" /> -->
+                      <i class="material-icons" id="heart">favorite</i>
+                      <div class="ripple"></div>
+                    </label>
+                  </div>
+                  <div class="favourite-counter"><span id="count">0</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card__preview">
+                <div class="card__preview--price">
+                  <div class="card__preview--text"><p>¥6666</p></div>
+                </div>
+                <img src="img/mercari_item9.jpg" alt="" />
+              </div>
+
+              <div class="card__caption">
+                <div class="card__caption-description"><p>【item info】xxxxxxxxxxxxx</p></div>
+                <div class="card__caption-likes">
+                  <div onclick="Count()" class="material-icons">
+                    <label class="like">
+                      <!-- <input type="checkbox" /> -->
+                      <i class="material-icons" id="heart">favorite</i>
+                      <div class="ripple"></div>
+                    </label>
+                  </div>
+                  <div class="favourite-counter"><span id="count">0</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card__preview">
+                <div class="card__preview--price">
+                  <div class="card__preview--text"><p>¥6666</p></div>
+                </div>
+                <img src="img/mercari_item9.jpg" alt="" />
+              </div>
+
+              <div class="card__caption">
+                <div class="card__caption-description"><p>【item info】xxxxxxxxxxxxx</p></div>
+                <div class="card__caption-likes">
+                  <div onclick="Count()" class="material-icons">
+                    <label class="like">
+                      <!-- <input type="checkbox" /> -->
+                      <i class="material-icons" id="heart">favorite</i>
+                      <div class="ripple"></div>
+                    </label>
+                  </div>
+                  <div class="favourite-counter"><span id="count">0</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card__preview">
+                <div class="card__preview--price">
+                  <div class="card__preview--text"><p>¥6666</p></div>
+                </div>
+                <img src="img/mercari_item9.jpg" alt="" />
+              </div>
+
+              <div class="card__caption">
+                <div class="card__caption-description"><p>【item info】xxxxxxxxxxxxx</p></div>
+                <div class="card__caption-likes">
+                  <div onclick="Count()" class="material-icons">
+                    <label class="like">
+                      <!-- <input type="checkbox" /> -->
+                      <i class="material-icons" id="heart">favorite</i>
+                      <div class="ripple"></div>
+                    </label>
+                  </div>
+                  <div class="favourite-counter"><span id="count">0</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card__preview">
+                <div class="card__preview--price">
+                  <div class="card__preview--text"><p>¥6666</p></div>
+                </div>
+                <img src="img/mercari_item9.jpg" alt="" />
+              </div>
+
+              <div class="card__caption">
+                <div class="card__caption-description"><p>【item info】xxxxxxxxxxxxx</p></div>
+                <div class="card__caption-likes">
+                  <div onclick="Count()" class="material-icons enabled">
+                    <label class="like">
+                      <input type="checkbox" />
+                      <i class="material-icons" id="heart" onclick='changeColor()'>favorite</i>
+                      <div class="ripple"></div>
+                    </label>
+                  </div>
+                  <div class="favourite-counter"><span id="count">0</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="card card-none">
+              <div class="card__preview">
+                <div class="card__preview--price">
+                  <div class="card__preview--text"><p>¥6666</p></div>
+                </div>
+                <img src="img/mercari_item9.jpg" alt="" />
+              </div>
+
+              <div class="card__caption">
+                <div class="card__caption-description"><p>【item info】xxxxxxxxxxxxx</p></div>
+                <div class="card__caption-likes">
+                  <div onclick="Count()" class="material-icons">
+                    <label class="like">
+                      <!-- <input type="checkbox" /> -->
+                      <i class="material-icons" id="heart">favorite</i>
+                      <div class="ripple"></div>
+                    </label>
+                  </div>
+                  <div class="favourite-counter"><span id="count">0</span></div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -598,5 +551,7 @@
         </div>
       </div>
     </footer>
+
+    <script src="main.js"> </script>
   </body>
 </html>

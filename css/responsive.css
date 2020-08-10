@@ -118,7 +118,6 @@
 
   /* 商品画像エリア */
   .items-section__product--container {
-    margin: 0 auto;
     grid-template-rows: repeat (5, calc(width * 0.2));
     grid-template-columns: repeat(5, minmax(140px, 1fr));
     gap: 10px;

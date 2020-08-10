@@ -381,7 +381,6 @@ a {
 
 .card__caption-description {
   display: inline-block;
-  /* padding: 6px 8px; */
   overflow: hidden;
   position: relative;
   z-index: 1;
@@ -432,9 +431,9 @@ a {
   /* top: 1px; */
 }
 
-.material-icons > enabled {
+/* .material-icons > enabled {
   color: red;
-}
+} */
 
 .favourite-counter {
   line-height: 24px;

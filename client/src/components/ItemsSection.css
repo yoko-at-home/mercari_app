@@ -1,0 +1,426 @@
+.items-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  /* padding: 0 auto; */
+}
+
+.items-section__inner--top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 20px 20px;
+  width: 100%;
+}
+/* 人気のカテゴリータイトル */
+.items-section__title {
+  display: flex;
+  justify-content: center;
+}
+
+.items-section__title h3 {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+/* 横スクロール */
+.items-section__categories {
+  display: inline-block;
+  list-style: none;
+  margin: 0;
+}
+
+.horizontal_scroll {
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 0 0 8px;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.horizontal_scroll li {
+  white-space: nowrap;
+  margin-right: 15px; /* ken */
+}
+
+.items-section__categories-item > button {
+  border-radius: 15px;
+  background-color: rgb(239, 239, 239);
+  border: none;
+  padding: 7px 16px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* 商品エリア */
+.items-section__inner--bottom {
+  background: #efefef;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px 20px;
+  width: 100%;
+}
+
+.items-section__inner--bottom-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 30px 0 60px;
+}
+
+.items-section__product--title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto 8px;
+  width: 100%;
+}
+
+/* レディース新着アイテム */
+.items-section__category--text {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 17px;
+  line-height: 24px;
+  width: 100%;
+}
+
+.items-section__link-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.items-section__category--more {
+  align-items: center;
+  color: #0095ee;
+  cursor: pointer;
+  display: inline-flex;
+  line-height: 1.4em;
+  text-decoration: none;
+  word-break: normal;
+  white-space: nowrap;
+}
+
+/*  商品画像エリア*/
+.items-section__product--container {
+  display: grid;
+  justify-content: center;
+  grid-template-rows: repeat(3, calc(width * 0.33));
+  grid-template-columns: repeat(3, minmax(70px, 1fr));
+  padding: 10px auto 25px;
+  gap: 5px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 1px, 1px, 4, gray;
+  border: 1px solid transparent; /* ken */
+}
+
+.card:hover {
+  transition: 0.7s; /* ken */
+  border: 1px solid #0095ee;
+}
+
+.card__preview {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  position: relative;
+  text-decoration: none;
+  /* vertical-align: top; */
+  position: relative;
+  padding: 0;
+}
+
+.card__preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.card_none {
+  display: none;
+}
+
+.card__preview--price {
+  /* padding-top: 50px; */
+  z-index: 2;
+  position: absolute;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 0 10px 10px 0;
+  padding: 4px 10px 4px 5px;
+  bottom: 10px;
+  left: 0px;
+  font-size: small;
+}
+
+.card__preview--price-text {
+  padding: 3px;
+}
+
+.card__caption {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+  position: relative;
+  width: 100%;
+  padding: 10px; /* ken */
+}
+
+.card__caption-description {
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ken */
+.card__caption-description span {
+  height: 40px; /* ken */
+  white-space: normal;
+  font-size: 13px; /* ken */
+  display: block;
+  overflow: hidden;
+}
+
+.card__caption-likes {
+  display: flex;
+  position: absolute;
+  /* padding: 0 8px; */
+  /* width: 30%; */
+  height: 24px;
+  /* justify-content: space-between; */
+  bottom: 0;
+  right: 0;
+  /* right: 20%; */
+  z-index: 100;
+  background-color: #fff;
+}
+
+/* ken */
+.card__caption-likes:before {
+  content: "";
+  position: absolute;
+  display: block;
+  left: -10px;
+  width: 20px;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(256, 256, 256, 0.1), #fff 72%);
+}
+
+.like {
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  /* background-color: #fff; */
+  transition: background 0.3s;
+  position: relative;
+}
+
+/* .like:hover {
+  background: #f5f5f5;
+} */
+
+.like [type="checkbox"]:checked ~ .material-icons {
+  animation-name: heart;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes heart {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    color: red;
+  }
+}
+
+.material-icons {
+  font-size: 18px !important; /* ken */
+  color: #e4e4e4;
+  user-select: none;
+  position: relative;
+  top: 2px;
+  right: -3px;
+}
+
+.ripple {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
+  transform: scale(0);
+  top: 2px;
+  right: -5px;
+}
+
+.like [type="checkbox"]:checked ~ .ripple {
+  animation-name: ripple;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+.favourite-counter {
+  line-height: 24px;
+  width: 20px;
+  margin-left: 10px; /* ken */
+  align-items: center;
+  background-color: #fff;
+}
+
+.card-none {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .items-section__category--text {
+    font-size: 24px;
+    line-height: 34px;
+  }
+
+  /* 人気のカテゴリータイトル */
+  .items-section__inner--top {
+    padding: 54px 0 30px;
+  }
+
+  .items-section__title h3 {
+    font-size: 28px;
+    line-height: 39px;
+    margin-bottom: 16px;
+  }
+
+  .items-section__categories {
+    justify-content: center;
+  }
+
+  /* 横スクロール */
+  .horizontal_scroll {
+    overflow-x: inherit;
+  }
+
+  /* 商品エリア */
+  .items-section__inner--bottom {
+    padding: 56px 50px 30px;
+  }
+
+  .items-section__inner--bottom-container {
+    max-width: 700px;
+  }
+
+  .items-section__product--title {
+    max-width: 700x;
+    margin: 0 auto;
+  }
+
+  .items-section__category--more {
+    display: inline-flex;
+  }
+
+  /* 商品画像エリア */
+  .items-section__product--container {
+    grid-template-rows: repeat (5, calc(width * 0.2));
+    grid-template-columns: repeat(5, minmax(140px, 1fr));
+    gap: 10px;
+  }
+
+  .card__caption {
+    padding: 15px 10px; /* ken */
+  }
+
+  .card-none {
+    display: flex;
+  }
+
+  .card__caption-description span {
+    /* height: 48px; */ /*ken*/
+    white-space: normal;
+    font-size: 14px;
+  }
+
+  .card__caption-likes {
+    /* height: 30px; */ /*ken*/
+    line-height: 30px;
+    /* right: 10%; */ /*ken*/
+  }
+
+  .material-icons {
+    font-size: 30px;
+  }
+
+  /* APP SECTION */
+  .app-section {
+    height: 260px;
+  }
+
+  .app-section__content {
+    flex-direction: column;
+  }
+
+  .app-section__subtitle h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 30px 0 15px;
+    margin-bottom: 15px;
+  }
+
+  .app-section__title h2 {
+    font-size: 34px;
+    font-weight: 400;
+  }
+
+  .app-section__icons-app-mobile {
+    display: none;
+  }
+
+  .app-section__phone-img {
+    display: flex;
+    width: 300px;
+    height: auto;
+    margin-left: 40px;
+  }
+
+  .app-section__icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+/* large-size screen  laptop */
+@media (min-width: 1065px) {
+  .items-section__inner--bottom-container {
+    max-width: 1024px;
+  }
+}

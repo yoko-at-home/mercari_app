@@ -1,0 +1,83 @@
+/* APP SECTION */
+.app-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-image: url(../assets/img/mercari_app_background.jpg);
+  height: 80px;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  width: 100%;
+}
+
+.app-section__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 80px;
+  align-items: center;
+}
+
+.app-section__content-titles {
+  display: inline-block;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.app-section__subtitle h3 {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.app-section__title h2 {
+  font-size: 20px;
+}
+
+.app-section__icons {
+  display: none;
+}
+
+.app-section__phone-img {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .app-section {
+    height: 260px;
+  }
+
+  .app-section__content {
+    flex-direction: column;
+  }
+
+  .app-section__subtitle h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 30px 0 15px;
+    margin-bottom: 15px;
+  }
+
+  .app-section__title h2 {
+    font-size: 34px;
+    font-weight: 400;
+  }
+
+  .app-section__icons-app-mobile {
+    display: none;
+  }
+
+  .app-section__phone-img {
+    display: flex;
+    width: 300px;
+    height: auto;
+    margin-left: 40px;
+  }
+
+  .app-section__icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+}

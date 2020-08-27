@@ -77,7 +77,16 @@
   .app-section__icons {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: start;
     width: 100%;
+  }
+  .app-section__icons div {
+    margin-right: 10px;
+  }
+  .app-section__icons-app img {
+    height: 68px;
+    margin-right: 20px;
+    width: 68px;
   }
 }

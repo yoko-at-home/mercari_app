@@ -1,6 +1,8 @@
 import React from "react";
 import mercari_app_icon from "../assets/img/mercari_app_icon.png";
 import mobile from "../assets/img/mobile.png";
+import google_play from "../assets/svg/google_play.svg";
+import app_store from "../assets/svg/app_store.svg";
 import "./AppAdvertisement.css";
 
 const AppAdvertisement = () => {
@@ -24,10 +26,10 @@ const AppAdvertisement = () => {
             <img src={mercari_app_icon} alt="app-icon" width="50px" />
           </div>
           <div class="app-section__icons--appstore">
-            <a href="/">app store</a>
+            <img src={app_store} alt="appstore-icon" width="140px" />
           </div>
           <div class="app-section__icons-gpstore">
-            <a href="/">google play</a>
+            <img src={google_play} alt="googleplay-icon" width="140px" />
           </div>
         </div>
       </div>

@@ -34,12 +34,25 @@ footer {
 }
 
 .footer__social-icon {
-  z-index: 3;
+  /* z-index: 3;
   display: grid;
   margin-top: 30px;
   grid-template-rows: repeat (2, 20px);
   grid-template-columns: repeat (4, 1fr);
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr; */
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+.twitter_svg {
+  width: 35px;
+  margin-top: 15px;
+  margin-right: 20px;
+}
+.facebook_svg {
+  width: 30px;
+  margin-top: 15px;
+  /* margin-right: 10px; */
 }
 
 .footer__list-country {
@@ -100,7 +113,7 @@ ul > li {
   white-space: normal;
 }
 
-.footer__country-japan:link .footer__country-us:link {
+.footer__country-japan .footer__country-us {
   text-decoration: none;
   color: white;
 }

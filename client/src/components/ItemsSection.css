@@ -54,6 +54,11 @@
   font-weight: 600;
 }
 
+.items-section__link-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
 /* 商品エリア */
 .items-section__inner--bottom {
   background: #efefef;
@@ -97,13 +102,16 @@
 
 .items-section__category--more {
   align-items: center;
-  color: #0095ee;
   cursor: pointer;
   display: inline-flex;
   line-height: 1.4em;
   text-decoration: none;
   word-break: normal;
   white-space: nowrap;
+}
+
+.items-section__category--more a {
+  color: #0095ee;
 }
 
 /*  商品画像エリア*/
@@ -333,16 +341,20 @@
 
   /* 商品エリア */
   .items-section__inner--bottom {
-    padding: 56px 50px 30px;
+    padding: 25px 0px 50px;
   }
 
   .items-section__inner--bottom-container {
-    max-width: 700px;
+    /* max-width: 700px; */
+    padding: 30px;
   }
 
   .items-section__product--title {
-    max-width: 700x;
+    /* max-width: 700x; */
     margin: 0 auto;
+    display: flex;
+    align-items: center;
+    maign-bottom: 6px;
   }
 
   .items-section__category--more {
@@ -352,7 +364,7 @@
   /* 商品画像エリア */
   .items-section__product--container {
     grid-template-rows: repeat (5, calc(width * 0.2));
-    grid-template-columns: repeat(5, minmax(140px, 1fr));
+    grid-template-columns: repeat(5, minmax(120px, 1fr));
     gap: 10px;
   }
 

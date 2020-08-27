@@ -48,6 +48,7 @@
   border-radius: 4px;
   padding: 0 10px;
   white-space: nowrap;
+  outline: none;
 }
 
 .header__button--login > button {
@@ -64,6 +65,7 @@
   padding: 0 10px;
   white-space: nowrap;
   margin-left: 10px; /* ken */
+  outline: none;
 }
 
 .header__button--login > button:hover {

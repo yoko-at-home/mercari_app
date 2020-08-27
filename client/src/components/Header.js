@@ -14,9 +14,7 @@ const Header = () => {
             </div>
             <div class="header__button">
               <div class="header__button--register">
-                <button>
-                  <a href>新規登録</a>
-                </button>
+                <button>新規登録</button>
               </div>
               <div class="header__button--login">
                 <button>ログイン</button>
@@ -155,9 +153,7 @@ const Header = () => {
             </div>
             <div class="header__button">
               <div class="header__button--register">
-                <button>
-                  <a href>新規会員登録</a>
-                </button>
+                <button>新規会員登録</button>
               </div>
               <div class="header__button--login">
                 <button>ログイン</button>

@@ -1,11 +1,12 @@
-import React from 'react';
+import React from "react";
 import mercari_logo from "../assets/img/mercari_logo.png";
 import "./Header.css";
 
 const Header = () => {
   return (
-    // mobile
-    <header class="header--mobile">
+    <div>
+      {/*mobile*/}
+      <header class="header--mobile">
         <div class="header__inner--mobile">
           <div class="header__top--mobile">
             <div class="header__logo">
@@ -13,31 +14,33 @@ const Header = () => {
             </div>
             <div class="header__button">
               <div class="header__button--register">
-                <button><a href>新規登録</a></button>
+                <button>
+                  <a href>新規登録</a>
+                </button>
               </div>
-              <div class="header__button--login"><button>ログイン</button></div>
+              <div class="header__button--login">
+                <button>ログイン</button>
+              </div>
             </div>
           </div>
 
           <div class="header__middle--mobile">
             <div class="header__form">
-
-                <input placeholder="何をお探しですか？" type="text"/>
-                <button class="header__search-icon">
-                  <svg
-                    aria-hidden="true"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fill="currentColor"
-                      fill-rule="nonzero"
-                      d="M11.435 10.063h-.723l-.256-.247a5.92 5.92 0 0 0 1.437-3.87 5.946 5.946 0 1 0-5.947 5.947 5.92 5.92 0 0 0 3.87-1.437l.247.256v.723L14.637 16 16 14.637l-4.565-4.574zm-5.489 0A4.111 4.111 0 0 1 1.83 5.946 4.111 4.111 0 0 1 5.946 1.83a4.111 4.111 0 0 1 4.117 4.116 4.111 4.111 0 0 1-4.117 4.117z"
-                    ></path>
-                  </svg>
-                </button>
-
+              <input placeholder="何をお探しですか？" type="text" />
+              <button class="header__search-icon">
+                <svg
+                  aria-hidden="true"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="nonzero"
+                    d="M11.435 10.063h-.723l-.256-.247a5.92 5.92 0 0 0 1.437-3.87 5.946 5.946 0 1 0-5.947 5.947 5.92 5.92 0 0 0 3.87-1.437l.247.256v.723L14.637 16 16 14.637l-4.565-4.574zm-5.489 0A4.111 4.111 0 0 1 1.83 5.946 4.111 4.111 0 0 1 5.946 1.83a4.111 4.111 0 0 1 4.117 4.116 4.111 4.111 0 0 1-4.117 4.117z"
+                  ></path>
+                </svg>
+              </button>
             </div>
           </div>
           <div class="header__bottom--mobile">
@@ -57,7 +60,9 @@ const Header = () => {
                     ></path>
                   </svg>
                 </div>
-                <div class="search__text"><h3>カテゴリーから探す</h3></div>
+                <div class="search__text">
+                  <h3>カテゴリーから探す</h3>
+                </div>
               </div>
               <div class="header__search">
                 <div class="search__svg">
@@ -74,16 +79,17 @@ const Header = () => {
                     ></path>
                   </svg>
                 </div>
-                <div class="search__text"><h3>ブランドから探す</h3></div>
+                <div class="search__text">
+                  <h3>ブランドから探す</h3>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-  </header>
-  // PC
-    <header class="header">
-      <div class="header__inner">
+      </header>
+      {/*PC*/}
+      <header class="header">
+        <div class="header__inner">
           <div class="header__top">
             <div class="header__logo">
               <img src={mercari_logo} alt="logo" />
@@ -123,7 +129,9 @@ const Header = () => {
                     ></path>
                   </svg>
                 </div>
-                <div class="search__text"><h3>カテゴリーから探す</h3></div>
+                <div class="search__text">
+                  <h3>カテゴリーから探す</h3>
+                </div>
               </div>
               <div class="header__search">
                 <div class="search__svg">
@@ -140,19 +148,25 @@ const Header = () => {
                     ></path>
                   </svg>
                 </div>
-                <div class="search__text"><h3>ブランドから探す</h3></div>
+                <div class="search__text">
+                  <h3>ブランドから探す</h3>
+                </div>
               </div>
             </div>
             <div class="header__button">
               <div class="header__button--register">
-                <button><a href>新規会員登録</a></button>
+                <button>
+                  <a href>新規会員登録</a>
+                </button>
               </div>
-              <div class="header__button--login"><button>ログイン</button></div>
+              <div class="header__button--login">
+                <button>ログイン</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
+    </div>
   );
 };
 

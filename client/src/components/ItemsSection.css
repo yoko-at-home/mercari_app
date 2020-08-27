@@ -184,6 +184,8 @@
 
 /* ken */
 .card__caption-description span {
+  color: black;
+  text-decoration: none !important;
   height: 40px; /* ken */
   white-space: normal;
   font-size: 13px; /* ken */

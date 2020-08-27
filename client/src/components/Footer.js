@@ -1,12 +1,12 @@
 import React from "react";
-import {} from "../assets/svg";
+/*import {} from "../assets/svg";*/
 import "./Footer.css";
 
 const Footer = () => {
   return (
     <footer>
       <div class="footer__container">
-      <div class="footer__grid">
+        <div class="footer__grid">
           <div class="footer__about">
             <div class="footer__titles">メルカリについて</div>
             <div class="footer__content">
@@ -45,44 +45,68 @@ const Footer = () => {
               <li class="footer__item">スマホ出品・売却相場</li>
             </ul>
           </div>
-        <div class="footer__privacy">
-          <div class="footer__titles">プライバシーと利用規約</div>
-              <ul class="footer__list">
-                <li class="footer__item">プライバシーポリシー</li>
-                <li class="footer__item">メルカリ利用規約</li>
-                <li class="footer__item">あんしんスマホサポート制度に関する利用特約</li>
-                <li class="footer__item">コンプライアンスポリシー</li>
-              </ul>
-        </div>
-        <div class="footer__privacy">
-          <div class="footer__titles">&nbsp;</div>
-              <ul class="footer__list">
-                <li class="footer__item">個人データの安全管理に係る基本方針</li>
-                <li class="footer__item">特定商取引に関する表記</li>
-                <li class="footer__item">資金決済法に基づく表示</li>
-                <li class="footer__item"><a href="/">法令順守と犯罪抑止のために</a> </li>
-              </ul>
-        </div>
-       <div class="footer__country-wrapper">
+          <div class="footer__privacy">
+            <div class="footer__titles">プライバシーと利用規約</div>
+            <ul class="footer__list">
+              <li class="footer__item">プライバシーポリシー</li>
+              <li class="footer__item">メルカリ利用規約</li>
+              <li class="footer__item">
+                あんしんスマホサポート制度に関する利用特約
+              </li>
+              <li class="footer__item">コンプライアンスポリシー</li>
+            </ul>
+          </div>
+          <div class="footer__privacy">
+            <div class="footer__titles">&nbsp;</div>
+            <ul class="footer__list">
+              <li class="footer__item">個人データの安全管理に係る基本方針</li>
+              <li class="footer__item">特定商取引に関する表記</li>
+              <li class="footer__item">資金決済法に基づく表示</li>
+              <li class="footer__item">
+                <a href="/">法令順守と犯罪抑止のために</a>{" "}
+              </li>
+            </ul>
+          </div>
+          <div class="footer__country-wrapper">
             <div class="footer__titles">国</div>
-              <ul class="footer__list-country">
-                <li class="footer__item"><a href="/" class="footer__country-japan">日本</a></li>
-                <li class="footer__item"><a href="/" class="footer__country-us">United States</a></li>
-              </ul>
+            <ul class="footer__list-country">
+              <li class="footer__item">
+                <a href="/" class="footer__country-japan">
+                  日本
+                </a>
+              </li>
+              <li class="footer__item">
+                <a href="/" class="footer__country-us">
+                  United States
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="empty">&nbsp;</div>
+
+          <div class="footer__label--logo">
+            <img
+              src="img/mercari-icon-footer.svg"
+              width="131px"
+              height="31px"
+              alt=""
+            />
+          </div>
+          <div class="footer__label--copyright-mobile">
+            <div class="footer__label--copyright">
+              <p>© Mercari, Inc.</p>
+            </div>
+          </div>
+
+          <div class="dummy"></div>
+          <div class="footer__label--copyright-pc">
+            <div class="footer__label--copyright">
+              <p>© Mercari, Inc.</p>
+            </div>
+          </div>
         </div>
-        <div class="empty">&nbsp;</div>
-
-      <div class="footer__label--logo"><img src="img/mercari-icon-footer.svg" width="131px" height="31px" alt="" /></div>
-      <div class="footer__label--copyright-mobile">
-        <div class="footer__label--copyright"><p>© Mercari, Inc.</p></div>
       </div>
-
-      <div class="dummy"></div>
-      <div class="footer__label--copyright-pc">
-        <div class="footer__label--copyright"><p>© Mercari, Inc.</p></div>
-      </div>
-    </div>
-  </footer>
+    </footer>
   );
 };
 

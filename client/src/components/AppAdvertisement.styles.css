@@ -1,9 +1,8 @@
-/* APP SECTION */
 .app-section {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-image: url(../assets/img/mercari_app_background.jpg);
+  background-image: url(../assets/img/ad_background.jpg);
   height: 80px;
   background-position: center;
   background-size: cover;
@@ -22,6 +21,7 @@
 .app-section__content-titles {
   display: inline-block;
   flex-direction: column;
+  justify-content: center;
   margin-left: 10px;
 }
 
@@ -38,6 +38,23 @@
   display: none;
 }
 
+.app-section__icons-app {
+  width: 70px;
+}
+
+.app-section__icons--appstore {
+  width: 140px;
+}
+
+.app-section__icons--appstore svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.app-section__icons-gpstore {
+  width: 160px;
+}
+
 .app-section__phone-img {
   display: none;
 }
@@ -49,6 +66,10 @@
 
   .app-section__content {
     flex-direction: column;
+  }
+
+  .app-section__content-titles {
+    margin-left: 0px;
   }
 
   .app-section__subtitle h3 {
@@ -77,16 +98,8 @@
   .app-section__icons {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    justify-content: start;
     width: 100%;
-  }
-  .app-section__icons div {
-    margin-right: 10px;
-  }
-  .app-section__icons-app img {
-    height: 68px;
-    margin-right: 20px;
-    width: 68px;
   }
 }

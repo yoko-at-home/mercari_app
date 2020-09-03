@@ -1,21 +1,19 @@
 import React from 'react';
-import Header from './Header';
-import BannerSection from './BannerSection';
-import ItemsSection from './ItemsSection';
-import AppAdvertisement from './AppAdvertisement';
-import LandingFooter from './Footer';
-// import './Landing.css';
 
-function LandingPage() {
+import { Header } from './Header';
+import { BannerSection } from './BannerSection';
+import { Items } from './ItemsSection';
+import { AppAdvertisement } from './AppAdvertisement';
+import { Footer } from './Footer';
+
+export default () => {
   return (
     <>
       <Header />
       <BannerSection />
-      <ItemsSection />
+      <Items />
       <AppAdvertisement />
-      <LandingFooter />
+      <Footer />
     </>
   );
-}
-
-export default LandingPage;
+};

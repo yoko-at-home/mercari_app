@@ -1,8 +1,6 @@
-import React from "react";
-/*import "./BannerSection.css";*/
+import React from 'react';
+import './BannerSection.styles.css';
 
-const BannerSection = () => {
-  return <section class="banner-section"></section>;
+export const BannerSection = () => {
+  return <section class='banner-section' />;
 };
-
-export default BannerSection;

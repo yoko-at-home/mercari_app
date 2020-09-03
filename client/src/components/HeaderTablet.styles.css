@@ -1,0 +1,146 @@
+.header--tablet {
+  display: none;
+}
+
+@media (min-width: 767px) {
+  .header--tablet {
+    display: block;
+    position: relative;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: white;
+    margin: 0 auto;
+    z-index: 9999;
+  }
+
+  .header__inner--tablet {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 8px 0;
+  }
+
+  .header__top--tablet {
+    display: flex;
+    align-items: center;
+  }
+
+  .header__logo {
+    margin-right: 20px;
+  }
+
+  .header__input {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 10px;
+    background-color: rgb(245, 245, 245);
+    line-height: 1.4em;
+    position: relative;
+    width: 100%;
+    height: 40px;
+
+    border-radius: 4px;
+    transition: all 0.3s ease-out 0s;
+    padding: 0;
+  }
+
+  /* .header__input:focus-within {
+      border: none;
+    } */
+
+  .header__input input {
+    border: 1px;
+    background-color: rgb(245, 245, 245);
+    font-size: 16px;
+    line-height: 1.4em;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px;
+    border-color: rgb(204, 204, 204);
+    border-image: initial;
+    border-radius: inherit;
+    transition: all 0.3s ease-out 0s;
+    border: 1px solid rgb(204, 204, 204);
+    padding-left: 10px; /* ken */
+    outline: none; /* ken */
+  }
+
+  .header__input input:focus {
+    border: 1px solid rgb(0, 149, 238);
+    transition: 0.5s;
+  }
+
+  .header__input button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    height: 40px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 40px;
+    border-width: initial;
+    border-style: none;
+  }
+
+  .header__input button:hover {
+    cursor: pointer;
+  }
+
+  .header__bottom--tablet {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  .header__search {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-right: 15px;
+  }
+
+  .header__left {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .header__right {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  /* 共通項目 */
+  .header__buttons > button {
+    border-radius: 5px;
+    padding: 8px 10px;
+    font-weight: 400;
+    font-size: 15px;
+  }
+
+  /* 新規会員 */
+  .header__button--register button {
+    margin-right: 5px;
+    border: none;
+    background-color: #ea352e;
+    color: white;
+    border: 1px solid transparent;
+  }
+
+  /* ログイン */
+  .header__button--login button {
+    background-color: white;
+    color: #3295ee;
+    border: 1px solid #3295ee;
+  }
+}
+
+@media (min-width: 1068px) {
+  .header__inner--tablet {
+    max-width: 1000px;
+  }
+}

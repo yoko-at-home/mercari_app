@@ -1,10 +1,11 @@
-import React from 'react';
+import React from "react";
 
-import { Header } from './Header';
-import { BannerSection } from './BannerSection';
-import { Items } from './ItemsSection';
-import { AppAdvertisement } from './AppAdvertisement';
-import { Footer } from './Footer';
+import { Header } from "./Header";
+import { BannerSection } from "./BannerSection";
+import { Items } from "./ItemsSection";
+import { AppAdvertisement } from "./AppAdvertisement";
+import { Footer } from "./Footer";
+import { FloatButton } from "./FloatButton";
 
 export default () => {
   return (
@@ -14,6 +15,7 @@ export default () => {
       <Items />
       <AppAdvertisement />
       <Footer />
+      <FloatButton />
     </>
   );
 };

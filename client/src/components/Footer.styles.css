@@ -42,6 +42,10 @@
   margin: 12px 0;
 }
 
+.footer__countries > .footer__item > p {
+  white-space: nowrap;
+}
+
 .footer__social-medias {
   margin-top: 32px;
   display: flex;
@@ -55,12 +59,14 @@
   margin-right: 8px;
 }
 
-.twitter > svg {
+.twitter {
   width: 32px;
+  fill: white;
 }
 
-.facebook > svg {
+.facebook {
   width: 26px;
+  fill: white;
 }
 
 .footer__countries {

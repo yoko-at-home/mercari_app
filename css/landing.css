@@ -170,7 +170,7 @@ input:focus {
 .search__wrapper {
   display: flex;
   align-items: center;
-  line-height: 42pxpx;
+  line-height: 42px;
   justify-content: space-between;
   /* padding: 10px 0; */ /* ken */
   font-size: small;

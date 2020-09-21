@@ -2,12 +2,14 @@ import React from "react";
 
 import "../index.css";
 import "./signup.styles.css";
-import { appleIcon } from "../assets/svg/";
-import { envelopeIcon } from "../assets/svg/";
-import { logoIcon } from "../assets/svg/";
-import { logoGrayIcon } from "../assets/svg/";
-import { facebookIcon } from "../assets/svg/";
-import { googleIcon } from "../assets/svg/";
+import {
+  AppleIcon,
+  EnvelopeIcon,
+  LogoIcon,
+  LogoGrayIcon,
+  FacebookIcon,
+  GoogleIcon,
+} from "../assets/svg/";
 
 export const signupPage = () => {
   return (
@@ -24,7 +26,7 @@ export const signupPage = () => {
             <li class="list__btn">
               <button class="btn-mail btn-default btn-align">
                 <div class="icon-mail">
-                  <envelopeIcon />
+                  <EnvelopeIcon />
                 </div>
                 <div class="btn-text">メールアドレスで登録する</div>
               </button>
@@ -32,7 +34,7 @@ export const signupPage = () => {
             <li class="list__btn">
               <button class="btn-google btn-default btn-align">
                 <div class="icon-mail">
-                  <googleIcon />
+                  <GoogleIcon />
                 </div>
                 <div class="btn-text">Googleで登録する</div>
               </button>
@@ -40,8 +42,8 @@ export const signupPage = () => {
             <li class="list__btn">
               <button class="btn-facebook btn-default btn-align">
                 <div class="icon-mail">
-                  {/* <facebookIcon /> */}
-                  <i class="fab fa-facebook-square"></i>
+                  <FacebookIcon />
+                  {/* <i class="fab fa-facebook-square"></i> */}
                 </div>
                 <div class="btn-text">Facebookで登録する</div>
               </button>
@@ -49,7 +51,7 @@ export const signupPage = () => {
             <li class="list__btn">
               <div class="btn-apple btn-default btn-align">
                 <div class="icon-mail">
-                  <appleIcon />
+                  <AppleIcon />
                 </div>
                 <div class="btn-text">Appleで登録する</div>
               </div>

@@ -237,10 +237,9 @@ a {
   justify-content: center;
   width: 100%;
   height: 100%;
-  /* padding: 0 auto; */
 }
 
-.items-section__inner--top {
+.items-section__top {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -289,7 +288,7 @@ a {
 }
 
 /* 商品エリア */
-.items-section__inner--bottom {
+.items-section__bottom {
   background: #efefef;
   display: flex;
   flex-direction: column;
@@ -299,7 +298,7 @@ a {
   width: 100%;
 }
 
-.items-section__inner--bottom-container {
+.items-section__bottom-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -342,12 +341,16 @@ a {
 
 /*  商品画像エリア*/
 .items-section__product--container {
+  width: 100%;
+}
+.items-section__product--container ul {
   display: grid;
   justify-content: center;
-  grid-template-rows: repeat(3, calc(width * 0.33));
+  /* grid-template-rows: repeat(3, calc(width * 0.33)); */
   grid-template-columns: repeat(3, minmax(70px, 1fr));
-  padding: 10px auto 25px;
-  gap: 5px;
+  grid-gap: 5px;
+  list-style: none;
+  padding: 0;
 }
 
 .card {
@@ -369,7 +372,6 @@ a {
   height: auto;
   position: relative;
   text-decoration: none;
-  /* vertical-align: top; */
   position: relative;
   padding: 0;
 }
@@ -386,7 +388,6 @@ a {
 }
 
 .card__preview--price {
-  /* padding-top: 50px; */
   z-index: 2;
   position: absolute;
   color: #fff;
@@ -428,13 +429,9 @@ a {
 .card__caption-likes {
   display: flex;
   position: absolute;
-  /* padding: 0 8px; */
-  /* width: 30%; */
   height: 24px;
-  /* justify-content: space-between; */
   bottom: 0;
   right: 0;
-  /* right: 20%; */
   z-index: 100;
   background-color: #fff;
 }
@@ -671,12 +668,12 @@ ul > li {
   line-height: 1.4em;
   margin: 16px 0 0;
   font-weight: 100;
-  opacity: 0.7;
+  /* opacity: 0.7; */
 }
 
 .footer__item {
   font-size: 12px;
-  /* font-weight: 200; */
+  font-weight: 200;
   opacity: 0.7;
   text-decoration: none;
   color: white;

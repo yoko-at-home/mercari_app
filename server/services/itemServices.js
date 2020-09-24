@@ -3,6 +3,7 @@ const buffer = fs.readFileSync("data.json");
 const { items } = JSON.parse(buffer);
 
 exports.getItems = (req, res) => {
+  // console.log("Hell GetItems");
   res.status(200).json({
     status: "success",
     data: items,
@@ -36,7 +37,7 @@ exports.getItem = (req, res) => {
 exports.createItem = (req, res) => {
   console.log(req.body);
   const newId = items.length + 1;
-  const newItem = Object.assign({ id: newId }, req.body);
+  const newItem = Object.assign({}, { id: newId }, req.body);
   items.push(newItem);
   fs.writeFileSync("data.json", JSON.stringify({ items: items }));
   res.status(200).json({
@@ -48,7 +49,7 @@ exports.createItem = (req, res) => {
 exports.updateItem = (req, res) => {
   const { id } = req.params;
   const numberID = parseInt(id);
-  if (numberID > item.length || numberID <= 0) {
+  if (numberID > items.length || numberID <= 0) {
     res.status(404).json({
       status: "fail",
       message: "指定されたIDの数字が大きすぎます",
@@ -63,10 +64,10 @@ exports.updateItem = (req, res) => {
 exports.deleteItem = (req, res) => {
   const { id } = req.params;
   const numberID = parseInt(id);
-  if (numberID > item.length || numberID <= 0) {
+  if (numberID > items.length || numberID <= 0) {
     res.status(404).json({
       status: "fail",
-      message: "",
+      message: "指定されたIDの数字が大きすぎます",
     });
   }
   //アップデート処理(この部分にデータベースが入ってくる)

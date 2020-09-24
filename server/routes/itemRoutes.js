@@ -1,16 +1,29 @@
 const express = require("express");
-const {
-  getItems,
-  getItem,
-  createItem,
-  updateItem,
-  deleteItem,
-} = require("../services/itemServices");
+// const {
+//   getItems,
+//   getItem,
+//   createItem,
+//   updateItem,
+//   deleteItem,
+// } = require("../services/itemServices");
+const ItemServices = require("../services/itemServices");
+const CommonMiddleware = require('../middleware/commonMiddleware');
 const itemRouter = express.Router(); //ルート専用のオブジェクト
-
+itemRouter.param("id", CommonMiddleware.checkId);
 // Chaining メソッドを連ねる方法
-itemRouter.route("/").get(getItem).post(createItem);
-itemRouter.route("/:id").get(getItem).patch(updateItem).delete(deleteItem);
+itemRouter.route("/").get(ItemServices.getItems).post(ItemServices.createItem);
+// itemRouter.route("/").get(getItems).post(createItem);
+
+itemRouter
+  .route("/:id")
+  .get(ItemServices.getItem)
+  .patch(ItemServices.updateItem)
+  .delete(ItemServices.deleteItem);
+// itemRouter
+//   .route("/:id")
+//   .get(getItem)
+//   .patch(updateItem)
+//   .delete(deleteItem);
 
 // app.get("/items", getItems);
 // app.get("/items/:id", getItem);

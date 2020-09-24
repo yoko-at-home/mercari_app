@@ -23,9 +23,10 @@
     flex-direction: column;
     color: #000;
     justify-content: space-between;
-    max-width: 700px;
     width: 100%;
-    padding: 10px 0;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 8px 0;
     box-shadow: none;
   }
 
@@ -79,7 +80,7 @@
   }
 
   /* 人気のカテゴリータイトル */
-  .items-section__inner--top {
+  .items-section__top {
     padding: 54px 0 30px;
   }
 
@@ -99,11 +100,11 @@
   }
 
   /* 商品エリア */
-  .items-section__inner--bottom {
+  .items-section__bottom {
     padding: 56px 50px 30px;
   }
 
-  .items-section__inner--bottom-container {
+  .items-section__bottom-container {
     max-width: 700px;
   }
 
@@ -117,35 +118,26 @@
   }
 
   /* 商品画像エリア */
-  .items-section__product--container {
-    grid-template-rows: repeat (5, calc(width * 0.2));
-    grid-template-columns: repeat(5, minmax(140px, 1fr));
+  .items-section__product--container ul {
+    grid-template-columns: repeat(5, minmax(120px, 1fr));
     gap: 10px;
   }
 
   .card__caption {
-    padding: 15px 10px; /* ken */
+    padding: 15px 10px;
   }
 
   .card-none {
-    display: flex;
-  }
-
-  .card__caption-description {
-    /* ken
-    height: 50px; */
+    display: block;
   }
 
   .card__caption-description span {
-    /* height: 48px; */ /*ken*/
     white-space: normal;
     font-size: 14px;
   }
 
   .card__caption-likes {
-    /* height: 30px; */ /*ken*/
     line-height: 30px;
-    /* right: 10%; */ /*ken*/
   }
 
   .material-icons {
@@ -211,7 +203,10 @@
     height: 250px;
   }
 
-  .items-section__inner--bottom-container {
+  .items-section__bottom-container {
+    max-width: 1024px;
+  }
+  .items-section__bottom-inner {
     max-width: 1024px;
   }
 

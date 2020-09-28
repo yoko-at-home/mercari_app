@@ -1,4 +1,6 @@
-exports.checkItem = function (req, res, next) {
-  console.log(req.body);
+exports.checkItem = (req, res, next) => {
+  // if (!req.body.like) {
+  //   console.log('not');
+  // }
   next();
 };

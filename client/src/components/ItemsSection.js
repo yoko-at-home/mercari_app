@@ -1,10 +1,33 @@
 import React from "react";
-// import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./ItemsSection.styles.css";
 import { Heart } from "../assets/svg";
-import { tempItems } from "../data/items";
 
 export const Items = () => {
+  const [items, setItems] = useState([]); //Hooksの書き方
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        //APIから情報を取得
+        const result = await fetch("http://localhost:4000/items", {
+          method: "GET", //httpメソッド
+        });
+        //JSON
+        const res = await result.json(); //ここでもawait(大量のデータを取得する可能性を考慮)
+
+        //表示可能な10個に絞る
+        // console.log("response", res.data);
+        const displayingItems = res.data.slice(0, 10);
+        console.log(displayingItems);
+        setItems(displayingItems);
+      } catch (err) {
+        throw err; //処理を止める
+        //console.log(err);//ログを残すだけ
+      }
+    }
+    fetchData();
+  }, []); //第二の引数 useEffect　ページがレンダリングされる前に一度だけ呼ばれる(値を入れると無限ループ)
+
   const genres = [
     {
       url: "#ladies",
@@ -24,8 +47,8 @@ export const Items = () => {
     },
   ];
 
-  const displayItems = tempItems.items.map((item) => {
-    if (item.id === 9) {
+  const displayItems = items.map((item) => {
+    if (item.id === 10) {
       return (
         <li key={item.id}>
           <a href="http://www.google.com">
@@ -36,7 +59,7 @@ export const Items = () => {
                     <p>¥6666</p>
                   </div>
                 </div>
-                <img src={item.url} alt="" />
+                <img src={item.imgUrl} alt="" />
               </div>
 
               <div class="card__caption">
@@ -89,6 +112,8 @@ export const Items = () => {
       );
     }
   });
+
+  // console.log("items state", items); //StateにAPIの情報が入る
 
   return (
     <section class="items-section">

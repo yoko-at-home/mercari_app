@@ -7,7 +7,7 @@ const express = require("express");
 //   deleteItem,
 // } = require("../services/itemServices");
 const ItemServices = require("../services/itemServices");
-const CommonMiddleware = require('../middleware/commonMiddleware');
+const CommonMiddleware = require("../middleware/commonMiddleware");
 const itemRouter = express.Router(); //ルート専用のオブジェクト
 itemRouter.param("id", CommonMiddleware.checkId);
 // Chaining メソッドを連ねる方法

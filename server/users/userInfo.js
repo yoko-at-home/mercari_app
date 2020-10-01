@@ -45,7 +45,7 @@ exports.createUser = (req, res) => {
   });
 };
 
-exports.updateItem = (req, res) => {
+exports.updateUser = (req, res) => {
   const { id } = req.params;
   const numberId = parseInt(id);
   if (numberId > users.length || numberId <= 0) {

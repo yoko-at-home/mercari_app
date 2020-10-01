@@ -6,10 +6,10 @@ console.log("hello from userRouter");
 // userRouter.param("id", CommonMiddleWare.checkId);
 userRouter.route("/").get(userInfo.getUsers).post(userInfo.createUser);
 
-// userRouter
-//   .route("/:id")
-//   .get(userInfo.getUser)
-//   .patch(userInfo.updateUser)
-//   .delete(userInfo.deleteUser);
+userRouter
+  .route("/:id")
+  .get(userInfo.getUser)
+  .patch(userInfo.updateUser)
+  .delete(userInfo.deleteUser);
 
 module.exports = userRouter;

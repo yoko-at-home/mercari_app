@@ -4,29 +4,27 @@ import "./ItemsSection.styles.css";
 import { Heart } from "../assets/svg";
 
 export const Items = () => {
-  const [items, setItems] = useState([]); //Hooksの書き方
+  const [items, setItems] = useState([]);
   useEffect(() => {
     async function fetchData() {
       try {
-        //APIから情報を取得
+        //apiから情報を取得（からの配列を最初に取得なのでawait、結果がきたら情報が入る
         const result = await fetch("http://localhost:4000/items", {
-          method: "GET", //httpメソッド
+          method: "GET",
         });
-        //JSON
-        const res = await result.json(); //ここでもawait(大量のデータを取得する可能性を考慮)
 
-        //表示可能な10個に絞る
-        // console.log("response", res.data);
+        //json形式をjavascriptに変換
+        const res = await result.json();
+
         const displayingItems = res.data.slice(0, 10);
         console.log(displayingItems);
         setItems(displayingItems);
       } catch (err) {
-        throw err; //処理を止める
-        //console.log(err);//ログを残すだけ
+        throw err;
       }
     }
     fetchData();
-  }, []); //第二の引数 useEffect　ページがレンダリングされる前に一度だけ呼ばれる(値を入れると無限ループ)
+  }, []);
 
   const genres = [
     {

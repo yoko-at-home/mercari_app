@@ -1,2 +1,3 @@
-# mercariアプリをReactを使ってクローン中です
+# mercariアプリ
+Reactを使ってクローン中です
 

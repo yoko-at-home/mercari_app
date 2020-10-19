@@ -1,4 +1,4 @@
-exports.checkId = (req, res, next, val) => {
+exports.checkId = function (req, res, next, val) {
   const numberId = parseInt(val);
   if (numberId > items.length || numberId <= 0) {
     res.status(404).json({

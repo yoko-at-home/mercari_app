@@ -1,0 +1,201 @@
+/* ヘッダー */
+.header--mobile {
+  display: flex;
+  background-color: white;
+  justify-content: center;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2px;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+.header__inner--mobile {
+  width: 100%;
+  padding: 10px;
+}
+
+.header__top--mobile {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__buttons {
+  display: flex;
+}
+
+/* 共通項目 */
+.header__buttons button {
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+/* 新規会員 */
+.header__button--register {
+  color: rgb(0, 149, 238);
+  margin-right: 5px;
+}
+
+.header__button--register a {
+  color: rgb(255, 255, 255);
+}
+
+.header__button--register > button {
+  background: rgb(234, 53, 45);
+  color: rgb(255, 255, 255);
+  line-height: 30px;
+  border-style: solid;
+  border-width: 1px;
+  border-image: initial;
+  border-radius: 4px;
+  padding: 0 10px;
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+
+.header__button--register > button:hover {
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+}
+
+.header__button--login > button {
+  color: rgb(0, 149, 238);
+  border-color: rgb(0, 149, 238);
+  background: white;
+  transition-property: transform;
+  transition-duration: 1s;
+  line-height: 30px;
+  border-style: solid;
+  border-width: 1px;
+  border-image: initial;
+  border-radius: 4px;
+  padding: 0 10px;
+  white-space: nowrap;
+  margin-left: 10px;
+}
+
+.header__button--login > button:hover {
+  color: rgb(255, 255, 255);
+  border-color: rgb(0, 149, 238);
+  background-color: rgb(0, 149, 238);
+}
+
+.header__middle--mobile {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 10px;
+  background-color: rgb(245, 245, 245);
+  line-height: 1.4em;
+  position: relative;
+  width: 100%;
+  height: 40px;
+
+  border-radius: 4px;
+  transition: all 0.3s ease-out 0s;
+  padding: 0;
+  margin: 10px 0;
+}
+
+/* ログイン */
+
+.header__input {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 10px;
+  background-color: rgb(245, 245, 245);
+  line-height: 1.4em;
+  position: relative;
+  width: 100%;
+  height: 40px;
+
+  border-radius: 4px;
+  transition: all 0.3s ease-out 0s;
+  padding: 0;
+}
+
+/* .header__input:focus-within {
+    border: none;
+  } */
+
+.header__input input {
+  border: 1px;
+  background-color: rgb(245, 245, 245);
+  font-size: 16px;
+  line-height: 1.4em;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px;
+  border-color: rgb(204, 204, 204);
+  border-image: initial;
+  border-radius: inherit;
+  transition: all 0.3s ease-out 0s;
+  border: 1px solid rgb(204, 204, 204);
+  padding-left: 10px; /* ken */
+  outline: none; /* ken */
+}
+
+.header__input input:focus {
+  border: 1px solid rgb(0, 149, 238);
+  transition: 0.5s;
+}
+
+.header__input button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  height: 40px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 40px;
+  border-width: initial;
+  border-style: none;
+}
+
+.header__input button:hover {
+  cursor: pointer;
+}
+
+.header__bottom---mobile {
+  display: flex;
+}
+
+.header__search {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__search > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__search-text {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 3px 0;
+  white-space: nowrap;
+}
+
+/* タグのアイコン */
+.header__search-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5px;
+}
+
+@media (min-width: 767px) {
+  .header--mobile {
+    display: none;
+  }
+}

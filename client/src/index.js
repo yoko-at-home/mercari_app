@@ -1,11 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import LandingPage from './components/Landing';
+import React from "react";
+import ReactDOM from "react-dom";
+import Router from "./router";
+import "./styles/global.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <LandingPage />
+    <Router />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );

@@ -1,0 +1,117 @@
+/* フッター */
+
+.footer {
+  padding: 15px;
+  background-color: #222222;
+  display: flex;
+  justify-content: center;
+}
+
+.footer__inner {
+  width: 100%;
+}
+
+.footer__section-row {
+  display: flex;
+}
+
+.footer__section {
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+.footer__title.empty {
+  height: 20px;
+  background-color: transparent;
+}
+
+.footer__title > p {
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.footer__items {
+  padding: 0;
+}
+
+.footer__item {
+  color: #c4c4c4;
+  font-size: 13px;
+  list-style: none;
+  margin: 12px 0;
+}
+
+.footer__countries > .footer__item > p {
+  white-space: nowrap;
+}
+
+.footer__social-medias {
+  margin-top: 32px;
+  display: flex;
+}
+
+.footer__social-media > svg > path {
+  fill: white;
+}
+
+.twitter {
+  margin-right: 8px;
+}
+
+.twitter {
+  width: 32px;
+  fill: white;
+}
+
+.facebook {
+  width: 26px;
+  fill: white;
+}
+
+.footer__countries {
+  display: flex;
+  padding: 0;
+}
+
+/* .footer__countries > li:nth-child(1) {
+  margin-right: 30px;
+} */
+
+.footer__logo {
+  display: flex;
+  align-items: center;
+}
+
+.footer__logo-text {
+  margin-top: 10px;
+}
+
+.footer__logo-text p {
+  font-size: 12px;
+  color: white;
+}
+
+@media (min-width: 767px) {
+  footer > div {
+    max-width: 700px;
+  }
+}
+
+@media (min-width: 1068px) {
+  .footer__inner {
+    max-width: 1000px;
+  }
+
+  .footer__sections {
+    display: flex;
+  }
+
+  .footer__countries {
+    display: block;
+  }
+
+  /* .footer__countries > li:nth-child(1) {
+    margin-right: 0px;
+  } */
+}

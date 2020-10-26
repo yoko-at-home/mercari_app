@@ -1,0 +1,96 @@
+.btn__wrap {
+  padding-left: 0;
+}
+
+.list__btn {
+  list-style: none;
+  margin-bottom: 13px;
+  padding-left: 0;
+}
+
+.list__btn a {
+  color: #0099e8;
+}
+
+.btn-default {
+  width: 392px;
+  height: 50px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  -webkit-transition: all ease-out 0.3s;
+  transition: all ease-out 0.3s;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn-text__bottom {
+  width: 392px;
+  height: 100px;
+  color: #888888;
+  padding-bottom: 25px;
+}
+
+.btn-align {
+  line-height: 48px;
+  height: 48px;
+  position: relative;
+}
+
+.btn-text {
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.btn-text_new {
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+  color: white;
+  background-color: #3295ee;
+}
+
+.btn-default:hover {
+  opacity: 0.7;
+}
+
+.btn-mail {
+  background: #0099e8;
+  color: #fff;
+  width: 20px;
+}
+.btn-mail_signup {
+  background: #ea352d;
+  color: #fff;
+}
+
+.btn-google {
+  position: relative;
+  background: #fff;
+  border: solid 1px #979797;
+}
+
+.btn-facebook {
+  position: relative;
+  background: #385185;
+  color: #fff;
+}
+
+.btn-apple {
+  position: relative;
+  background: #000;
+  color: #fff;
+}
+
+.icon-mail {
+  width: 25px;
+  position: absolute;
+  left: 15px;
+  top: 7px;
+}
+.icon-mail-apple {
+  width: 25px;
+  position: absolute;
+  left: 15px;
+  top: 2px;
+}

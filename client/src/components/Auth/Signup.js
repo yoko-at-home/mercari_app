@@ -1,8 +1,6 @@
 import React from "react";
-import { Link, Route } from "react-router-dom";
-// import Authentsstration } from "./components/Auth/Registration";
-
-import "./AuthStyles.css";
+import { Link } from "react-router-dom";
+// import {Authentsstration } from "./components/Auth/Registration";
 
 import "../../styles/global.css";
 import "./AuthStyles.css";
@@ -21,10 +19,7 @@ export const SignupPage = () => {
         <div className="section__center">
           <ul className="btn__wrap">
             <li className="list__btn">
-              {/* <Route exact path="/Registration"> */}
-              {/* <AuthenticationPage content={<Registration />} /> */}
               <EmailButton />
-              {/* </Route> */}
             </li>
             <li className="list__btn">
               <GoogleButton />

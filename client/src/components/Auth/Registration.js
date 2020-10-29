@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import "./Registration.styles.css";
 
 export const Registration = () => {
   const [info, setInfo] = useState({
@@ -36,13 +37,7 @@ export const Registration = () => {
   };
 
   return (
-    <div
-      style={{
-        width: "100%",
-        display: "flex",
-        justifyContent: "center",
-      }}
-    >
+    <div className="registration_body">
       <div
         style={{
           width: "100%",

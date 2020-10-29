@@ -19,7 +19,7 @@ const Router = () => {
       <Route exact path="/signup">
         <AuthenticationPage content={<SignupPage />} />
       </Route>
-      <Route exact path="/signup">
+      <Route path="/signup/registration">
         <AuthenticationPage content={<Registration />} />
       </Route>
     </BrowserRouter>

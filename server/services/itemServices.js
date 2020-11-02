@@ -65,13 +65,13 @@ exports.createItem = async function (req, res) {
   // items.push(newItem);
   // fs.writeFileSync("data.json", JSON.stringify({ items: items }));
   const data = await db.query(
-    'INSERT INTO item("imgUrl", price, title) VALUES($1, $2, $3) returning *;',
+    'INSERT INTO item("imgUrl", price, title) VALUES ($1, $2, $3) returning *;',
     [req.body.imgUrl, req.body.price, req.body.title]
   );
   console.log(data.rows[0]);
 
   // if (!result.rows[0]) { <==次の書き方と同じ
-  if (data.rows.length === 0) {
+  if (result.rows.length === 0) {
     return res.status(400).json({
       status: "error",
       message: "データを追加できませんでした",
@@ -79,7 +79,7 @@ exports.createItem = async function (req, res) {
   }
   res.status(200).json({
     status: "success",
-    data: data.rows[0],
+    data: result.rows[0],
   });
 };
 

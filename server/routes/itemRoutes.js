@@ -1,7 +1,7 @@
 const express = require("express");
 
 const ItemServices = require("../services/itemServices");
-const ItemsMiddleware = require("../middleware/itemMiddleware");
+const ItemsMiddleware = require("../middleware/itemMiddeware");
 const CommonMiddleware = require("../middleware/commonMiddleware");
 const itemRouter = express.Router();
 // まず、IDをチェックして次に流れて行ってねというための構文（ここではidがあるかどうかをチェックしている）

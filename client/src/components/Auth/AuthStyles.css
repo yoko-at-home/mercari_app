@@ -15,8 +15,7 @@ a {
   justify-content: center;
   align-items: center;
   background-color: #fff;
-  padding-top: 24px;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
   width: 90%;
   margin: 0 auto;
 }
@@ -30,14 +29,16 @@ a {
   padding-bottom: 0px;
   width: 90%;
   margin: 0 auto;
-  border-bottom: 1.5px solid #f5f5f5;
+  border-bottom: 1px solid #dbdbdb;
 }
 
 .section__center {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 70%;
   margin-top: 0px;
+  margin-bottom: 10px;
 }
 
 .main__text {
@@ -56,23 +57,30 @@ a {
 }
 
 /* main */
-
 @media (min-width: 767px) {
   .main {
     padding-bottom: 20px;
-    width: 60%;
-    margin: 10px auto;
-  }
-  .list__btn {
-    margin-bottom: 20px;
+    width: 70%;
+    margin: 0 auto;
   }
 
-  main {
+  .main__no-account {
+    padding-bottom: 0px;
+    width: 70%;
+    margin: 0 auto;
+    border-bottom: 1px solid #dbdbdb;
+  }
+
+  .section__center {
+    width: 60%;
+  }
+
+  /* main {
     width: 660px;
     background-color: #fff;
     margin: 20px auto;
     padding: 10px 0 20px;
-  }
+  } */
 
   .l-single-head {
     padding: 24px 8px;

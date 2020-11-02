@@ -19,19 +19,22 @@ const AuthFooterWrapper = styled.div`
 `;
 
 const FooterItems = styled.ul`
-  margin: 0;
+  margin: 5px 0;
   padding: 0;
   li {
     display: flex;
     flex-direction: colomn;
+    justify-content: center;
+    text-align: center;
     font-size: 12px;
     color: #333;
     line-height: 2em;
     padding: 0;
-    list-style: none;
-    text-decoration: none;
     @media (min-width: 767px) {
+      display: inline-flex;
       flex-direction: row;
+      margin-top: 20px;
+      margin-right: 8px;
     }
   }
 `;

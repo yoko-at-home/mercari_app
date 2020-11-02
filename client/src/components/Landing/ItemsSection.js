@@ -9,15 +9,15 @@ export const ItemsSection = () => {
     async function fetchData() {
       try {
         //apiから情報を取得（からの配列を最初に取得なのでawait、結果がきたら情報が入る
-        const result = await fetch("http://localhost:4000/items", {
-          method: "GET",
-        });
+        const res = await fetch("http://localhost:4000/items");
+        console.log('res', res);
 
         //json形式をjavascriptに変換
-        const res = await result.json();
+        const resJson = await res.json();
+        console.log('log', resJson);
+        // 九つだけ表示させる
+        const displayingItems = resJson.data.slice(0, 10);
 
-        const displayingItems = res.data.slice(0, 10);
-        console.log(displayingItems);
         setItems(displayingItems);
       } catch (err) {
         throw err;
@@ -45,8 +45,8 @@ export const ItemsSection = () => {
     },
   ];
 
-  const displayItems = items.map((item) => {
-    if (item.id === 10) {
+  const displayItems = items.map((item, index) => {
+    if (index === 9) {
       return (
         <li key={item.id}>
           <a href="http://www.google.com">

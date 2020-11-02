@@ -16,14 +16,16 @@ export const LoginPage = () => {
   return (
     <>
       <div className="main__no-account">
-        <ul className="btn__wrap">
-          <div className="main__text">アカウントをお持ちでない方はこちら</div>
-          <li className="list__btn">
-            <Link to="./Signup">
-              <NewRegistrationButton />
-            </Link>
-          </li>
-        </ul>
+        <div className="section__center">
+          <ul className="btn__wrap">
+            <div className="main__text">アカウントをお持ちでない方はこちら</div>
+            <li className="list__btn">
+              <Link to="./Signup">
+                <NewRegistrationButton />
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
       <div className="main">
         <div className="section__center">
@@ -44,12 +46,14 @@ export const LoginPage = () => {
                 <LoginForm />
               </div>
             </li>
-            <li className="list__btn">
-              <LoginButton />
-            </li>
+            <ul className="btn__wrap">
+              <li className="list__btn">
+                <LoginButton />
+              </li>
+            </ul>
             <li className="list__btn">{/* <LoginCaptchaBlock /> */}</li>
             <li className="list__btn">
-              <Link to="https://www.mercari.com/jp/password/reset/start/">
+              <Link to="/signup">
                 パスワードをお忘れの方
               </Link>
             </li>

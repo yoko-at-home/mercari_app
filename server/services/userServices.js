@@ -1,8 +1,10 @@
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+
 const db = require("../db");
 
 exports.signup = async (req, res) => {
-  console.log("req.body", req.body);
+  // console.log("req.body", req.body);
   try {
     const email = req.body.email;
     const result = await db.query('SELECT * FROM "user" WHERE email = $1', [
@@ -15,6 +17,7 @@ exports.signup = async (req, res) => {
         message: "すでにそのEmailは登録されています",
       });
     }
+
     const password = req.body.password;
     await bcrypt.hash(password, 10, (err, hash) => {
       if (err) {
@@ -23,10 +26,29 @@ exports.signup = async (req, res) => {
           message: "暗号化する過程で問題が発生しました",
         });
       }
-      db.query('INSERT INTO "user" (email, password) VALUES ($1, $2)', [
-        email,
-        hash,
-      ]);
+      db.query(
+        'INSERT INTO "user" (nickname, email, password, first_name, last_name, first_name_kana, last_name_kana, year, month, day) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)',
+        [
+          req.body.nickname,
+          email,
+          hash,
+          req.body.firstName,
+          req.body.lastName,
+          req.body.firstNameKana,
+          req.body.lastNameKana,
+          req.body.year,
+          req.body.month,
+          req.body.day,
+        ]
+      );
+      const user = {
+        nickname: req.body.nickname,
+        email: req.body.email,
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
+      };
+      const token = jwt.sign(user, process.env.JWT_ACCESS_TOKEN);
+      console.log("token", token);
     });
   } catch (err) {
     return res.status(400).json({
@@ -63,12 +85,12 @@ exports.login = async (req, res) => {
           message: "パスワードが一致しませんでした",
         });
       }
-    });
-    res.status(200).json({
-      status: "success",
+      res.status(200).json({
+        status: "success",
+      });
     });
   } catch (err) {
-    res.status(400).json({
+    return res.status(400).json({
       status: "error",
       message: "Loginの途中でエラーが起こりました",
     });

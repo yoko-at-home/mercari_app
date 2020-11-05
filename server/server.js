@@ -1,3 +1,4 @@
+//他のファイルでも必要とする前提となる情報を盛り込んでいる
 //require('dotenv').config()は次のようにもできる
 const dotenv = require("dotenv");
 dotenv.config();

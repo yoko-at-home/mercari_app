@@ -1,57 +1,86 @@
-import React from "react";
-import { useState } from "react";
+import React from 'react';
+import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import ProgressBar from "./ProgressBar";
 import "./Registration.styles.css";
 
 export const Registration = () => {
+
+  const history = useHistory()
+
   const [info, setInfo] = useState({
-    nickname: "",
-    email: "",
-    password: "",
-    firstName: "",
-    lastName: "",
-    firstNameKana: "",
-    lastNameKana: "",
+    nickname: "*****",
+    email: "****@***",
+    password: "****",
+    firstName: "****",
+    lastName: "****",
+    firstNameKana: "****",
+    lastNameKana: "****",
     year: "",
     month: "",
     day: "",
   });
 
-  let nicknameError = "";
+  const [error, setError] = useState({
+    nickname:'',
+    email:'',
+    password:'',
+    process:''
+});
+
+const displayError = () => {
+  if (error.process !== '') {
+    return error.process;
+  }
+}
 
   //　inlineで書くよりもここで宣言した方がいい
-  const handleSubmit = async (e) => {
-    e.preventDefault(); //リロードさせない
-    if (info.nickname === "") {
-      nicknameError = <div>Error</div>;
-      return;
+const handleSubmit = async (e) => {
+  e.preventDefault(); //リロードさせない
+
+    if (info.nickname === '') {
+      setError({ nickname: 'ニックネームが入力されていません' });
     }
 
-    await fetch("http://localhost:4000/users/signup", {
-      method: "POST",
-      // credentials: "include",
-      headers: {
-        "Content-Type": "application/json", //server側でjson -> jsに変換
+    try {
+      // JSONのstring型のレスポンスをresponseの変数に入れる
+      const response = await fetch('http://localhost:4000/users/signup', {
+        method: 'POST',
+        // credentials: 'include',
+        headers: {
+        'Content-Type': 'application/json', //server側でjson -> jsに変換
       },
       body: JSON.stringify(info), //serverは、request.bodyで受け取る　StringifyはJSON形式のinfoをjsとして受け取れる
     });
+
+      //　response(string型)をjavascriptのオブジェクトに変換する
+      const resJson = await response.json();
+
+      //　localstorageにtokenをkey,valueの形で保存する
+      localStorage.setItem('token', resJson.token);
+
+      // landing pageにユーザーを飛ばす
+      history.push('/');
+    } catch (err) {
+  setError({ ...error, process: '何か処理の中で問題が発生しました。'});
+    }
   };
 
   return (
-    <div className="registration">
-      <div className="registration__inner">
-        <div className="registration__header">
+    <div className='registration'>
+      <div className='registration__inner'>
+        <div className='registration__header'>
           <ProgressBar />
         </div>
         <h5 className="header-font">会員情報入力</h5>
         <div className="registration__content">
           <div className="registration__align">
             <form
-              action="localhost:4000/signup/registration"
-              method="post"
-              onSubmit={handleSubmit}
-            >
+                action='localhost:4000/signup/registration'
+                method='post'
+              onSubmit={handleSubmit}>
               <div>
+                  <div>{error.nickname}</div>
                 <div>
                   <label htmlFor="nickname">ニックネーム</label>
                   <div class="necessary-badge">必須</div>
@@ -68,7 +97,7 @@ export const Registration = () => {
                     placeholder="例）メルカリ太郎"
                   />
                 </div>
-                {nicknameError}
+                {/* {nicknameError} */}
               </div>
               <div>
                 <div>
@@ -236,8 +265,11 @@ export const Registration = () => {
                   本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
                 </p>
               </div>
-              <div>{info.error}</div>
-              <div className="next_button-wrapper">
+                {/* <div>{info.error}</div> */}
+                {/* <div>{error.process !==''}</div> */}
+                {/* <div>{error.process !== '' ? error.process : ' '}</div> */}
+                <div>{displayError()}</div>
+                <div>
                 <input type="submit" value="次へ進む" className="next_button" />
               </div>
               <div>

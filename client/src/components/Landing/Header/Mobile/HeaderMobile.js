@@ -1,11 +1,45 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import jwt from 'jsonwebtoken';
 
 import "./HeaderMobile.styles.css";
 
 import Logo from "../../../../assets/img/mercari_logo.png";
 
+const HeaderButtons = () => {
+  return (
+    <div className="header__buttons">
+    <div className="header__button--register">
+      <button>
+        <Link to="/signup">新規会員</Link>
+      </button>
+    </div>
+    <div className="header__button--login">
+      <button>
+        <Link to="login">ログイン</Link>
+      </button>
+    </div>
+  </div>
+)
+}
+
 export const HeaderMobile = () => {
+  const displayButtons = () => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      return (
+        HeaderButtons()
+      )
+    }
+    return jwt.verify(token, 'mercari', (err, decoded) => {
+      if (err) {
+        return (
+          HeaderButtons()
+        )
+      }
+      return <p>ようこそ、{decoded.nickname}さん！</p>
+    })
+  }
   return (
     <>
       <header className="header--mobile">
@@ -14,18 +48,8 @@ export const HeaderMobile = () => {
             <div className="header__logo">
               <img src={Logo} width="130px" alt="logo" />
             </div>
-            <div className="header__buttons">
-              <div className="header__button--register">
-                <button>
-                  <Link to="/signup">新規会員</Link>
-                </button>
-              </div>
-              <div className="header__button--login">
-                <button>
-                  <Link to="login">ログイン</Link>
-                </button>
-              </div>
-            </div>
+            <div className='header__buttons'>{displayButtons()}</div>
+
           </div>
           <div className="header__middle--mobile">
             <div className="header__input">

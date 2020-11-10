@@ -6,6 +6,21 @@ import "./HeaderTablet.styles.css";
 
 import Logo from "../../../../assets/img/mercari_logo.png";
 
+const HeaderButtons = () => {
+  <div className="header__buttons">
+  <div className="header__button--register">
+    <button>
+      <Link to="/signup">新規会員登録</Link>
+    </button>
+  </div>
+  <div className="header__button--login">
+    <button>
+      <Link to="/login">ログイン</Link>
+    </button>
+      </div>
+    </div>
+}
+
 export const HeaderTablet = () => {
   const displayButtons = () => {
     // tokenがlocalstorageにあるか確認
@@ -13,18 +28,7 @@ export const HeaderTablet = () => {
     // tokenが存在していないか確認する
     if (token === null) {
       return(
-      <div className="header__buttons">
-      <div className="header__button--register">
-        <button>
-          <Link to="/signup">新規会員登録</Link>
-        </button>
-      </div>
-      <div className="header__button--login">
-        <button>
-          <Link to="/login">ログイン</Link>
-        </button>
-          </div>
-        </div>
+        HeaderButtons()
       );
     }
     // tokenが存在してる
@@ -33,18 +37,7 @@ export const HeaderTablet = () => {
     return jwt.verify(token, 'mercari', (err, decoded) => {
       if (err) {
         return (
-      <div className="header__buttons">
-      <div className="header__button--register">
-        <button>
-          <Link to="/signup">新規会員登録</Link>
-        </button>
-      </div>
-      <div className="header__button--login">
-        <button>
-          <Link to="/login">ログイン</Link>
-        </button>
-      </div>
-    </div>
+          HeaderButtons()
       );
     }
       return <p>ようこそ、{decoded.nickname}さん</p>;

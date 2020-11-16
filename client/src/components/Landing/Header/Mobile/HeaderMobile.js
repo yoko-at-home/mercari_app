@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom";
 import jwt from 'jsonwebtoken';
 
@@ -6,42 +6,60 @@ import "./HeaderMobile.styles.css";
 
 import Logo from "../../../../assets/img/mercari_logo.png";
 
-const HeaderButtons = () => {
-  return (
-    <div className="header__buttons">
-    <div className="header__button--register">
-      <button>
-        <Link to="/signup">新規会員</Link>
-      </button>
-    </div>
-    <div className="header__button--login">
-      <button>
-        <Link to="login">ログイン</Link>
-      </button>
-    </div>
-  </div>
-)
-}
 
 export const HeaderMobile = () => {
-  const displayButtons = () => {
-    const token = localStorage.getItem('token');
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [userInfo, setUserInfo] = useState({})
+
+  useEffect(() => {
+    const token = localStorage.getItem('token')
     if (!token) {
+      setIsLoggedIn(false)
+    }
+    jwt.verify(token, 'mercari', (err, decoded) => {
+      if (err || !decoded) {
+        setIsLoggedIn(false)
+        return
+      }
+      setIsLoggedIn(true)
+      setUserInfo(decoded)
+    })
+  }, [])
+
+  const logout = () => {
+    localStorage.removeItem('token')
+    setIsLoggedIn(false)
+  }
+
+  const displayButtons = () => {
+    if (!isLoggedIn) {
       return (
-        HeaderButtons()
+        <div className="header__buttons">
+        <div className="header__button--register">
+          <button>
+            <Link to="/signup">新規会員</Link>
+          </button>
+        </div>
+        <div className="header__button--login">
+          <button>
+            <Link to="login">ログイン</Link>
+          </button>
+        </div>
+      </div>
       )
     }
-    return jwt.verify(token, 'mercari', (err, decoded) => {
-      if (err) {
-        return (
-          HeaderButtons()
-        )
-      }
-      return <p>ようこそ、{decoded.nickname}さん！</p>
-    })
+
+      return (
+        <div style={{ display: 'flex' }}>
+          {userInfo && userInfo.nickname ? (
+            <p>ようこそ、{userInfo.nickname}さん！</p>
+          ) : null}
+          <button className='' onClick={logout}>ログアウト</button>
+        </div>
+      )
   }
+
   return (
-    <>
       <header className="header--mobile">
         <div className="header__inner--mobile">
           <div className="header__top--mobile">
@@ -100,6 +118,5 @@ export const HeaderMobile = () => {
           </div>
         </div>
       </header>
-    </>
   );
 };

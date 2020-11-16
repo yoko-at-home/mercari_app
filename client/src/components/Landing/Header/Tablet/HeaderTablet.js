@@ -24,7 +24,7 @@ export const HeaderTablet = () => {
       setIsLoggedIn(true)
       setUserInfo(decoded)
     })
-  })
+  }, [])
 
   const logout = () => {
     localStorage.removeItem('token')

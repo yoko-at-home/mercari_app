@@ -4,21 +4,11 @@ import { useHistory } from 'react-router-dom'
 import "../../styles/global.css";
 import './AuthStyles.css'
 import './AuthButton.styles.css'
-import styled from 'styled-components'
 
 import { FacebookButton } from "./FacebookButton";
 import { GoogleButton } from "./GoogleButton";
 import { AppleButton } from './AppleButton'
 
-const LoginInput = styled.div`
-  margin: 0 auto;
-  input {
-    line-height: 35px;
-    border-radius: 5px;
-    padding: 5px 8px;
-    margin-bottom: 20px;
-  }
-`
 
 export const Login = () => {
   const history = useHistory()
@@ -30,25 +20,33 @@ export const Login = () => {
 
   //ここでからの配列を作ってuseState定義するのだったと思うけど..
   // const EmailError = ''
-  const [error, setError] = useState({
-    email: '',
-    password: '',
-  })
-  const displayError = () => {
-    if (error.process !== '') {
-      return error.process
-    }
-  }
-
+  // const [error, setError] = useState({
+  //   email: '',
+  //   password: '',
+  // })
+  // const displayError = () => {
+  //   if (error.process !== '') {
+  //     return error.process
+  //   }
+  // }
+  const [error, setError] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    if (info.email === '') {
-      setError({ メールアドレス: 'メールアドレスを入力してください。' })
-    }
-    if (info.password === '') {
-      setError({ パスワード: 'パスワードを入力してください。' })
+    // if (info.email === '') {
+    //   setError({ メールアドレス: 'メールアドレスを入力してください。' })
+    // }
+    // if (info.password === '') {
+    //   setError({ パスワード: 'パスワードを入力してください。' })
+    // }
+    if (
+      info.mail === '' ||
+      info.password ===''
+    ) {
+      console.log('entered err')
+      setError('入力にエラーがありました')
+      return
     }
     // response -> string型
     // '{"status": "success"}'
@@ -65,7 +63,8 @@ export const Login = () => {
       // '{"status": "success"}'.json() -> { status : "success"}
       // json string型をjavascriptのオブジェクトに変換する
       const resJavascript = await response.json()
-      console.log(resJavascript.status) // "success", "fail"
+
+      // console.log(resJavascript.status) // "success", "fail"
       // if (resJavascript.statusCode === 'success') {
       //   // クッキーをつける
       // } else {
@@ -75,7 +74,7 @@ export const Login = () => {
       // landing pageにユーザーを飛ばす
       history.push('/')
     } catch (err) {
-      setError({ ...setError, process: '処理の途中でエラーが発生しました。' })
+      setError('処理の途中でエラーが発生しました。')
     }
   }
 
@@ -104,7 +103,6 @@ export const Login = () => {
               </Link>
             </li>
           </ul>
-          <div>{displayError()}</div>
         </div>
       </div>
 
@@ -130,28 +128,24 @@ export const Login = () => {
                   onSubmit={handleSubmit}
                   style={{ width: '100%' }}
                 >
-                  <LoginInput>
-                    <input
-                      onChange={(e) =>
-                        setInfo({ ...info, email: e.target.value })
-                      }
-                      value={info.email}
-                      className='form__input'
-                      type='text'
-                      placeholder='メールアドレス'
-                    />
-                  </LoginInput>
-                  <LoginInput>
-                    <input
-                      onChange={(e) =>
-                        setInfo({ ...info, password: e.target.value })
-                      }
-                      value={info.password}
-                      className='form__input'
-                      type='text'
-                      placeholder='パスワード'
-                    />
-                  </LoginInput>
+                  <input
+                    onChange={(e) =>
+                      setInfo({ ...info, email: e.target.value })
+                    }
+                    value={info.email}
+                    className='form__input'
+                    type='text'
+                    placeholder='メールアドレス'
+                  />
+                  <input
+                    onChange={(e) =>
+                      setInfo({ ...info, password: e.target.value })
+                    }
+                    value={info.password}
+                    className='form__input'
+                    type='text'
+                    placeholder='パスワード'
+                  />
                 </form>
               </div>
             </li>
@@ -183,6 +177,7 @@ export const Login = () => {
             </li>
           </ul>
         </div>
+        <div>{error !== '' ? <p>{}</p> : null}</div>
       </div>
     </>
   )

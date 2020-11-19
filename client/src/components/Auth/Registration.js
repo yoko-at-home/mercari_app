@@ -20,29 +20,26 @@ export const Registration = () => {
     day: '',
   })
 
-  const [error, setError] = useState({
-    nickname: '',
-    email: '',
-    password: '',
-    process: '',
-  })
-
-  const displayError = () => {
-    if (error.process !== '') {
-      return error.process
-    }
-  }
+  const [error, setError] = useState('')
 
   //　inlineで書くよりもここで宣言した方がいい
   const handleSubmit = async (e) => {
     e.preventDefault() //リロードさせない
 
-    if (info.nickname === '') {
-      setError({ nickname: 'ニックネームが入力されていません' })
-    } if (info.email === '') {
-      setError({ email: 'メールアドレスが入力されていません' })
-    } if (info.password === '') {
-      setError({ password: 'パスワードが入力されていません' });
+    if (
+      info.nickname === '' ||
+      info.email === '' ||
+      info.password === '' ||
+      info.firstName === '' ||
+      info.lastName === '' ||
+      info.firstNameKana === '' ||
+      info.lastNameKana === '' ||
+      info.year === '' ||
+      info.month === '' ||
+      info.day === ''
+    ) {
+      setError('未入力の項目があります')
+      return
     }
 
     try {
@@ -65,7 +62,7 @@ export const Registration = () => {
       // landing pageにユーザーを飛ばす
       history.push('/')
     } catch (err) {
-      setError({ ...error, process: '処理の途中で問題が発生しました。' })
+      setError( '処理の途中で問題が発生しました。' )
     }
   }
 
@@ -87,7 +84,7 @@ export const Registration = () => {
                 <div>{error.nickname}</div>
                 <div>
                   <label htmlFor='nickname'>ニックネーム</label>
-                  <div class='necessary-badge'>必須</div>
+                  <div className='necessary-badge'>必須</div>
                 </div>
                 <div>
                   <input
@@ -101,12 +98,11 @@ export const Registration = () => {
                     placeholder='例）メルカリ太郎'
                   />
                 </div>
-                {/* {nicknameError} */}
               </div>
               <div>
                 <div>
                   <label htmlFor='email'>メールアドレス</label>
-                  <div class='necessary-badge'>必須</div>
+                  <div className='necessary-badge'>必須</div>
                 </div>
                 <div>
                   <input
@@ -124,7 +120,7 @@ export const Registration = () => {
               <div>
                 <div>
                   <label htmlFor='password'>パスワード</label>
-                  <div class='necessary-badge'>必須</div>
+                  <div className='necessary-badge'>必須</div>
                 </div>
                 <div>
                   <input
@@ -163,7 +159,7 @@ export const Registration = () => {
               <div>
                 <div className='label-wrapper'>
                   <p className='text-inline'>お名前（全角）</p>
-                  <div class='necessary-badge'>必須</div>
+                  <div className='necessary-badge'>必須</div>
                 </div>
                 <div className='input-wrapper'>
                   <div className='input-wrapper'>
@@ -195,7 +191,7 @@ export const Registration = () => {
               <div>
                 <div className='label-wrapper'>
                   <p className='text-inline'>お名前カナ（全角）</p>
-                  <div class='necessary-badge'>必須</div>
+                  <div className='necessary-badge'>必須</div>
                 </div>
                 <div className='input-wrapper'>
                   <input
@@ -223,7 +219,7 @@ export const Registration = () => {
               <div>
                 <div className='label-wrapper'>
                   <p className='text-inline'>生年月日</p>
-                  <div class='necessary-badge'>必須</div>
+                  <div className='necessary-badge'>必須</div>
                 </div>
                 <div className='input-wrapper'>
                   <select
@@ -269,10 +265,9 @@ export const Registration = () => {
                   本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
                 </p>
               </div>
-              {/* <div>{info.error}</div> */}
-              {/* <div>{error.process !==''}</div> */}
-              {/* <div>{error.process !== '' ? error.process : ' '}</div> */}
-              <div>{displayError()}</div>
+              <h1 className='main__text_error'>
+                {error !== '' ? <p>{error}</p> : null}
+              </h1>
               <div>
                 <input type='submit' value='次へ進む' className='next_button' />
               </div>

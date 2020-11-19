@@ -18,17 +18,6 @@ export const Login = () => {
     password: '',
   })
 
-  //ここでからの配列を作ってuseState定義するのだったと思うけど..
-  // const EmailError = ''
-  // const [error, setError] = useState({
-  //   email: '',
-  //   password: '',
-  // })
-  // const displayError = () => {
-  //   if (error.process !== '') {
-  //     return error.process
-  //   }
-  // }
   const [error, setError] = useState('');
 
   const handleSubmit = async (e) => {
@@ -44,28 +33,29 @@ export const Login = () => {
       info.mail === '' ||
       info.password ===''
     ) {
-      console.log('entered err')
-      setError('入力にエラーがありました')
+      // console.log('entered err')
+      setError('入力漏れがあります')
       return
     }
+    console.log('info', info);
     // response -> string型
     // '{"status": "success"}'
-    try {
       const response = await fetch('http://localhost:4000/users/login', {
         // credentials: 'include',
-        method: 'POST',
         headers: {
           // 'Access-Control-Allow-Origin': 'http://localhost:4000',
           'Content-Type': 'application/json',
         },
+      method: 'POST',
         body: JSON.stringify(info),
       })
+    // console.log(info);
       // '{"status": "success"}'.json() -> { status : "success"}
       // json string型をjavascriptのオブジェクトに変換する
       const resJavascript = await response.json()
 
       // console.log(resJavascript.status) // "success", "fail"
-      // if (resJavascript.statusCode === 'success') {
+       if (resJavascript.status === 'success') {
       //   // クッキーをつける
       // } else {
       //   setError(resJavascript.message)
@@ -73,11 +63,10 @@ export const Login = () => {
 
       // landing pageにユーザーを飛ばす
       history.push('/')
-    } catch (err) {
-      setError('処理の途中でエラーが発生しました。')
+    } else {
+      setError(resJavascript.message);
     }
-  }
-
+  };
   return (
     <>
       <div className='main__no-account'>
@@ -85,21 +74,19 @@ export const Login = () => {
           <ul className='btn__wrap'>
             <div className='main__text'>アカウントをお持ちでない方はこちら</div>
             <li className='list__btn'>
-              <Link to='./Signup'>
-                <Link
-                  to='/signup/registration'
-                  style={{
-                    display: 'block',
-                    borderRadius: 3,
-                    border: '1px solid black',
-                    backgroundColor: 'transparent',
-                  }}
-                >
-                  <button className='btn-new btn-default btn-align'>
-                    <div className='icon-mail'></div>
-                    <div className='btn-text'>新規会員登録</div>
-                  </button>
-                </Link>
+              <Link
+                to='/signup/registration'
+                style={{
+                  display: 'block',
+                  borderRadius: 3,
+                  border: '1px solid black',
+                  backgroundColor: 'transparent',
+                }}
+              >
+                <button className='btn-new btn-default btn-align'>
+                  <div className='icon-mail'></div>
+                  <div className='btn-text'>新規会員登録</div>
+                </button>
               </Link>
             </li>
           </ul>
@@ -119,66 +106,51 @@ export const Login = () => {
               <AppleButton />
             </li>
           </ul>
-          <ul className='btn__wrap'>
-            <li className='list__btn'>
-              <div className='btn-text__bottom'>
-                <div>{info.error}</div>
-                <form
-                  method='post'
-                  onSubmit={handleSubmit}
-                  style={{ width: '100%' }}
-                >
-                  <input
-                    onChange={(e) =>
-                      setInfo({ ...info, email: e.target.value })
-                    }
-                    value={info.email}
-                    className='form__input'
-                    type='text'
-                    placeholder='メールアドレス'
-                  />
-                  <input
-                    onChange={(e) =>
-                      setInfo({ ...info, password: e.target.value })
-                    }
-                    value={info.password}
-                    className='form__input'
-                    type='text'
-                    placeholder='パスワード'
-                  />
-                </form>
+          <h4 className='main__text_error'>{error}</h4>
+          <form method='post' onSubmit={handleSubmit} style={{ width: '100%' }}>
+            <div style={{ marginTop: 20, width: '100%' }}>
+              <div style={{ margin: '10px 0' }}>
+                <input
+                  onChange={(e) => setInfo({ ...info, email: e.target.value })}
+                  value={info.email}
+                  className='form__input'
+                  type='text'
+                  placeholder='メールアドレス'
+                />
               </div>
-            </li>
-            <ul className='btn__wrap'>
-              <li className='list__btn'>
-                <Link
-                  to='/'
-                  style={{
-                    display: 'block',
-                    borderRadius: 3,
-                    backgroundColor: '#EA352E',
-                    border: '1px solid #EA352E',
-                  }}
-                >
-                  <button className='btn-mail_signup btn-default btn-align'>
-                    <div className='icon-mail'></div>
-                    <input
-                      type='submit'
-                      value='ログイン'
-                      className='next_button'
-                    />
-                  </button>
-                </Link>
-              </li>
-            </ul>
-            <li className='list__btn'>{/* <LoginCaptchaBlock /> */}</li>
-            <li className='list__btn'>
-              <Link to='/signup'>パスワードをお忘れの方</Link>
-            </li>
-          </ul>
+              <div style={{ margin: '10px 0' }}>
+                <input
+                  onChange={(e) =>
+                    setInfo({ ...info, password: e.target.value })
+                  }
+                  value={info.password}
+                  className='form__input'
+                  type='text'
+                  placeholder='パスワード'
+                />
+              </div>
+            </div>
+            <button
+              className='btn-default btn-align'
+              style={{ background: 'red' }}
+            >
+              <Link to='/signup' className='button__anchor'>
+                <input
+                  type='submit'
+                  value='ログイン'
+                  style={{ background: 'red', border: 0, color: 'white' }}
+                />
+              </Link>
+            </button>
+          </form>
+
+          <div style={{ width: '100%', margin: '8px 0' }}>
+            <Link to='/signup' className='forgot__password'>
+              パスワードをお忘れの方
+            </Link>
+          </div>
         </div>
-        <div>{error !== '' ? <p>{}</p> : null}</div>
       </div>
     </>
   )
-}
+};

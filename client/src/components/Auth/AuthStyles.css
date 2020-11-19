@@ -48,6 +48,13 @@ a {
   padding-bottom: 8px;
 }
 
+.main__text_error {
+  text-align: left;
+  font-size: 20spx;
+  color: red;
+  padding-top: 10px;
+  margin:0;
+}
 /* main */
 .list__text {
   display: flex;

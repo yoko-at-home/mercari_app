@@ -16,7 +16,7 @@ export const HeaderMobile = () => {
     if (!token) {
       setIsLoggedIn(false)
     }
-    jwt.verify(token, 'mercari', (err, decoded) => {
+    jwt.verify(token, process.env.REACT_APP_JWT_KEY, (err, decoded) => {
       if (err || !decoded) {
         setIsLoggedIn(false)
         return

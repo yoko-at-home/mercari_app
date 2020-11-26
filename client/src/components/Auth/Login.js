@@ -40,7 +40,7 @@ export const Login = () => {
     console.log('info', info);
     // response -> string型
     // '{"status": "success"}'
-      const response = await fetch('http://localhost:4000/users/login', {
+      const response = await fetch('http://localhost:4000/api/users/login', {
         // credentials: 'include',
         headers: {
           // 'Access-Control-Allow-Origin': 'http://localhost:4000',

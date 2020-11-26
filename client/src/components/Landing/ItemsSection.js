@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import "./ItemsSection.styles.css";
-import { Heart } from "../../assets/svg";
+import { Card } from '../Card'
 
 export const ItemsSection = () => {
   const [items, setItems] = useState([]); //Hooksの書き方
@@ -9,7 +9,7 @@ export const ItemsSection = () => {
     async function fetchData() {
       try {
         //apiから情報を取得（からの配列を最初に取得なのでawait、結果がきたら情報が入る
-        const res = await fetch("http://localhost:4000/items");
+        const res = await fetch('http://localhost:4000/api/items')
         console.log('res', res);
 
         //json形式をjavascriptに変換
@@ -48,66 +48,16 @@ export const ItemsSection = () => {
   const displayItems = items.map((item, index) => {
     if (index === 9) {
       return (
-        <li key={item.id}>
-          <a href="http://www.google.com">
-            <div className="card card-none">
-              <div className="card__preview">
-                <div className="card__preview--price">
-                  <div className="card__preview--text">
-                    <p>¥6666</p>
-                  </div>
-                </div>
-                <img src={item.imgUrl} alt="" />
-              </div>
-
-              <div className="card__caption">
-                <div className="card__caption-description">
-                  <span>{item.title}</span>
-                  <div className="card__caption-likes">
-                    <div className="card__like-icon">
-                      <Heart />
-                    </div>
-                    <div className="card__like-text">
-                      <span id="count">20</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
+        <li className='card-none' key={item.id}>
+                    <Card price={3000}  />
         </li>
-      );
+      )
     } else {
       return (
         <li key={item.id}>
-          <a href="http://www.google.com">
-            <div className="card">
-              <div className="card__preview">
-                <div className="card__preview--price">
-                  <div className="card__preview--text">
-                    <p>¥{item.price}</p>
-                  </div>
-                </div>
-                <img src={item.imgUrl} alt="" />
-              </div>
-
-              <div className="card__caption">
-                <div className="card__caption-description">
-                  <span>{item.title}</span>
-                  <div className="card__caption-likes">
-                    <div className="card__like-icon">
-                      <Heart />
-                    </div>
-                    <div className="card__like-text">
-                      <span id="count">{item.like}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
+          <Card />
         </li>
-      );
+      )
     }
   });
 

@@ -50,7 +50,7 @@ export const Registration = () => {
 
     try {
       // JSONのstring型のレスポンスをresponseの変数に入れる
-      const response = await fetch('http://localhost:4000/users/signup', {
+      const response = await fetch('http://localhost:4000/api/users/signup', {
         // credentials: 'include',
         headers: {
           'Content-Type': 'application/json', //server側でjson -> jsに変換

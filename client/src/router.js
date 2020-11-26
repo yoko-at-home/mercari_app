@@ -1,8 +1,9 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import LandingPage from "./pages/Landing";
 import AuthenticationPage from "./pages/Authentication";
+import ItemsPage from './pages/items'
 import { SignupPage } from "./components/Auth/Signup";
 import { Registration } from "./components/Auth/Registration";
 import { Login } from './components/Auth/Login'
@@ -10,9 +11,8 @@ import { Login } from './components/Auth/Login'
 const Router = () => {
   return (
     <BrowserRouter>
-      <Route exact path='/'>
-        <LandingPage />
-      </Route>
+      <Switch>
+
       <Route exact path='/login'>
         <AuthenticationPage content={<Login />} />
       </Route>
@@ -22,6 +22,14 @@ const Router = () => {
       <Route path='/signup/registration'>
         <AuthenticationPage content={<Registration />} />
       </Route>
+      <Route path='/users/items'>
+        <ItemsPage />
+      </Route>
+      <Route path='/'>
+        <LandingPage />
+      </Route>
+      <Route>ご指定のページがありません</Route>
+      </Switch>
     </BrowserRouter>
   )
 };

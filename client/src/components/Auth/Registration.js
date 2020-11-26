@@ -22,6 +22,12 @@ export const Registration = () => {
 
   const [error, setError] = useState('')
 
+  const displayError = () => {
+    if (error.process !== '') {
+      return error.process
+    }
+  }
+
   //　inlineで書くよりもここで宣言した方がいい
   const handleSubmit = async (e) => {
     e.preventDefault() //リロードさせない
@@ -45,26 +51,29 @@ export const Registration = () => {
     try {
       // JSONのstring型のレスポンスをresponseの変数に入れる
       const response = await fetch('http://localhost:4000/users/signup', {
-        method: 'POST',
         // credentials: 'include',
         headers: {
           'Content-Type': 'application/json', //server側でjson -> jsに変換
         },
+        method: 'POST',
         body: JSON.stringify(info), //serverは、request.bodyで受け取る　StringifyはJSON形式のinfoをjsとして受け取れる
       })
 
       //　response(string型)をjavascriptのオブジェクトに変換する
       const resJson = await response.json()
+      if (resJson.status === 'success') {
+        //　localstorageにtokenをkey,valueの形で保存する
+        localStorage.setItem('token', resJson.token)
 
-      //　localstorageにtokenをkey,valueの形で保存する
-      localStorage.setItem('token', resJson.token)
-
-      // landing pageにユーザーを飛ばす
-      history.push('/')
+        // landing pageにユーザーを飛ばす
+        history.push('/')
+      } else {
+        setError(resJson.message);
+      }
     } catch (err) {
-      setError( '処理の途中で問題が発生しました。' )
+      setError('処理の途中で問題が発生しました。')
     }
-  }
+  };
 
   return (
     <div className='registration'>
@@ -265,6 +274,8 @@ export const Registration = () => {
                   本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
                 </p>
               </div>
+              {/* <div>{info.error}</div> */}
+              <h3>{displayError()}</h3>
               <h1 className='main__text_error'>
                 {error !== '' ? <p>{error}</p> : null}
               </h1>

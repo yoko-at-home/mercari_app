@@ -54,7 +54,7 @@ exports.signup = async (req, res) => {
       // const token = jwt.sign(user, process.env.JWT_ACCESS_TOKEN)
       // console.log('token', token);
 
-      // userのオブジェクトを暗号化し、jsonとして遅れる
+      // userのオブジェクトを暗号化し、jsonとして送る
       const token = jwt.sign(user, process.env.JWT_ACCESS_TOKEN)
 
       // ここまでくればうまくいった

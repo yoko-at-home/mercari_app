@@ -16,8 +16,8 @@ app.use(
 );
 console.log("!!!");
 app.use(express.json()); // for parsing application/json
-app.use("/items", itemRouter);
-app.use("/users", userRouter);
+app.use('/api/items', itemRouter)
+app.use('/api/users', userRouter)
 module.exports = app;
 
 // app.use(cors({

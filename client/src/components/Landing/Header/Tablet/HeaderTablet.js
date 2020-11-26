@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import jwt from 'jsonwebtoken';
 
@@ -6,43 +6,59 @@ import "./HeaderTablet.styles.css";
 
 import Logo from "../../../../assets/img/mercari_logo.png";
 
-const HeaderButtons = () => {
-  <div className="header__buttons">
-  <div className="header__button--register">
-    <button>
-      <Link to="/signup">新規会員登録</Link>
-    </button>
-  </div>
-  <div className="header__button--login">
-    <button>
-      <Link to="/login">ログイン</Link>
-    </button>
-      </div>
-    </div>
-}
 
 export const HeaderTablet = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [userInfo, setUserInfo] = useState({})
+
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    if (!token) {
+      setIsLoggedIn(false)
+    }
+    jwt.verify(token, 'mercari', (err, decoded) => {
+      if (err || !decoded) {
+        setIsLoggedIn(false)
+        return
+      }
+      setIsLoggedIn(true)
+      setUserInfo(decoded)
+    })
+  }, [])
+
+  const logout = () => {
+    localStorage.removeItem('token')
+    setIsLoggedIn(false)
+  }
+
   const displayButtons = () => {
-    // tokenがlocalstorageにあるか確認
-    const token = localStorage.getItem('token');
-    // tokenが存在していないか確認する
-    if (token === null) {
-      return(
-        HeaderButtons()
-      );
+    if (!isLoggedIn) {
+      return (
+        <div className="header__buttons">
+        <div className="header__button--register">
+          <button>
+            <Link to="/signup">新規会員登録</Link>
+          </button>
+        </div>
+        <div className="header__button--login">
+          <button>
+            <Link to="/login">ログイン</Link>
+          </button>
+            </div>
+          </div>
+      )
     }
-    // tokenが存在してる
-    // err -> エラーの内容（エラー処理に使う）
-    // decoded -> 解読された内容
-    return jwt.verify(token, 'mercari', (err, decoded) => {
-      if (err) {
-        return (
-          HeaderButtons()
-      );
-    }
-      return <p>ようこそ、{decoded.nickname}さん</p>;
-  });
-  };
+
+        return(
+        <div style={{display:'flex'}}>
+            {userInfo && userInfo.nickname ? ((
+              <p>ようこそ、{userInfo.nickname}さん</p>
+            )) : null}
+            <button onClick={logout}>ログアウト</button>
+      </div>
+        )
+  }
+
   return (
       <header className='header--tablet'>
         <div className='header__inner--tablet'>

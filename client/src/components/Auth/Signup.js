@@ -9,7 +9,7 @@ import { FacebookButton } from "./FacebookButton";
 import { GoogleButton } from "./GoogleButton";
 import { AppleButton } from "./AppleButton";
 
-export const SignupPage = () => {
+export const Signup = () => {
   return (
     <div className="SectionCenter">
       <div className="main">

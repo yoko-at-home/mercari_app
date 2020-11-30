@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
 import jwt from 'jsonwebtoken';
 
 import "./HeaderTablet.styles.css";
@@ -60,6 +60,9 @@ export const HeaderTablet = () => {
         {userInfo && userInfo.nickname ? (
           <p>ようこそ、{userInfo.nickname}さん</p>
         ) : null}
+        <button>
+          <Link to='/users/items'>商品ページ</Link>
+        </button>
         <button onClick={logout}>ログアウト</button>
       </div>
     )

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Heart } from '../assets/svg'
 import itemImg from '../assets/img/mercari_item.jpg'
-import './Landing/ItemsSection.styles.css'
+import './Card.styles.css'
 
 export const Card = ({
   price = 6000,

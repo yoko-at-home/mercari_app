@@ -3,8 +3,8 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import LandingPage from "./pages/Landing";
 import AuthenticationPage from "./pages/Authentication";
-import ItemsPage from './pages/items'
-import { SignupPage } from "./components/Auth/Signup";
+import ItemsPage from './pages/items';
+import { Signup } from "./components/Auth/Signup";
 import { Registration } from "./components/Auth/Registration";
 import { Login } from './components/Auth/Login'
 
@@ -17,7 +17,7 @@ const Router = () => {
         <AuthenticationPage content={<Login />} />
       </Route>
       <Route exact path='/signup'>
-        <AuthenticationPage content={<SignupPage />} />
+        <AuthenticationPage content={<Signup />} />
       </Route>
       <Route path='/signup/registration'>
         <AuthenticationPage content={<Registration />} />

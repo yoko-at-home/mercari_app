@@ -52,9 +52,18 @@ export const HeaderMobile = () => {
       return (
         <div style={{ display: 'flex' }}>
           {userInfo && userInfo.nickname ? (
-            <p>ようこそ、{userInfo.nickname}さん！</p>
+            <p>
+              ようこそ、
+              <br />
+              {userInfo.nickname}さん！
+            </p>
           ) : null}
-          <button className='' onClick={logout}>ログアウト</button>
+          <button style={{ padding: 0, fontSize: 8 }}>
+            <Link to='/users/items'>商品ページ</Link>
+          </button>
+          <button style={{ padding: 0, fontSize: 8 }} onClick={logout}>
+            ログアウト
+          </button>
         </div>
       )
   }

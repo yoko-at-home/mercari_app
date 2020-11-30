@@ -22,11 +22,11 @@ export const Registration = () => {
 
   const [error, setError] = useState('')
 
-  const displayError = () => {
-    if (error.process !== '') {
-      return error.process
-    }
-  }
+  // const displayError = () => {
+  //   if (error.process !== '') {
+  //     return error.process
+  //   }
+  // }
 
   //　inlineで書くよりもここで宣言した方がいい
   const handleSubmit = async (e) => {
@@ -45,10 +45,10 @@ export const Registration = () => {
       info.day === ''
     ) {
       setError('未入力の項目があります')
-      return
+      return;
     }
 
-    try {
+    // try {
       // JSONのstring型のレスポンスをresponseの変数に入れる
       const response = await fetch('http://localhost:4000/api/users/signup', {
         // credentials: 'include',
@@ -70,9 +70,9 @@ export const Registration = () => {
       } else {
         setError(resJson.message);
       }
-    } catch (err) {
-      setError('処理の途中で問題が発生しました。')
-    }
+    // } catch (err) {
+    //   setError('処理の途中で問題が発生しました。')
+    // }
   };
 
   return (
@@ -120,8 +120,8 @@ export const Registration = () => {
                     }
                     value={info.email}
                     className='form__input'
-                    id='nickname'
-                    type='text'
+                    id='email'
+                    type='email'
                     placeholder='PC・携帯どちらでも可'
                   />
                 </div>
@@ -167,39 +167,37 @@ export const Registration = () => {
               </div>
               <div>
                 <div className='label-wrapper'>
-                  <p className='text-inline'>お名前（全角）</p>
+                  {/* <p className='text-inline'>お名前（全角）</p> */}
+                  <label htmlFor='name'>お名前（全角）</label>
                   <div className='necessary-badge'>必須</div>
                 </div>
                 <div className='input-wrapper'>
-                  <div className='input-wrapper'>
-                    <input
-                      onChange={(e) =>
-                        setInfo({ ...info, firstName: e.target.value })
-                      }
-                      className='form__input'
-                      value={info.firstName}
-                      type='text'
-                      name='firstName'
-                      placeholder='例）山田'
-                    />
-                  </div>
-                  <div className='input-wrapper'>
-                    <input
-                      onChange={(e) =>
-                        setInfo({ ...info, lastName: e.target.value })
-                      }
-                      className='form__input'
-                      value={info.lastName}
-                      type='text'
-                      name='lastName'
-                      placeholder='例）彩'
-                    />
-                  </div>
+                  <input
+                    onChange={(e) =>
+                      setInfo({ ...info, firstName: e.target.value })
+                    }
+                    className='form__input'
+                    value={info.firstName}
+                    type='text'
+                    name='firstName'
+                    placeholder='例）山田'
+                  />
+                  <input
+                    onChange={(e) =>
+                      setInfo({ ...info, lastName: e.target.value })
+                    }
+                    className='form__input'
+                    value={info.lastName}
+                    type='text'
+                    name='lastName'
+                    placeholder='例）彩'
+                  />
                 </div>
               </div>
               <div>
                 <div className='label-wrapper'>
-                  <p className='text-inline'>お名前カナ（全角）</p>
+                  {/* <p className='text-inline'>お名前カナ（全角）</p> */}
+                  <label htmlFor='NameKana'>お名前カナ（全角）</label>
                   <div className='necessary-badge'>必須</div>
                 </div>
                 <div className='input-wrapper'>
@@ -227,7 +225,8 @@ export const Registration = () => {
               </div>
               <div>
                 <div className='label-wrapper'>
-                  <p className='text-inline'>生年月日</p>
+                  {/* <p className='text-inline'>生年月日</p> */}
+                  <label htmlFor='NameKana'>生年月日</label>
                   <div className='necessary-badge'>必須</div>
                 </div>
                 <div className='input-wrapper'>
@@ -275,7 +274,7 @@ export const Registration = () => {
                 </p>
               </div>
               {/* <div>{info.error}</div> */}
-              <h3>{displayError()}</h3>
+              {/* <h3>{displayError()}</h3> */}
               <h1 className='main__text_error'>
                 {error !== '' ? <p>{error}</p> : null}
               </h1>

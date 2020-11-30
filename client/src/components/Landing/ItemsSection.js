@@ -10,15 +10,15 @@ export const ItemsSection = () => {
       try {
         //apiから情報を取得（からの配列を最初に取得なのでawait、結果がきたら情報が入る
         const res = await fetch('http://localhost:4000/api/items')
-        console.log('res', res);
+        // console.log('res', res);
 
         //json形式をjavascriptに変換
-        const resJson = await res.json();
-        console.log('log', resJson);
+        const resJson = await res.json()
+        console.log('log', resJson)
         // 九つだけ表示させる
-        const displayingItems = resJson.data.slice(0, 10);
+        const displayingItems = resJson.data.slice(0, 15)
 
-        setItems(displayingItems);
+        setItems(displayingItems)
       } catch (err) {
         throw err;
       }
@@ -46,20 +46,17 @@ export const ItemsSection = () => {
   ];
 
   const displayItems = items.map((item, index) => {
-    if (index === 9) {
-      return (
-        <li className='card-none' key={item.id}>
-                    <Card price={3000}  />
-        </li>
-      )
-    } else {
-      return (
-        <li key={item.id}>
-          <Card />
-        </li>
-      )
-    }
-  });
+    return (
+      <li className={index > 8 ? 'card-none' : null} key={item.id}>
+        <Card
+          price={item.price}
+          description={item.description}
+          imgurl={item.img_url}
+          likes={item.likes}
+        />
+      </li>
+    )
+  })
 
   // console.log("items state", items); //StateにAPIの情報が入る
 

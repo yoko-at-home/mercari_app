@@ -16,7 +16,7 @@ export const ItemsSection = () => {
         const resJson = await res.json()
         console.log('log', resJson)
         // 九つだけ表示させる
-        const displayingItems = resJson.data.slice(0, 15)
+        const displayingItems = resJson.data.slice(0, 10)
 
         setItems(displayingItems)
       } catch (err) {

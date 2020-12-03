@@ -119,8 +119,8 @@
     display: block;
   }
 
-  .card__caption-description {
-  }
+  /* .card__caption-description {
+  } */
 
   .card__caption-description span {
     white-space: normal;

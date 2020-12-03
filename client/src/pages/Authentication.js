@@ -6,10 +6,12 @@ import { AuthFooter } from "../components/Auth/AuthFooter";
 
 const AuthenticationPage = ({ content }) => {
   return (
+    <div>
     <div className="auth">
       <AuthHeader />
       {content}
       <AuthFooter />
+      </div>
     </div>
   );
 };

@@ -7,10 +7,10 @@ import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom'
 
 const ItemsPage = () => {
-  const history = useHistory()
   // const [data, setData] = useState()
   const [items, setItems] = useState([])
   const [nickname, setNickname] = useState('')
+  const history = useHistory()
 
   useEffect(() => {
     const fetchData = async (userId) => {
@@ -20,40 +20,45 @@ const ItemsPage = () => {
           Accept: 'application/json',
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({id: userId}),
+        body: JSON.stringify({ id: userId }),
       })
       const resJson = await response.json()
-      console.log("resJson", resJson)
+      console.log('resJson', resJson)
       setItems(resJson.data)
     }
     const token = localStorage.getItem('token')
     try {
       const user = jwt.verify(token, process.env.REACT_APP_JWT_KEY)
-      setNickname(user.nickname);
+      setNickname(user.nickname)
       fetchData(user.id)
     } catch (err) {
-      history.push('/');
+      history.push('/')
     }
-  }, []);
+  }, [])
 
   return (
     <div>
       <div>
-        <div style={{display:'flex'}}>
-        <h3>{nickname}さんが出品した商品</h3>
-        <Link style={{backgroundColor:'pink', borderRadius:5, padding:3}} to="/">トップページへ</Link>
+        <div style={{ display: 'flex' }}>
+          <h3>{nickname}さんが出品した商品</h3>
+          <Link
+            style={{ backgroundColor: 'pink', borderRadius: 5, padding: 3 }}
+            to='/'
+          >
+            トップページへ
+          </Link>
         </div>
         <div className='items__layout'>
           <ul className='items__layout--grid'>
             {items.map((item, userId) => {
               return (
                 <li>
-                <Card
-                price={item.price}
-                description={item.description}
-                imgurl={item.img_url}
-                likes={item.likes}
-              />
+                  <Card
+                    price={item.price}
+                    description={item.description}
+                    imgurl={item.img_url}
+                    likes={item.likes}
+                  />
                 </li>
               )
             })}

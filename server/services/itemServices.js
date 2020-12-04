@@ -64,7 +64,7 @@ exports.createItem = async function (req, res) {
   // const newItem = Object.assign({}, { id: newId }, req.body);
   // items.push(newItem);
   // fs.writeFileSync("data.json", JSON.stringify({ items: items }));
-  const data = await db.query(
+  const result = await db.query(
     'INSERT INTO item("imgUrl", price, title) VALUES ($1, $2, $3) returning *;',
     [req.body.imgUrl, req.body.price, req.body.title]
   );

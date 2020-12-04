@@ -1,10 +1,25 @@
-CREATE TABLE item
-(
+CREATE TABLE "user" (
     id BIGSERIAL PRIMARY KEY NOT NULL,
-    "imgUrl" VARCHAR(150) NOT NULL,
+    nickname VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    password VARCHAR(100) NOT NULL,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    first_name_kana VARCHAR(50) NOT NULL,
+    last_name_kana VARCHAR(50) NOT NULL,
+    year INT NOT NULL,
+    month INT NOT NULL,
+    day INT NOT NULL
+);
+
+
+CREATE TABLE item (
+    id BIGSERIAL PRIMARY KEY NOT NULL,
+    img_url VARCHAR(100) NOT NULL,
     price INT NOT NULL,
-    title VARCHAR(150) NOT NULL,
-    likes INT DEFAULT 0
+    description VARCHAR(100),
+    likes INT DEFAULT 0,
+    user_id INT REFERENCES "user"(id)
 );
 
 insert into item
@@ -31,17 +46,3 @@ insert into item
     ("imgUrl", price, title)
 values
     ('https://static.mercdn.net/thumb/photos/m21433167160_1.jpg?1596024232', 3026, 'integer a nibh in quis justo');
-
-CREATE TABLE "user" (
-    id BIGSERIAL PRIMARY KEY NOT NULL,
-    nickname VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL,
-    password VARCHAR(100) NOT NULL,
-    first_name VARCHAR(50) NOT NULL,
-    last_name VARCHAR(50) NOT NULL,
-    first_name_kana VARCHAR(50) NOT NULL,
-    last_name_kana VARCHAR(50) NOT NULL,
-    year INT NOT NULL,
-    month INT NOT NULL,
-    day INT NOT NULL
-);

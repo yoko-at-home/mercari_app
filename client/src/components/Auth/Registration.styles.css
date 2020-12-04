@@ -73,6 +73,15 @@ nav {
   border-radius: 3px;
   font-size: 16px;
 }
+.form__input-price {
+  display: inline-flex;
+  width: 80%;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  font-size: 16px;
+}
 .form__input-date {
   width: 80%;
   padding: 10px;
@@ -92,6 +101,17 @@ nav {
   margin-left: 5px;
   margin-top: 15px;
   margin-bottom: 5px;
+}
+
+.notice {
+  display: inline-flex;
+  color: red;
+  margin-left: 10px;
+}
+.yen{
+  display: inline-block;
+  margin-right: 5px;
+  font-size: large;
 }
 
 label {

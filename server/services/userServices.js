@@ -17,20 +17,27 @@ exports.signup = async (req, res) => {
         message: 'そのメールアドレスはすでに登録されています',
       })
     }
+    // if (result.rows !== '*@*') {
+    //   console.log('メールアドレス', result.rows)
+    //   return res.status(400).json({
+    //     status: 'fail',
+    //     message: '正しい形式のメールアドレスを入力してください',
+    //   })
+    // }
 
     // requestのbodyの項目からパスワードのデータを受け取る
     const password = req.body.password
 
     // 受け取ったパスワードを暗号化する
-    await bcrypt.hash(password, 10, (err, hash) => {
+    await bcrypt.hash(password, 10, async (err, hash) => {
       if (err) {
         return res.status(400).json({
           status: 'error',
           message: '暗号化する過程で問題が発生しました',
         })
       }
-      db.query(
-        'INSERT INTO "user" (nickname, email, password, first_name, last_name, first_name_kana, last_name_kana, year, month, day) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)',
+      const data = await db.query(
+        'INSERT INTO "user" (nickname, email, password, first_name, last_name, first_name_kana, last_name_kana, year, month, day) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) returning *',
         [
           req.body.nickname,
           email,
@@ -45,10 +52,9 @@ exports.signup = async (req, res) => {
         ]
       )
       const user = {
-        nickname: req.body.nickname,
-        email: req.body.email,
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
+        id: data.rows[0].id,
+        nickname: data.rows[0].nickname,
+        email: data.rows[0].email,
       }
 
       // const token = jwt.sign(user, process.env.JWT_ACCESS_TOKEN)
@@ -86,6 +92,7 @@ exports.login = async (req, res) => {
     }
     console.log(result.rows)
     const password = req.body.password
+
     const databasepassword = result.rows[0].password
     await bcrypt.compare(password, databasepassword, (err, same) => {
       if (err) {
@@ -104,6 +111,7 @@ exports.login = async (req, res) => {
       const user = {
         id: result.rows[0].id,
         nickname: result.rows[0].nickname,
+        email: result.rows[0].email,
       }
       jwt.sign(user, process.env.JWT_ACCESS_TOKEN, (err, token) => {
         if (err) {
@@ -114,7 +122,7 @@ exports.login = async (req, res) => {
         }
         res.status(200).json({
           status: 'success',
-          token:  token,
+          token: token,
         })
       })
     })
@@ -122,6 +130,29 @@ exports.login = async (req, res) => {
     return res.status(400).json({
       status: 'error',
       message: 'loginの途中でエラーが起こりました',
+    })
+  }
+}
+
+exports.getItemsByUser = async function (req, res) {
+  const id = req.body.id
+  try {
+    if (!id) {
+      res.status(400).json({
+        status: 'fail',
+        message: 'IDが取り出せませんでした',
+      })
+      return
+    }
+    const items = await db.query('SELECT * FROM item WHERE user_id = $1', [id])
+    res.status(200).json({
+      status: 'success',
+      data: items.rows,
+    })
+  } catch (err) {
+    res.status(400).json({
+      status: 'error',
+      message: 'エラーが発生しました',
     })
   }
 }

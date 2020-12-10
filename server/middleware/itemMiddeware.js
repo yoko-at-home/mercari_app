@@ -1,16 +1,16 @@
 exports.checkItem = (req, res, next) => {
-  // if (!req.body.likes || !req.body) {
+  //  console.log(req.body)
   if (
-    // !req.body.like ||
-    !req.body.title ||
+    !req.body.description ||
     !req.body.price ||
-    !req.body.imgUrl
+    !req.body.imgUrl ||
+    !req.body.token
   ) {
     res.status(400).json({
-      status: "fail",
-      message: "itemsのオブジェクト形式に沿っていない",
-    });
+      status: 'fail',
+      message: 'itemsのオブジェクト形式に沿っていない',
+    })
   }
   // 次のミドルウェアを呼ぶための関数
-  next();
+  next()
 };

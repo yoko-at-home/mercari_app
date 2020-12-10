@@ -42,7 +42,7 @@ export const HeaderMobile = () => {
         </div>
         <div className="header__button--login">
           <button>
-            <Link to="login">ログイン</Link>
+            <Link to="/login">ログイン</Link>
           </button>
         </div>
       </div>

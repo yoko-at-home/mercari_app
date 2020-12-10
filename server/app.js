@@ -16,6 +16,11 @@ app.use(
 );
 console.log("!!!");
 app.use(express.json()); // for parsing application/json
+
+if (!process.env.JWT_ACCESS_TOKEN) {
+  console.error('環境変数が読み込まれませんでした')
+  process.exit(1) //serverを強制的に落とす
+}
 app.use('/api/items', itemRouter)
 app.use('/api/users', userRouter)
 module.exports = app;

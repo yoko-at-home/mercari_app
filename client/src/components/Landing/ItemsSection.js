@@ -1,62 +1,49 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React from 'react'
 import "./ItemsSection.styles.css";
 import { Card } from '../Card'
+import useFetch from '../../hooks/useFetch'
+
 
 export const ItemsSection = () => {
-  const [items, setItems] = useState([]); //Hooksの書き方
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        //apiから情報を取得（からの配列を最初に取得なのでawait、結果がきたら情報が入る
-        const res = await fetch('http://localhost:4000/api/items')
-        // console.log('res', res);
-
-        //json形式をjavascriptに変換
-        const resJson = await res.json()
-        console.log('log', resJson)
-        // 九つだけ表示させる
-        const displayingItems = resJson.data.slice(0, 10)
-
-        setItems(displayingItems)
-      } catch (err) {
-        throw err;
-      }
-    }
-    fetchData();
-  }, []); //第二の引数 useEffect　ページがレンダリングされる前に一度だけ呼ばれる(値を入れると無限ループ)
+  const info = useFetch(`http://localhost:4000/api/items`)
 
   const genres = [
     {
-      url: "#ladies",
-      name: "レディース",
+      url: '#ladies',
+      name: 'レディース',
     },
     {
-      url: "#mens",
-      name: "メンズ",
+      url: '#mens',
+      name: 'メンズ',
     },
     {
-      url: "#electronics",
-      name: "家電・スマホ・カメラ",
+      url: '#electronics',
+      name: '家電・スマホ・カメラ',
     },
     {
-      url: "#toys",
-      name: "おもちゃ・ホビー・グッズ",
+      url: '#toys',
+      name: 'おもちゃ・ホビー・グッズ',
     },
-  ];
+  ]
 
-  const displayItems = items.map((item, index) => {
-    return (
-      <li className={index > 8 ? 'card-none' : null} key={item.id}>
-        <Card
-          price={item.price}
-          description={item.description}
-          imgurl={item.img_url}
-          likes={item.likes}
-        />
-      </li>
-    )
-  })
+  const displayItems = info.map(
+
+
+    ({   id, price, description, img_url, likes }, index) => {
+          return (
+            <li className={index === 9 ? 'card-none' : null} key={id}>
+              <Card
+                price={price}
+                description={description}
+                imgurl={img_url}
+                likes={likes}
+              />
+            </li>
+          )
+        }
+
+
+  )
 
   // console.log("items state", items); //StateにAPIの情報が入る
 
@@ -104,4 +91,4 @@ export const ItemsSection = () => {
       </div>
     </section>
   )
-};
+}

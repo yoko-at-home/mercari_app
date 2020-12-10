@@ -41,12 +41,15 @@ const ItemsPage = () => {
       <div>
         <div style={{ display: 'flex' }}>
           <h3>{nickname}さんが出品した商品</h3>
-          <Link
-            style={{ backgroundColor: 'pink', borderRadius: 5, padding: 3 }}
-            to='/'
-          >
-            トップページへ
-          </Link>
+          <button className='btn'>
+            <Link to='./'>トップページへ</Link>
+          </button>
+          <button className='btn'>
+            <Link
+              to='/items/sell'
+            >出品ページへ
+            </Link>
+          </button>
         </div>
         <div className='items__layout'>
           <ul className='items__layout--grid'>

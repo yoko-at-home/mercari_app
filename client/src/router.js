@@ -3,8 +3,8 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import LandingPage from "./pages/Landing";
 import AuthenticationPage from "./pages/Authentication";
-import ItemsPage from './pages/items';
-import SellPage from './pages/sell'
+import ItemsPage from './pages/Items'
+import SellPage from './pages/Sell'
 import { Signup } from "./components/Auth/Signup";
 import { Registration } from "./components/Auth/Registration";
 import { Login } from './components/Auth/Login'

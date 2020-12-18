@@ -5,6 +5,7 @@ import jwt from 'jsonwebtoken';
 import "./HeaderMobile.styles.css";
 
 import Logo from "../../../../assets/img/mercari_logo.png";
+import { Input } from '../../../atom/Input'
 
 
 export const HeaderMobile = () => {
@@ -78,7 +79,8 @@ export const HeaderMobile = () => {
           <div className='header__buttons'>{displayButtons()}</div>
         </div>
         <div className='header__middle--mobile'>
-          <div className='header__input'>
+          <Input type='default' />
+          {/* <div className='header__input'>
             <input placeholder='何をお探しですか？' type='text' />
             <button>
               <svg
@@ -94,7 +96,7 @@ export const HeaderMobile = () => {
                 ></path>
               </svg>
             </button>
-          </div>
+          </div> */}
         </div>
         <div className='header__bottom---mobile'>
           <div className='header__search'>

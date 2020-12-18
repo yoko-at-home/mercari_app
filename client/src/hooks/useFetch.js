@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-const useFetch = (url = 'http://localhost:4000/api/items', limit = 10) => {
+const useFetch = (url, limit = 10) => {
   const [state, setState] = useState([]) //Hooksの書き方
   useEffect(() => {
     async function fetchData() {
@@ -12,9 +12,9 @@ const useFetch = (url = 'http://localhost:4000/api/items', limit = 10) => {
         const resJson = await res.json()
         console.log('repsonse', resJson)
         // 九つだけ表示させる
-        const displayingItems = resJson.data.slice(0, limit)
+        const data = resJson.data.slice(0, limit)
 
-        setState(displayingItems)
+        setState(data)
       } catch (err) {
         throw err
       }

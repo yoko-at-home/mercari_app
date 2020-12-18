@@ -1,18 +1,11 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useHistory } from 'react-router-dom'
-import "../../styles/global.css";
-import './AuthStyles.css'
-import './AuthButton.styles.css'
-
-import { FacebookButton } from "./FacebookButton";
-import { GoogleButton } from "./GoogleButton";
-import { AppleButton } from './AppleButton'
-
+import { Button } from '../atom/Button'
+import './Signup.styles.css'
 
 export const Login = () => {
   const history = useHistory()
-
   const [info, setInfo] = useState({
     email: '',
     password: '',
@@ -42,11 +35,11 @@ export const Login = () => {
     // '{"status": "success"}'
       const response = await fetch('http://localhost:4000/api/users/login', {
         // credentials: 'include',
+      method: 'POST',
         headers: {
           // 'Access-Control-Allow-Origin': 'http://localhost:4000',
           'Content-Type': 'application/json',
         },
-      method: 'POST',
         body: JSON.stringify(info),
       })
     // console.log(info);
@@ -68,89 +61,117 @@ export const Login = () => {
     }
   };
   return (
-    <>
-      <div className='main__no-account'>
-        <div className='section__center'>
-          <ul className='btn__wrap'>
+    <div className='signup'>
+      <div className='signup__inner'>
+        <div className='signup__content'>
+          <div className='signup__header'>
             <div className='main__text'>アカウントをお持ちでない方はこちら</div>
-            <li className='list__btn'>
-              <Link
-                to='/signup/registration'
-                style={{
-                  display: 'block',
-                  borderRadius: 3,
-                  border: '1px solid black',
-                  backgroundColor: 'transparent',
-                }}
-              >
-                <button className='btn-new btn-default btn-align'>
-                  <div className='icon-mail'></div>
-                  <div className='btn-text'>新規会員登録</div>
-                </button>
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </div>
+            <Button
+              type='auth'
+              platform='registration'
+              onClick={() => history.push('/signup/registration')}
+              customize={{
+                border: '1px solid #0199E8',
+                backgroundColor: '#0199E8',
+              }}
+              fullWidth
+            />
+          </div>
 
-      <div className='main'>
-        <div className='section__center'>
-          <ul className='btn__wrap'>
-            <li className='list__btn'>
-              <GoogleButton />
-            </li>
-            <li className='list__btn'>
-              <FacebookButton />
-            </li>
-            <li className='list__btn'>
-              <AppleButton />
-            </li>
-          </ul>
-          <h4 className='main__text_error'>{error}</h4>
-          <form method='post' onSubmit={handleSubmit} style={{ width: '100%' }}>
-            <div style={{ marginTop: 20, width: '100%' }}>
-              <div style={{ margin: '10px 0' }}>
-                <input
-                  onChange={(e) => setInfo({ ...info, email: e.target.value })}
-                  value={info.email}
-                  className='form__input'
-                  type='text'
-                  placeholder='メールアドレス'
-                />
-              </div>
-              <div style={{ margin: '10px 0' }}>
-                <input
-                  onChange={(e) =>
-                    setInfo({ ...info, password: e.target.value })
-                  }
-                  value={info.password}
-                  className='form__input'
-                  type='text'
-                  placeholder='パスワード'
-                />
-              </div>
+          <div className='signup__buttons'>
+            <div style={{ width: '100%', margin: '8px 0' }}>
+              <Button
+                type='auth'
+                platform='google'
+                onClick={() => alert('google button clicked')}
+                customize={{
+                  border: '1px solid black',
+                  backgroundColor: 'transpaent',
+                }}
+                fullWidth
+              />
             </div>
-            <button
-              className='btn-default btn-align'
-              style={{ background: 'red' }}
+            <div style={{ width: '100%', margin: '8px 0' }}>
+              <Button
+                type='auth'
+                platform='facebook'
+                onClick={() => alert('facebook button clicked')}
+                customize={{
+                  border: '1px solid black',
+                  backgroundColor: '#385185',
+                }}
+                fullWidth
+              />
+            </div>
+            <div style={{ width: '100%', margin: '8px 0' }}>
+              <Button
+                type='auth'
+                platform='apple'
+                customize={{
+                  border: '1px solid black',
+                  backgroundColor: '#000000',
+                }}
+                onClick={() => alert('apple button clicked')}
+                fullWidth
+              />
+            </div>
+            <h4 className='main__text_error'>{error}</h4>
+            <form
+              method='post'
+              onSubmit={handleSubmit}
+              style={{ width: '100%' }}
             >
-              <Link to='/signup' className='button__anchor'>
+              <div style={{ marginTop: 20, width: '100%' }}>
+                <div style={{ margin: '10px 0' }}>
+                  <input
+                    onChange={(e) =>
+                      setInfo({ ...info, email: e.target.value })
+                    }
+                    value={info.email}
+                    className='form__input'
+                    type='text'
+                    placeholder='メールアドレス'
+                  />
+                </div>
+                <div style={{ margin: '10px 0' }}>
+                  <input
+                    onChange={(e) =>
+                      setInfo({ ...info, password: e.target.value })
+                    }
+                    value={info.password}
+                    className='form__input'
+                    type='text'
+                    placeholder='パスワード'
+                  />
+                </div>
+              </div>
+
+              <Button
+                type='auth'
+                platform='login'
+                // onClick={() => history.push('')}
+                customize={{
+                  border: '1px solid red',
+                  backgroundColor: 'red',
+                }}
+                fullWidth
+              >
                 <input
                   type='submit'
                   value='ログイン'
                   style={{ background: 'red', border: 0, color: 'white' }}
                 />
-              </Link>
-            </button>
-          </form>
+              </Button>
+            </form>
 
-          <div style={{ width: '100%', margin: '8px 0' }}>
-            <Link to='/signup' className='forgot__password'>
-              パスワードをお忘れの方
-            </Link>
+            <div style={{ width: '100%', margin: '8px 0' }}>
+              <Link to='/signup' className='forgot__password'>
+                パスワードをお忘れの方
+              </Link>
+            </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 };

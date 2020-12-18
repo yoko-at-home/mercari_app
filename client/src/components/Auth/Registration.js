@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import ProgressBar from "./ProgressBar";
+import ProgressBar from '../atom/Button/ProgressBar'
 import "./Registration.styles.css";
 
 export const Registration = () => {
@@ -48,7 +48,7 @@ export const Registration = () => {
       return;
     }
 
-    // try {
+    try {
       // JSONのstring型のレスポンスをresponseの変数に入れる
       const response = await fetch('http://localhost:4000/api/users/signup', {
         // credentials: 'include',
@@ -61,18 +61,15 @@ export const Registration = () => {
 
       //　response(string型)をjavascriptのオブジェクトに変換する
       const resJson = await response.json()
-      if (resJson.status === 'success') {
+      // if (resJson.status === 'success') {
         //　localstorageにtokenをkey,valueの形で保存する
         localStorage.setItem('token', resJson.token)
 
         // landing pageにユーザーを飛ばす
-        history.push('/')
-      } else {
-        setError(resJson.message);
-      }
-    // } catch (err) {
-    //   setError('処理の途中で問題が発生しました。')
-    // }
+        history.push('/');
+     } catch (err) {
+       setError('処理の途中で問題が発生しました')
+     }
   };
 
   return (
@@ -121,7 +118,7 @@ export const Registration = () => {
                     value={info.email}
                     className='form__input'
                     id='email'
-                    type='email'
+                    type='text'
                     placeholder='PC・携帯どちらでも可'
                   />
                 </div>

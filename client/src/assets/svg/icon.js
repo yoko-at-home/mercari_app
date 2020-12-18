@@ -23,7 +23,7 @@ export const Heart = () => {
 
 export const Email = (props) => {
   return (
-    <svg viewBox="0 0 512 512">
+    <svg style={{ display: 'block' }} width={props.width} viewBox='0 0 512 512'>
       <g>
         <g>
           <path

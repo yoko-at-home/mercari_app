@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import '../styles/pages.css'
-import { Card } from '../components/Card'
+import { Card } from '../components/molecules/Card'
 import jwt from 'jsonwebtoken'
 import { Link } from 'react-router-dom';
 
 import { useHistory } from 'react-router-dom'
 
 const ItemsPage = () => {
-  // const [data, setData] = useState()
+  const history = useHistory();
   const [items, setItems] = useState([])
+  // const [data, setData] = useState()
   const [nickname, setNickname] = useState('')
-  const history = useHistory()
 
   useEffect(() => {
     const fetchData = async (userId) => {
@@ -42,7 +42,7 @@ const ItemsPage = () => {
         <div style={{ display: 'flex' }}>
           <h3>{nickname}さんが出品した商品</h3>
           <button className='btn'>
-            <Link to='./'>トップページへ</Link>
+            <Link to='/'>トップページへ</Link>
           </button>
           <button className='btn'>
             <Link
@@ -53,16 +53,17 @@ const ItemsPage = () => {
         </div>
         <div className='items__layout'>
           <ul className='items__layout--grid'>
-            {items.map((item, userId) => {
-              return (
-                <li>
-                  <Card
-                    price={item.price}
-                    description={item.description}
-                    imgurl={item.img_url}
-                    likes={item.likes}
-                  />
-                </li>
+          {items.map((item, index) => {
+            return (
+              <li key={index}>
+                <Card
+                  type="item"
+                  price={item.price}
+                  imgUrl={item.img_url}
+                  description={item.description}
+                  likes={item.likes}
+                />
+              </li>
               )
             })}
           </ul>

@@ -116,7 +116,7 @@
   }
 
   .card-none {
-    display: block;
+    display: flex;
   }
 
   /* .card__caption-description {

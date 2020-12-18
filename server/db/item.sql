@@ -16,5 +16,5 @@ INSERT INTO item(img_url, price, description, user_id) VALUES ('https://static.m
 INSERT INTO item(img_url, price, description, user_id) VALUES ('https://static.mercdn.net/c!/w=240/thumb/photos/m91168164208_1.jpg?1606655301', 4500, '☆リーバイス☆LEVIS550 ブーツカットデニムパンツ　ジーンズ', 1);
 INSERT INTO item(img_url, price, description, user_id) VALUES ('https://static.mercdn.net/c!/w=240/thumb/photos/m91168164208_1.jpg?1606655301', 4500, '☆リーバイス☆LEVIS550 ブーツカットデニムパンツ　ジーンズ', 2);
 INSERT INTO item(img_url, price, description, user_id) VALUES ('https://static.mercdn.net/c!/w=240/thumb/photos/m91168164208_1.jpg?1606655301', 4500, '☆リーバイス☆LEVIS550 ブーツカットデニムパンツ　ジーンズ', 2);
-INSERT INTO item(img_url, price, description, user_id) VALUES ('https://yokoiwasaki.netlify.app/images-england/066.jpeg', 4500, '☆リーバイス☆LEVIS550 ブーツカットデニムパンツ　ジーンズ', 2);
-INSERT INTO item(img_url, price, description, user_id) VALUES ('https://yokoiwasaki.netlify.app/images-england/010.jpeg', 4500, '☆リーバイス☆LEVIS550 ブーツカットデニムパンツ　ジーンズ', 2);
+INSERT INTO item(img_url, price, description, user_id) VALUES ('https://static.mercdn.net/c!/w=240/thumb/photos/m67570932924_1.jpg?1607477013', 10000, 'ダイヤモンドリング', 2);
+INSERT INTO item(img_url, price, description, user_id) VALUES ('https://static.mercdn.net/c!/w=240/thumb/photos/m67570932924_1.jpg?1607477013', 10000, 'ダイヤモンドリング', 2);

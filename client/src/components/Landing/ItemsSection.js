@@ -1,6 +1,6 @@
 import React from 'react'
 import "./ItemsSection.styles.css";
-import { Card } from '../Card'
+import { Card } from '../molecules/Card'
 import useFetch from '../../hooks/useFetch'
 
 
@@ -27,15 +27,14 @@ export const ItemsSection = () => {
   ]
 
   const displayItems = info.map(
-
-
-    ({   id, price, description, img_url, likes }, index) => {
-          return (
-            <li className={index === 9 ? 'card-none' : null} key={id}>
+    ({ id, price, description, img_url, likes }, index) => {
+      return (
+        <li className={index === 9 ? "card-none" : null} key={id}>
               <Card
+            type="item"
                 price={price}
                 description={description}
-                imgurl={img_url}
+                imgUrl={img_url}
                 likes={likes}
               />
             </li>

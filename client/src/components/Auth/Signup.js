@@ -1,45 +1,75 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
 // import {Authentsstration } from "./components/Auth/Registration";
-
-import "../../styles/global.css";
-import "./AuthStyles.css";
-import { EmailButton } from "./EmailButton";
-import { FacebookButton } from "./FacebookButton";
-import { GoogleButton } from "./GoogleButton";
-import { AppleButton } from "./AppleButton";
+import { Button } from '../atom/Button'
+import { useHistory } from 'react-router-dom'
+import './Signup.styles.css'
 
 export const Signup = () => {
+  const history = useHistory()
   return (
-    <div className="SectionCenter">
-      <div className="main">
-        <div className="section__top">
-          <div className="l-single-head">新規会員登録</div>
-        </div>
-        <div className="section__center">
-          <ul className="btn__wrap">
-            <li className="list__btn">
-              <EmailButton />
-            </li>
-            <li className="list__btn">
-              <GoogleButton />
-            </li>
-            <li className="list__btn">
-              <FacebookButton />
-            </li>
-            <li className="list__btn">
-              <AppleButton />
-            </li>
-            <li>
-              <div className="btn-text__bottom">
-                登録することで、
-                <Link to="">利用規約とプライバシーポリシー</Link>
-                に同意したものとみなされます。
-              </div>
-            </li>
-          </ul>
+    <div className='signup'>
+      <div className='signup__inner'>
+        <div className='signup__content'>
+          <div className='signup__header'>
+            <h5 style={{ fontSize: 20 }}>新規会員登録</h5>
+          </div>
+          <div className='signup__buttons'>
+            <div style={{ width: '100%', margin: '8px 0' }}>
+              <Button
+                type='auth'
+                platform='email'
+                onClick={() => history.push('/signup/registration')}
+                customize={{
+                  backgroundColor: '#EA352E',
+                  border: '1px solid #EA352E',
+                }}
+                fullWidth
+              />
+            </div>
+            <div style={{ width: '100%', margin: '8px 0' }}>
+              <Button
+                type='auth'
+                platform='google'
+                onClick={() => alert('google button clicked')}
+                customize={{
+                  border: '1px solid black',
+                  backgroundColor: 'transparent',
+                }}
+                fullWidth
+              />
+            </div>
+            <div style={{ width: '100%', margin: '8px 0' }}>
+              <Button
+                type='auth'
+                platform='facebook'
+                onClick={() => alert('facebook button clicked')}
+                customize={{
+                  border: '1px solid black',
+                  backgroundColor: '#385185',
+                }}
+                fullWidth
+              />
+            </div>
+            <div style={{ width: '100%', margin: '8px 0' }}>
+              <Button
+                type='auth'
+                platform='apple'
+                customize={{
+                  border: '1px solid black',
+                  backgroundColor: '#000000',
+                }}
+                onClick={() => alert('apple button clicked')}
+                fullWidth
+              />
+            </div>
+            <div style={{ marginTop: 30 }}>
+              <p style={{ color: '#A9A9A9', fontSize: 14 }}>
+                登録することで、利用規約とプライバシーポリシーに同意したものとみなされます。
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  );
+  )
 };

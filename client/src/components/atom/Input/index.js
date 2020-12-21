@@ -7,3 +7,4 @@ export const Input = ({ type = 'default' }) => {
   }
   return types[type]
 }
+

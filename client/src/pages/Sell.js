@@ -1,4 +1,7 @@
 import React from 'react'
+// import Logo from '../assets/img/mercari_logo.png';
+import { AuthHeader} from '../components/organisms/Header/Auth'
+import { AuthFooter } from '../components/organisms/Footer/Auth'
 
 import { useHandleSubmit } from '../hooks/useHandleSubmit'
 // import { useHistory } from 'react-router-dom'
@@ -16,11 +19,12 @@ const SellPage = () => {
 
   return (
     <>
+      <AuthHeader/>
       <div
         style={{
           display: 'flex',
           flexDirection: 'column',
-          width: '90%',
+          width: '60%',
           margin: '0 auto',
         }}
       >
@@ -65,6 +69,7 @@ const SellPage = () => {
           </form>
         </div>
       </div>
+      <AuthFooter/>
     </>
   )
 }

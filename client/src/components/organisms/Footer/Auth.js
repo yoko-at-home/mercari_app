@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import LogoGrayIcon from "../../../assets/svg/logo-gray.svg";
+import LogoGrayIcon from '../../../assets/svg/logo-gray.svg'
 import styled from "styled-components";
 import "./Auth.styles.css";
 
@@ -38,6 +38,7 @@ const FooterItems = styled.ul`
     }
   }
 `;
+
 
 export const AuthFooter = () => {
   return (

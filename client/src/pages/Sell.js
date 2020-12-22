@@ -1,9 +1,9 @@
 import React from 'react'
 
-import { useHandleSubmit } from '../../../hooks/useHandleSubmit'
+import { useHandleSubmit } from '../hooks/useHandleSubmit'
 // import { useHistory } from 'react-router-dom'
 
-export const SellPage = () => {
+const SellPage = () => {
   const [
     price,
     description,
@@ -68,3 +68,4 @@ export const SellPage = () => {
     </>
   )
 }
+export default SellPage;

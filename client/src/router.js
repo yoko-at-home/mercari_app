@@ -2,10 +2,9 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import LandingPage from "./pages/Landing";
-// import ItemsPage from './components/organisms/UserUnique/Items'
+import SellPage from "./pages/Sell";
 import { Layout } from "./components/layout";
-import {  Auth } from "./components/organisms/Auth/";
-// import { UsesrUnique } from "./components/organisms/UserUnique/";
+import { Auth } from "./components/organisms/Auth";
 
 const Router = () => {
   return (
@@ -24,7 +23,7 @@ const Router = () => {
           <Layout type='userunique' content={<Auth type='items' />} />
         </Route>
         <Route exact path='/items/sell'>
-          <Layout type='userunique' content={<Auth type='sell' />} />
+          <SellPage />
         </Route>
         <Route path='/'>
           <LandingPage />

@@ -1,10 +1,10 @@
 import React from 'react'
-import "./ItemsSection.styles.css";
+import "./Items.styles.css";
 import { Card } from '../molecules/Card'
 import useFetch from '../../hooks/useFetch'
 
 
-export const ItemsSection = () => {
+export const Items = () => {
   const info = useFetch(`http://localhost:4000/api/items`)
 
   const genres = [

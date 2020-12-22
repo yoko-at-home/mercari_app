@@ -1,11 +1,11 @@
 import React from 'react'
 import './styles.css'
 
-export const DefaultInput = () => {
+export const LandingInput = ({ data, setData} ) => {
   return (
     <div className='header__input'>
-      <input placeholder='何かお探しですか？' />
-      <button>
+      <input placeholder='何かお探しですか？' value={data} onChange={setData}/>
+      <button onClick>
         <svg aria-hidden='true' width='16' height='16' viewBox='0 0 16 16'>
           <path
             fill='currentColor'

@@ -2,31 +2,29 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import LandingPage from "./pages/Landing";
-import AuthenticationPage from "./pages/Authentication";
-import ItemsPage from './pages/Items'
-import SellPage from './pages/Sell'
-import { Signup } from "./components/Auth/Signup";
-import { Registration } from "./components/Auth/Registration";
-import { Login } from './components/Auth/Login'
+// import ItemsPage from './components/organisms/UserUnique/Items'
+import { Layout } from "./components/layout";
+import {  Auth } from "./components/organisms/Auth/";
+// import { UsesrUnique } from "./components/organisms/UserUnique/";
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path='/login'>
-          <AuthenticationPage content={<Login />} />
+          <Layout type='auth' content={<Auth type='login' />} />
         </Route>
         <Route exact path='/signup'>
-          <AuthenticationPage content={<Signup />} />
+          <Layout type='auth' content={<Auth type='signup' />} />
         </Route>
         <Route path='/signup/registration'>
-          <AuthenticationPage content={<Registration />} />
+          <Layout type='auth' content={<Auth type='registration' />} />
         </Route>
         <Route path='/users/items'>
-          <ItemsPage />
+          <Layout type='userunique' content={<Auth type='items' />} />
         </Route>
         <Route exact path='/items/sell'>
-          <SellPage />
+          <Layout type='userunique' content={<Auth type='sell' />} />
         </Route>
         <Route path='/'>
           <LandingPage />

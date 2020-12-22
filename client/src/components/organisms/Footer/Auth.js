@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import LogoGrayIcon from "../../assets/svg/logo-gray.svg";
+import LogoGrayIcon from "../../../assets/svg/logo-gray.svg";
 import styled from "styled-components";
-import "./AuthFooter.styles.css";
+import "./Auth.styles.css";
 
 const AuthFooterWrapper = styled.div`
   padding-bottom: 10px;

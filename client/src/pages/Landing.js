@@ -1,21 +1,21 @@
 import React from "react";
 
-import { Header } from "../components/Landing/Header/Header";
-import { BannerSection } from "../components/Landing/BannerSection";
-import { ItemsSection } from "../components/Landing/ItemsSection";
-import { AppAdvertisement } from "../components/Landing/AppAdvertisement";
-import { Footer } from "../components/Landing/Footer";
-import { FloatButton } from "../components/Landing/FloatButton";
+import { Header } from "../components/organisms/Header";
+import { Section } from "../components/section";
+import { Footer } from "../components/organisms/Footer";
+import { Button } from "../components/atom/Button";
 
 const LandingPage = () => {
   return (
     <>
-      <Header />
-      <BannerSection />
-      <ItemsSection />
-      <AppAdvertisement />
-      <Footer />
-      <FloatButton />
+      <Header type='landing'/>
+      <Section type='banner'/>
+      <Section type='items'/>
+      <Section type='app'/>
+      <Footer type='landing' />
+      <div style={{ position: 'fixed', bottom: -10, right: -15, zIndex: 999 }}>
+      <Button type='float' />
+      </div>
     </>
   );
 };

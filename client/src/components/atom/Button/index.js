@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { AuthButton } from './Auth'
-
+import { FloatButton } from "./Float";
 
 export const Button = ({
   type = 'auth',
@@ -16,6 +16,9 @@ export const Button = ({
       component: <AuthButton platform={platform} />,
       customStyle: { borderRadius: 3 },
     },
+    float: {
+      component: <FloatButton/>
+    }
   }
 
   if (to) {
@@ -45,6 +48,8 @@ export const Button = ({
       style={{
         display: 'block',
         width: fullWidth && '100%',
+        backgroundColor: "transparent",
+        border: "none",
         ...customize,
         ...types[type].customStyle,
       }}

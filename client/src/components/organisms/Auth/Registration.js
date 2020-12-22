@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import ProgressBar from '../atom/Button/ProgressBar'
+import ProgressBar from '../../atom/Button/ProgressBar'
 import "./Registration.styles.css";
 
 export const Registration = () => {
@@ -45,32 +45,32 @@ export const Registration = () => {
       info.day === ''
     ) {
       setError('未入力の項目があります')
-      return;
+      return
     }
 
     try {
       // JSONのstring型のレスポンスをresponseの変数に入れる
       const response = await fetch('http://localhost:4000/api/users/signup', {
+        method: 'POST',
         // credentials: 'include',
         headers: {
           'Content-Type': 'application/json', //server側でjson -> jsに変換
         },
-        method: 'POST',
         body: JSON.stringify(info), //serverは、request.bodyで受け取る　StringifyはJSON形式のinfoをjsとして受け取れる
       })
 
       //　response(string型)をjavascriptのオブジェクトに変換する
       const resJson = await response.json()
       // if (resJson.status === 'success') {
-        //　localstorageにtokenをkey,valueの形で保存する
-        localStorage.setItem('token', resJson.token)
+      //　localstorageにtokenをkey,valueの形で保存する
+      localStorage.setItem('token', resJson.token)
 
-        // landing pageにユーザーを飛ばす
-        history.push('/');
-     } catch (err) {
-       setError('処理の途中で問題が発生しました')
-     }
-  };
+      // landing pageにユーザーを飛ばす
+      history.push('/')
+    } catch (err) {
+      setError('処理の途中で問題が発生しました')
+    }
+  }
 
   return (
     <div className='registration'>

@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useHistory } from 'react-router-dom'
-import { Button } from '../atom/Button'
+import { Button } from '../../atom/Button'
+import { Input } from '../../atom/Input'
 import './Signup.styles.css'
 
 export const Login = () => {
@@ -123,25 +124,20 @@ export const Login = () => {
             >
               <div style={{ marginTop: 20, width: '100%' }}>
                 <div style={{ margin: '10px 0' }}>
-                  <input
-                    onChange={(e) =>
-                      setInfo({ ...info, email: e.target.value })
-                    }
-                    value={info.email}
-                    className='form__input'
-                    type='text'
+                  <Input
+                    type='auth'
+                    data={info.email}
+                    setData={(e)=>setInfo({...info, email:e.target.value})}
                     placeholder='メールアドレス'
                   />
                 </div>
                 <div style={{ margin: '10px 0' }}>
-                  <input
-                    onChange={(e) =>
-                      setInfo({ ...info, password: e.target.value })
-                    }
-                    value={info.password}
-                    className='form__input'
-                    type='text'
-                    placeholder='パスワード'
+                  <Input
+                    type='auth'
+                    data={info.password}
+                    setData={(e) =>
+                      setInfo({ ...info, password: e.target.value })}
+                      placeholder='パスワード'
                   />
                 </div>
               </div>

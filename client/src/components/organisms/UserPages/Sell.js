@@ -1,11 +1,9 @@
 import React from 'react'
-import { AuthHeader } from '../components/Auth/AuthHeader'
-import { AuthFooter } from '../components/Auth/AuthFooter'
 
-import { useHandleSubmit } from '../hooks/useHandleSubmit'
+import { useHandleSubmit } from '../../../hooks/useHandleSubmit'
 // import { useHistory } from 'react-router-dom'
 
-const SellPage = () => {
+export const SellPage = () => {
   const [
     price,
     description,
@@ -18,8 +16,14 @@ const SellPage = () => {
 
   return (
     <>
-      <AuthHeader />
-      <div style={{display:'flex', flexDirection: 'column',width: '90%', margin: '0 auto'}}>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          width: '90%',
+          margin: '0 auto',
+        }}
+      >
         <h1 style={{ marginTop: '15px' }}>出品</h1>
 
         <div className='section__center'>
@@ -33,12 +37,9 @@ const SellPage = () => {
                   {priceError && <p className='notice'>{priceError}</p>}
                   <div>
                     <div className='yen'>¥</div>
-                    <input style={{width: 300}}
+                    <input
                       type='text'
-                      onChange={(e) => {
-                        // console.log('hello')
-                        setPrice(e.target.value)
-                      }}
+                      onChange={(e) => setPrice(e.target.value)}
                       value={price}
                     />
                   </div>
@@ -64,9 +65,6 @@ const SellPage = () => {
           </form>
         </div>
       </div>
-      <AuthFooter />
     </>
   )
 }
-
-export default SellPage

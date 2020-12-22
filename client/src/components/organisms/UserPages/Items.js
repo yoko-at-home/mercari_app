@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import '../styles/pages.css'
-import { Card } from '../components/molecules/Card'
+import '../../../styles/pages.css'
+import { Card } from '../../molecules/Card'
 import jwt from 'jsonwebtoken'
 import { Link } from 'react-router-dom';
 
 import { useHistory } from 'react-router-dom'
 
-const ItemsPage = () => {
+export const ItemsPage = () => {
   const history = useHistory();
   const [items, setItems] = useState([])
   // const [data, setData] = useState()
@@ -72,5 +72,3 @@ const ItemsPage = () => {
     </div>
   )
 }
-
-export default ItemsPage;

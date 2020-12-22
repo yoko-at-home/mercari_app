@@ -1,6 +1,6 @@
 import React from "react";
-import "./FloatButton.styles.css";
-import { Camera } from "../../assets/svg";
+import "./Float.styles.css";
+import { Camera } from "../../../assets/svg";
 import {Link} from 'react-router-dom'
 
 export const FloatButton = () => {

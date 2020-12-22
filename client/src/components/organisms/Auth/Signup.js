@@ -1,10 +1,10 @@
 import React from 'react'
 // import {Authentsstration } from "./components/Auth/Registration";
-import { Button } from '../atom/Button'
+import { Button } from '../../atom/Button'
 import { useHistory } from 'react-router-dom'
 import './Signup.styles.css'
 
-export const Signup = () => {
+export const Signup = (content) => {
   const history = useHistory()
   return (
     <div className='signup'>

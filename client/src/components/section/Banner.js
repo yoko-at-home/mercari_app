@@ -1,6 +1,6 @@
 import React from "react";
-import "./BannerSection.styles.css";
+import "./Banner.styles.css";
 
-export const BannerSection = () => {
+export const Banner = () => {
   return <section className="banner-section" />;
 };

@@ -4,8 +4,10 @@ const dotenv = require("dotenv");
 dotenv.config();
 // サーバーの指定のみを実行(package.jsonから最初に読み込まれる)
 const app = require("./app");
-const port = 4000;
+
+//herokuのプラットフォーム内では、herokuのPORTを使うそうでなければ4000
+const port = process.env.PORT || 4000;
 
 app.listen(port, () => {
-  console.log('ポート4000が開きました❤️')
+  console.log(`サーバーが${port}で起動しました❤️`)
 });

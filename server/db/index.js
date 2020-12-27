@@ -1,5 +1,15 @@
 const { Pool } = require("pg");
-const pool = new Pool();
+const connectionString =
+  process.env.DATABASE_URL ||
+  'postgres://postgres:password@localhost:5432/mercari';
+
+  console.log('here is the connectionString', connectionString)
+const pool = new Pool({
+  connectionString: connectionString,
+  ssl: {
+    rejectUnauthorized:false,
+  },
+});
 // {
 //デーベースの情報を入れる=> .envファイルに移行posgreは書かなくても大丈夫
 // user: "postgres", //デフォルト
@@ -12,7 +22,10 @@ const pool = new Pool();
 //pool.query("select * from item"); =>以下のようにエクスポートした先で使う
 //参照サイト：node-posgres.com （pg pooling...Kenさんから情報くる）
 module.exports = {
-  query: (text, params, callback) => {
-    return pool.query(text, params, callback);
-  },
-};
+  pool,
+}
+// module.exports = {
+//   query: (text, params, callback) => {
+//     return pool.query(text, params, callback);
+//   },
+// };

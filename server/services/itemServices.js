@@ -1,4 +1,5 @@
-const db = require("../db");
+const { pool } = require('../db')
+
 const jwt = require('jsonwebtoken')
 // const fs = require("fs");
 // const buffer = fs.readFileSync("data.json");
@@ -6,7 +7,7 @@ const jwt = require('jsonwebtoken')
 
 exports.getItems = async function (req, res) {
   try {
-    const items = await db.query("SELECT * FROM item");
+    const items = await pool.query("SELECT * FROM item");
   //  console.log("result", items.rows);
 
     res.status(200).json({
@@ -36,7 +37,7 @@ exports.getItem = async function (req, res) {
     const { id } = req.params;
     const numberId = parseInt(id);
 
-    const item = await db.query("SELECT * FROM item WHERE id =$1", [numberId]);
+    const item = await db.query("SELECT * FROM item WHERE id=$1", [numberId]);
     const result = item.rows[0];
 
     if (!result) {
@@ -62,7 +63,8 @@ exports.getItem = async function (req, res) {
 exports.createItem = async function (req, res) {
   const { token, imgUrl, price, description } = req.body
 
-  let id
+  let id;
+
   try {
     id = jwt.verify(token, process.env.JWT_ACCESS_TOKEN).id
     console.log('decoded', id)
@@ -75,9 +77,9 @@ exports.createItem = async function (req, res) {
   // fs.writeFileSync("data.json", JSON.stringify({ items: items }));
 
   const result = await db.query(
-    'INSERT INTO item (img_url, price, description, user_id ) VALUES ($1, $2, $3, $4) returning *;',
-    [imgUrl, price, description, id]
-  )
+    "INSERT INTO item (user_id, price, description, img_url) values ($1, $2, $3, $4) returning *",
+    [id, price, description, imgUrl]
+  );
 
   // if (!result.rows[0]) { <==次の書き方と同じ
   if (result.rows.length === 0) {

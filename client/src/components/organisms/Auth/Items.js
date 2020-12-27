@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 import { useHistory } from 'react-router-dom'
 
-export const Items = () => {
+export const ItemsPage = () => {
   const history = useHistory();
   const [items, setItems] = useState([])
   // const [data, setData] = useState()
@@ -34,7 +34,7 @@ export const Items = () => {
     } catch (err) {
       history.push('/')
     }
-  }, [])
+  }, [history]);
 
   return (
     <div>

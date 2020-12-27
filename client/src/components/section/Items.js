@@ -6,6 +6,7 @@ import useFetch from '../../hooks/useFetch'
 
 export const Items = () => {
   const info = useFetch(`http://localhost:4000/api/items`)
+  //const info = useFetch("https://mercari1129.herokuapp.com/api/items");
 
   const genres = [
     {
@@ -34,7 +35,7 @@ export const Items = () => {
             type="item"
                 price={price}
                 description={description}
-                imgUrl={img_url}
+                imgurl={img_url}
                 likes={likes}
               />
             </li>

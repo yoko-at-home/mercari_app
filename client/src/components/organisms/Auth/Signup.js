@@ -4,7 +4,7 @@ import { Button } from '../../atom/Button'
 import { useHistory } from 'react-router-dom'
 import './Signup.styles.css'
 
-export const Signup = (content) => {
+export const Signup = () => {
   const history = useHistory()
   return (
     <div className='signup'>

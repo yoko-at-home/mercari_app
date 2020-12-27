@@ -1,12 +1,12 @@
 import React from 'react'
 import { ItemCard } from './Item'
 
-export const Card = ({ type = "item", price, imgUrl, description, likes }) => {
+export const Card = ({ type = "item", price, imgurl, description, likes }) => {
   const types = {
     item: (
       <ItemCard
         price={price}
-        imgUrl={imgUrl}
+        imgurl={imgurl}
         description={description}
         likes={likes}
       />

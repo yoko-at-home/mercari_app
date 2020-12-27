@@ -3,11 +3,11 @@ import { AppAdvertisement } from './AppAdvertisement'
 import { Banner } from './Banner';
 import { Items } from './Items'
 
-export const Section = ({ type = '' }) => {
+export const Section = ({ type = 'app' }) => {
   const types = {
     app: <AppAdvertisement />,
     banner: <Banner />,
-    items: <Items/>
+    items: <Items/>,
   }
   return types[type];
 }

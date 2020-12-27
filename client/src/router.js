@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
+import ItemsPage from "./pages/Items";
 import LandingPage from "./pages/Landing";
 import SellPage from "./pages/Sell";
 import { Layout } from "./components/layout";
@@ -19,8 +20,9 @@ const Router = () => {
         <Route path='/signup/registration'>
           <Layout type='auth' content={<Auth type='registration' />} />
         </Route>
-        <Route path='/users/items'>
-          <Layout type='userunique' content={<Auth type='items' />} />
+        <Route exact path='/users/items'>
+                  <ItemsPage />
+         <Layout type='auth' content={<Auth type='items' />} />
         </Route>
         <Route exact path='/items/sell'>
           <SellPage />

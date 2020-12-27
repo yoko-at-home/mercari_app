@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom'
 const useHandleSubmit = () => {
   const history = useHistory()
   const [price, setPrice] = useState('0')
-  // const [imgUrl, setImgUrl] = useState('')
+  // const [imgurl, setImgUrl] = useState('')
   const [description, setDescription] = useState('')
   const [priceError, setPriceError] = useState('')
   const [descriptionError, setDescriptionError] = useState('')
@@ -36,7 +36,7 @@ const useHandleSubmit = () => {
     }
     // console.log('送信できました')
     try {
-      const response = await fetch('http://localhost:4000/api/items/', {
+      const response = await fetch('http://localhost:4000/api/items', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

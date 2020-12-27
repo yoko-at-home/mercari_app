@@ -9,10 +9,11 @@ const app = express();
 
 // サーバー側を立ち上げてexpressでは受信を拒否する（limiterを解除してくれる）
 app.use(
-  cors({
-    origin: "http://localhost:3000",
-    optionsSuccessStatus: 200,
-  })
+  cors()
+  // cors({
+  //   origin: "http://localhost:3000",
+  //   optionsSuccessStatus: 200,
+  // })
 );
 console.log("!!!");
 app.use(express.json()); // for parsing application/json
@@ -23,6 +24,8 @@ if (!process.env.JWT_ACCESS_TOKEN) {
 }
 app.use('/api/items', itemRouter)
 app.use('/api/users', userRouter)
+
+app.get('/', (req, res)=> res.send('hello world!'))
 module.exports = app;
 
 // app.use(cors({

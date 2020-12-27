@@ -5,7 +5,7 @@ import itemImg from '../../../assets/img/mercari_item.jpg'
 
 export const ItemCard = ({
   price = 6000,
-  imgUrl = itemImg,
+  imgurl = itemImg,
   description = '商品名',
   likes = 0,
 }) => {
@@ -17,7 +17,7 @@ export const ItemCard = ({
             <p>¥{price}</p>
           </div>
         </div>
-        <img src={imgUrl} alt='' />
+        <img src={imgurl} alt='' />
       </div>
 
       <div className='card__caption'>
